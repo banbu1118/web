@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>表单_fieldset与legend</title>
+</head>
+<body>
+    <form action="https://search.jd.com/serach">
+        <!--主要信息-->
+        <fieldset>
+            <legend>主要信息</legend>
+            <label for="zhanghu">账户：</label>
+            <input id="zhanghu" type="text" name="account" maxlength="10"><br>
+            <label>
+                密码：
+                <input type="password" name="pwd" maxlength="10"><br>
+            </label>
+            性别：
+            <label>
+                <input type="radio" name="gender" value="male" >男
+            </label>
+            <label>
+                <input type="radio" name="gender" value="female">女<br>
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend>附件信息</legend>
+            爱好：
+            <label>
+                <input type="checkbox" name="hobby" value="smoke">抽烟
+            </label>
+            <label>
+                <input type="checkbox" name="hobby" value="drink">喝酒
+            </label>
+            <label>
+                <input type="checkbox" name="hobby" value="perm">烫头<br>
+            </label>
+            <label>
+                其他：
+            <textarea name="" cols="23" rows="3"></textarea><br>
+            </label>
+            <label>
+                籍贯：
+            <select name="place">
+                <option value="冀">河北</option>
+                <option value="鲁">山东</option>
+                <option value="粤">广东</option>
+            </select>
+        </fieldset>
+        </label>
+        <input type="hidden" name="from" value="toutiao"><br>
+        <input type="submit" value="确认">
+        <input type="reset" value="重置">
+        <input type="button" value="检测账户是否被注册">
+
+    </form>
+
+
+
+</body>
+</html>
