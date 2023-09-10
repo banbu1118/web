@@ -3,8 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>伪类选择器</title>
+    <style>
+        /* 什么是伪类？——很像类，但不是类，是元素状态的一种描述 */
+        /* 选中没有访问过的a元素 */
+        a:link {
+            color: yellow;
+        }
+        /* 选中访问过的a元素 */
+        a:visited {
+            color: gray;
+        }
+    </style>
 </head>
 <body>
-    
+    <a href="https://www.baidu.com">去百度</a>
+    <a href="https://www.jd.com">去京东</a>
 </body>
 </html>
