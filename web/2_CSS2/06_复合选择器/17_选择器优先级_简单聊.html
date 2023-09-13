@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17_选择器优先级_简单聊</title>
+    <style>
+        /* ID选择器优先级 > 类选择器优先级 > 元素优先级 > 通配选择器 */
+        /* 行内样式优先级 > 所有选择器优先级 */
+        /* 后来者居上 */
+        #atguigu {
+            color: red;
+        }
+        .slogan {
+            color: green;
+        }
+        /* h2 {
+            color: red;
+        } */
+        /* * {
+            color: green;
+        } */
+    </style>
+</head>
+<body>
+    <h2 class="slogan" id="atguigu" style="color: blue;">尚硅谷，让天下没有难学的技术</h2>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>16_伪元素选择器</title>
+    <style>
+        /* 什么是伪元素？ 很像元素，但不是元素（element），是元素中的一些特殊位置 */
+        /* 选中的是div中的第一个 */
+        div::first-letter {
+            color: red;
+        }
+        /* 选中的是div中的第一行 */
+        div::first-line {
+            background-color: yellow;
+        }
+        /* 鼠标选中的是div中的文字 */
+        div::selection {
+            background-color: green;
+            color: orange;
+        }
+        /* 选中的是input中的提示文字 */
+        input::placeholder {
+            color: skyblue;
+        }
+        /* 选中的是p元素最开始的位置，随后创建一个子元素 */
+        p::before {
+            content: "￥";
+        }
+        /* 选中的是p元素最后的位置，随后创建一个子元素 */
+        p::after {
+            content: ".00";
+        }
+    </style>
+</head>
+<body>
+    <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, natus! Eaque odit exercitationem, deleniti unde eos eveniet adipisci mollitia in dolore assumenda pariatur error laborum doloribus numquam perspiciatis hic dignissimos inventore! Ullam optio ipsa quidem voluptas minus vel sed, molestias similique aut, dignissimos ipsam laboriosam placeat cupiditate ad beatae impedit maxime omnis modi enim magni necessitatibus quibusdam eum inventore. Adipisci!</div>
+    <br>
+    <input type="text" placeholder="请输入您的用户名">
+    <br>
+    <p>199</p>
+    <p>299</p>
+    <p>399</p>
+    <p>499</p>
+</body>
+</html>
