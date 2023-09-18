@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>08_行高_注意事项</title>
+    <style>
+        /* 注意点1：行高过小会怎样？——文字重叠，且最小值为0，不能为负数 */
+        #d1 {
+            font-size: 40px;
+            background-color: skyblue;
+            line-height: 60px;
+        }
+        /* 注意点2：行高是可以继承的 */
+        #d2 {
+            font-size: 40px;
+            background-color: orange;
+            line-height: 1.5;
+        }
+        /* span {
+            font-size: 200px;
+            color: red;
+            line-height: 1.5;
+        } */
+        /* 注意点3：line-height和height是什么关系
+                设置了height，高度就是height的值
+                没有设置height，高度就是line-height*行数 
+         */
+
+        #d3 {
+            font-size: 40px;
+            background-color: yellowgreen;
+            line-height: 100px;
+            height: 300px;
+        }
+        #d4 {
+            font-size: 40px;
+            background-color: yellowgreen;
+            line-height: 0px;
+        }
+        /* 行高的应用场景1：调整多行文字的间距 */
+        #d5 {
+            font-size: 40px;
+            background-color: skyblue;
+            line-height: 100px;
+        }
+        /* 行高的应用场景1：调整单行文字的垂直居中 */
+        #d6 {
+            font-size: 40px;
+            background-color: skyblue;
+            height: 300px;
+            line-height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div id="d1">aiguigu尚硅谷让天下没有难学的技术aiguigu尚硅谷让天下没有难学的技术aiguigu尚硅谷让天下没有难学的技术aiguigu尚硅谷让天下没有难学的技术aiguigu尚硅谷让天下没有难学的技术aiguigu尚硅谷让天下没有难学的技术aiguigu尚硅谷让天下没有难学的技术</div> -->
+    <!-- <div id="d2">aiguigu尚硅谷让天下没有难学的技术aiguigu尚硅谷让天下没有难学的技术aiguigu尚硅谷让天下没有难学的技术aiguigu<span>尚硅谷</span>让天下没有难学的技术aiguigu尚硅谷让天下没有难学的技术aiguigu尚硅谷让天下没有难学的技术aiguigu尚硅谷让天下没有难学的技术</div> -->
+    <!-- <div id="d3">aiguigu尚硅谷让天下没有难学的技术</div> -->
+    <!-- <div id="d4">aiguigu尚硅谷让天下没有难学的技术aiguigu尚硅谷让天下没有难学的技术aiguigu尚硅谷让天下没有难学的技术aiguigu<span>尚硅谷</span>让天下没有难学的技术aiguigu尚硅谷让天下没有难学的技术aiguigu尚硅谷让天下没有难学的技术aiguigu尚硅谷让天下没有难学的技术</div> -->
+    <!-- <div id="d5">aiguigu尚硅谷让天下没有难学的技术aiguigu尚硅谷让天下没有难学的技术aiguigu尚硅谷让天下没有难学的技术aiguigu<span>尚硅谷</span>让天下没有难学的技术aiguigu尚硅谷让天下没有难学的技术aiguigu尚硅谷让天下没有难学的技术aiguigu尚硅谷让天下没有难学的技术</div> -->
+    <div id="d6">aiguigu尚硅谷让天下没有难学的技术x</div>
+
+</body>
+</html>
