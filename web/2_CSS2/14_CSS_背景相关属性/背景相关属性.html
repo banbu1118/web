@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>背景相关属性</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+        div {
+            width: 400px;
+            height: 400px;
+            /* 设置背景颜色，默认值是transparent 透明 */
+            background-color: green;
+            border: 5px black solid;
+            font-size: 20px;
+            /* 设置背景图片 */
+            /* background-image: url("../images/悟空.jpg"); */
+            /* 设置背景图片的重复方式 */
+            /* background-repeat: no-repeat; */
+            /* 控制背景图片的位置 ——第1种写法：关键词*/
+            /* background-position: center right; */
+            /* 控制背景图片的位置 ——第2种写法：用具体的像素值*/
+            /* background-position: 40px 60px; */
+            /* 背景复合属性 */
+            background: yellow url("../images/悟空.jpg") no-repeat 40px 60px;
+        }
+    </style>
+</head>
+<body>
+    <div>你好啊</div>
+</body>
+</html>
