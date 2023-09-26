@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>16_margin塌陷问题</title>
+    <style>
+        .outer {
+            width: 400px;
+            /* height: 400px; */
+            background-color: gray;
+
+            /* 对于margin塌陷问题的解决方案1 */
+            /* border: 1px solid red; */
+
+            /* 对于margin塌陷问题的解决方案2 */
+            /* padding: 1px; */
+
+            /* 对于margin塌陷问题的解决方案3（推荐） */
+            overflow: hidden;
+        }
+        .inner1 {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            /* 下面这行代码是有问题的 */
+            margin-top: 50px;
+
+            /* margin-bottom: 50px; */
+        }
+        .inner2 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            /* margin-top: 50px; */
+
+            /* 下面这行代码是有问题的 */
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner1">inner1</div>
+        <div class="inner2">inner2</div>
+    </div>
+    <div>我是一段文字</div>
+
+</body>
+</html>
