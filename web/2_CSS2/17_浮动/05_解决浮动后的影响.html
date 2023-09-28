@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>04_浮动后的影响</title>
+    <style>
+        .outer {
+            width: 500px;
+            background-color: gray;
+            border: 1px solid black;
+            /* 第一种解决方案 */
+            /* height: 122px; */
+
+            /* 第二种解决方案 */
+            /* float: left; */
+
+            /* 第三种解决方案 */
+            /* overflow: scroll; */
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            border: 1px solid black;
+            margin: 10px;
+        }
+        .box1,.box2,.box3 {
+            float: left;
+        }
+        /* .box4 {
+            display: inline-block;
+        } */
+        .box4 {
+            clear: both;
+        }
+        .mofa {
+            /* 第四种解决方案 */
+            /* clear: both; */
+        }
+        .outer::after {
+            /* 第五种解决方案 */
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+        <!-- <div class="mofa"></div> -->
+    </div>
+    <div style="background-color: orange;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad ut, ullam, aliquid perferendis obcaecati cupiditate animi aliquam asperiores amet odio a fugiat delectus quibusdam pariatur vero tempora corrupti adipisci consectetur quos. Consectetur facere, ipsum assumenda repellendus inventore minus ut sapiente optio doloremque obcaecati illo quam nostrum ratione deleniti amet quibusdam, rerum unde quaerat est cupiditate. Quaerat eveniet facere sint veniam eum deleniti assumenda fuga eligendi exercitationem accusamus saepe, vitae repellendus, aliquid ipsa repudiandae tempore, ullam tempora sunt doloremque quidem nostrum. Ex temporibus dolor, odit quod nisi ipsa quis! Optio, totam quo quisquam id ducimus iusto perferendis qui iste! Qui tenetur quidem, in, animi et aliquam repellendus provident quis ad sit earum iusto, dolore repudiandae iste voluptates maiores fugiat accusamus itaque sapiente a doloribus inventore assumenda porro minus. Aliquam mollitia recusandae sunt ea veniam laboriosam maiores atque expedita, neque quis. Dicta rem, atque pariatur eligendi accusantium expedita dolores commodi recusandae eius asperiores neque. Laborum necessitatibus recusandae sed vitae velit dignissimos nostrum animi, vel praesentium mollitia, delectus illo. Esse quis a placeat neque eveniet id consectetur blanditiis tempora fuga, quidem, vitae reprehenderit cupiditate recusandae unde at. Excepturi commodi doloremque sit cupiditate voluptatibus, maxime repudiandae soluta est aliquam consequatur placeat cum ipsa cumque.</div>
+</body>
+</html>
