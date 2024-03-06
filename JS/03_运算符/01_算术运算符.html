@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>运算符</title>
+    <script>
+        /* 
+        运算符（操作符）
+        运算符可以对一个或多个操作数（值）进行运算
+        算数运算符：
+        + 加法运算符
+        - 减法运算符
+        * 乘法运算符
+        / 除法运算符
+        ** 幂运算
+        % 模运算
+
+        注意：
+        算术运算时，除了字符串的加法，其他运算的操作苏是非数值时，都会转换为数值然后运算
+
+        当任意一个值和字符串做加法运算时，它会先将其他值转换为字符串，然后再做拼串的操作
+
+        可以通过为任意类型 + 一个空串的形式来将其转换为字符串，其原理和String()函数相同，但使用起来更简洁
+        
+        */
+
+        let a = 1 + 1
+        a = 10 - 5 
+        a = 2 * 4
+        a = 10 / 2
+        a = 10 / 3
+        a = 10 / 0  //Infinity
+        a = 10 ** 4
+        a = 9 ** 0.5    //0.5做开方的运算
+        a = 10 % 3  //取余
+
+        //js是一门弱类型语言，当进行运算时会通过自动的类型转换来完成运算
+        a = 10 - '5'    //10 - 5
+        a = 10 + true   //10 + 1
+        a = 5 + null    //5 + 0
+        a = 6 - undefined   //6 - NaN = NaN
+
+        //当任意一个值和字符串做加法运算时，它会先将其他值转换为字符串，然后再做拼串的操作
+        a = 'hello ' + 'world'  //hello world
+        a = 1 + '2'     //"1" + "2" = "12"
+
+        a = true
+        a = true + 'hello'  //truehello
+        a = true + ''  //true，利用空串转换布尔值为字符串
+        console.log(typeof a, a)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
