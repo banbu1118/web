@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if-else-练习1</title>
+    <script>
+        /* 
+        练习1：
+        编写一个程序，获取一个用户输入的整数。然后通过程序显示这个整数是奇数还是偶数。
+
+        练习2：
+        从键盘输入小明的期末成绩：
+        当成绩为100时，“奖励一辆BMW”
+        当成绩为[80-99]时，“奖励一台iphone”
+        当成绩为[60-79]时，“奖励一本参考书”
+        其他时，什么奖励也没有
+
+        练习3：
+        大家都知道，男大当婚，女大当嫁。那么女方家长要嫁女儿，当然要提出一定的条件：
+        高：180cm以上；
+        富：1000万以上；
+        帅：500以上：
+        如果这三个条件同时满足，则：“我一定要嫁给她”
+        如果这三个条件有为真的情况，则：“嫁吧，比上不如，比下有余”
+        如果三个条件都不满足，则：“不嫁”
+
+        */
+
+
+        //prompt() 用来获取用户的输入
+        //他会将用户输入的内容以字符串的形式返回，可以通过变量来接收
+        // let num = prompt("请输入一个变量")
+        // num = +num
+        //将字符串转换为数字
+        //直接生成number类型的变量，接收函数前加个加号
+        // let num = +prompt("请输入一个变量")
+        // console.log(typeof num, num)
+
+        //练习1：
+        // let num = +prompt("请输入一个整数：")
+
+        //用parseInt()获取一个整数
+        let num = parseInt(prompt("请输入一个整数"))
+        //验证用户的输入是否合法，只有有效数字时，我们才判断奇偶
+        //使用isNaN()函数来检查一个值是否是NaN
+        if(isNaN(num)){
+            alert(`${num}是NaN，您的输入有问题，请输入一个整数`)
+        }else if((num % 2) == 0){
+            alert(`您输入的${num}是偶数`)
+        }else{
+            alert(`您输入的${num}是奇数`)
+        }
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
