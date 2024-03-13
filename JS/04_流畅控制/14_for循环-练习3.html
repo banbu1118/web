@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for循环-练习3</title>
+    <script>
+        /* 
+        获取用户输入大于1的整数，暂时不考虑用户输入错误的情况
+        然后编写代码，检查这个数字是否是质数，如果是质数，打印这个结果
+
+        质数：一个数只能被1和它本身整除，那么这个数就是质数
+        */
+
+        // let a = +prompt("请输入一个大于1的整数：")
+        // for(i=a;i>1;i--){
+        //     if(i%i === 0 && i%1 === 0){
+        //         alert(`${i}是质数`)
+        //     }
+        // }
+
+
+        // let flag = true
+        // let num = 9
+        // for(i=2; i<9; i++){
+        //     if(9%i ===0){
+        //         flag=false
+        //     }
+        // }
+        // if(flag){
+        //     alert("9是质数")
+        // }else{
+        //     alert("9不是质数")
+        // }
+
+        //获取用户输入
+        let num = +prompt("请输入一个大于1的整数：")
+
+        //记录num是否为质数，默认是true，为质数
+        let flag = true
+        for(i=2; i<num; i++){
+            if(num%i ===0){
+                //如果num能被i整数，则num不是质数
+                //当循环执行时，如果没有进入判断，则说明num是质数
+                //哪怕判断执行了一次，也说明num不是质数
+                flag=false
+            }
+        }
+        if(flag){
+            alert(`${num}是质数`)
+        }else{
+            alert(`${num}不是质数`)
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
