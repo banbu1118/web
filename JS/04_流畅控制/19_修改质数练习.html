@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19_修改质数练习</title>
+    <script>
+        /* 
+        优化前：10000时，320ms
+        优化前：100000时，19147ms
+
+        第一次优化:
+        优化后：10000时，120ms
+        优化后：100000时，2889 ms
+         */
+
+         //开始计时器
+        console.time("质数练习：")
+
+        for(let i=2; i<100000; i++){
+
+        //检查i是否为质数
+        //创建一个变量，记录i的状态，默认i是质数
+        let flag = true
+
+        //获取1-i之间的数
+        for(let j=2; j<i ; j++){
+            //判断i能否被j整除
+            if(i%j === 0){
+                //进入判断，i不是质数，修改flag为false
+                flag = false
+
+                //进入判断说明i不是质数，后续检查没有必要执行
+                break
+            }
+        }
+        if(flag){
+            console.log(i)
+        }
+        }
+
+        //停止计时器
+        console.timeEnd("质数练习：")
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
