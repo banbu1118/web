@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11_作用域链</title>
+    <script>
+        /* 
+        作用域链
+        当我们使用一个变量时
+        js解释器会优先在当前作用域中寻找变量
+        如果找到则直接使用
+        如果没有找到，则去上一层作用域中寻找，找到了则使用
+        如果没有找到，继续去上一层寻找，以此类推
+        如果全局作用域也没有找到，则报错 xxx is not defined  
+        */
+
+    //    let a = 10
+
+       {
+        // let a = "第一代码块的a"
+        // console.log(a)
+        {
+            // let a = "第二代码块的a"
+            // console.log(a)
+        }
+       }
+
+       let b = 33
+
+       function fn(){
+        let b = 44
+        console.log(b)
+
+        function f1(){
+            let b = 55
+            console.log(b)
+        }
+
+        f1()
+       }
+
+       fn()
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
