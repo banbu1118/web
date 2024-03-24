@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16_立即执行函数</title>
+    <script>
+        /* 
+        在开发中，应该尽量减少在全局作用域中编写代码！
+
+        所以我们的代码要尽量编写到全局作用域
+
+        如果使用let声明变量，可以使用{}创建块作用域
+        */
+
+
+        {
+            let a = 10
+        }
+
+        {
+            let a = 20
+        }
+
+        // function fn(){
+        //     var a = 10
+        // }
+
+        // fn()
+
+        // function fn2(){
+        //     var a = 20
+        // }
+
+        // fn2()
+
+        //希望可以创建一个只执行一次的匿名函数
+
+        /* 
+        立即执行函数（IIFE）
+        立即是匿名的函数，并且它只会调用一次
+        可以利用IIFE来创建一个一次性的函数作用域，避免变量冲突的问题
+        */
+        (function(){
+            let a = 10
+            console.log(a)
+        }());       //加个分号，防止出现(xxx)(xxx)的问题
+
+
+        (function(){
+            let a = 20
+            console.log(a)
+        }());
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
