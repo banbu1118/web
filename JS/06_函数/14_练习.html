@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14_练习</title>
+    <script>
+        /* 
+        
+        */
+
+        // var a = 1
+        // function fn(){
+        //     a = 2
+        //     console.log(a)
+        // }
+
+        // fn()
+        // console.log(a)
+
+
+        //变量和函数的提升，同样适用于函数作用域
+        // var a = 1
+        // function fn(a){
+        //     console.log(a)
+        //     a = 2
+        //     console.log(a)
+        // }
+
+        // fn()
+        // console.log(a)
+
+
+        var a = 1
+        function fn(a){
+            console.log(a)
+            a = 2
+            console.log(a)
+        }
+
+        fn(10)
+        console.log(a)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
