@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18_箭头函数的this</title>
+    <script>
+        /* 
+        箭头函数：
+        ([参数]) => 返回值
+
+        例子：
+        无参数函数：() => 返回值
+        一个参数的：a => 返回值
+        多个参数：(a,b) => 返回值
+
+        只有一个语句的函数：() => 返回值
+        只返回一个对象的函数：() => ({...})
+        有多行语句的函数：() => {
+            ...
+            return 返回值
+        }
+        
+
+        箭头函数没有自己this，它的this由它的外层作用域决定
+        箭头函数和调用方式无关
+
+        
+        */
+
+        function fn(){
+            console.log("fn --->", this)
+        }
+
+        const fn2 = () => {
+            console.log("fn2 --->", this)   //总是window
+        }
+
+        // fn()     //window
+        // fn2()    //window
+
+        const obj = {
+            name:"孙悟空",
+            // fn:fn,
+            fn,
+            // fn2:fn2
+            fn2,
+            sayHello(){
+                console.log(this.name)
+                // function t(){
+                //     console.log("t --->", this)
+                // }
+                // t()
+
+                const t2 =() => {
+                    console.log("t --->", this)
+                }
+                t2()
+            }
+        }
+
+        // obj.fn()    //obj
+        // obj.fn2()   //window
+
+        obj.sayHello()
+
+        
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
