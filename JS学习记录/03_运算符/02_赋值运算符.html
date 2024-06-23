@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赋值运算符</title>
+    <script>
+        /* 
+            赋值运算符用来将一个值赋值给一个变量
+                = 
+                    - 将符号右侧的值赋值给左侧的变量
+                +=
+                    - a += n 等价于 a = a + n
+                -=
+                *=
+                /=
+                %=
+                **=
+
+                ??=
+                    - 空赋值
+                    - 只有当变量的值为null或undefined才会赋值成功
+
+
+        */
+
+        let a = 10
+
+        let b = a
+
+        a = 66
+        a = a + 11  //大部分的运算符都不会改变变量的值，但是赋值运算符除外
+
+
+        a = 5
+        // a = a + 5
+        a += 5
+
+        a = null
+        a ??= 100
+        console.log(typeof a, a);
+        // console.log(typeof b, b);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
