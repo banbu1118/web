@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while练习</title>
+    <script>
+        /* 
+        练习：
+            假设银行存款利率为5%，问1000块存多少年可以变成5000
+        */
+
+        let money = 1000
+        let i = 0
+        while (money < 5000) {
+            money = money + money * 0.05
+            // console.log(money);
+            i++
+
+        }
+        console.log(`需要存${i}年，最总钱数为${money}`);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
