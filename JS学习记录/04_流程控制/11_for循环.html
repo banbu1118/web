@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for循环</title>
+    <script>
+        /* 
+            for循环
+                - for循环和while循环没有本质的区别，都是用来重复执行代码块的。
+                - 不同点就是语法结构，for循环更加清晰
+                - 语法
+                    for(初始化表达式; 条件表达式; 更新表达式){
+                        语句
+                        }
+                
+                - 执行流程：
+                    1.执行初始化表达式，初始化变量
+                    2.执行条件表达式，判断循环是否执行，true执行，false结束
+                    3.判断结果为true，则执行循环体
+                    4.执行更新表达式，对初始化变量进行修改
+                    5.重复步骤2-4，直到条件表达式为false，结束循环
+
+                - 初始化表达式，在循环的整个周期中，只会执行一次
+                - for循环的三个表达式都是可以省略
+                - 使用let在for循环中声明的变量，只在for循环中有效，外部无法访问
+                    使用var声明的变量，在for循环外也能访问
+                - 创建死循环的方式：
+                    for(;;){
+                        // 循环体
+                    }
+
+                练习1：
+                    求100以内所有3的倍数的个数和总和
+
+        */
+    //    let i = 0
+    //    while (i < 5) {
+    //        console.log(i)
+    //        i++
+    //    }
+
+        // for (let i = 0; i < 5; i++) {
+        //     console.log(i)
+        // }
+
+        //这是一个死循环，会一直执行下去
+        // for(;;){
+        //     console.log("无限循环")
+        // }
+
+        for(var i = 0; i < 5; i++){
+            console.log(i);
+        }
+
+        console.log(i);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
