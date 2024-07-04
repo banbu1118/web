@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习</title>
+    <script>
+    /*
+        获取用户输入大于1的整数（暂时不考虑用户输入错误的情况）
+        然后编写代码检查这个数字是否为质数，并打印出所有质数
+        - 质数：只能被1和自身整除的正整数。 
+    */
+
+    // 获取用户输入
+    // let num = +prompt("请输入大于1的整数：");
+
+    // 定义一个函数，判断是否为质数
+
+    /* 
+        编写代码，检查9是否为质数
+            - 检查9有没有除以1和9的其他因数
+                - 如果有，则不是质数
+                - 如果没有，则是质数
+    */
+    //接收用户的输入
+    // let num = +prompt("请输入大于1的整数：");
+    // let n = 0;
+    // for(let i = 2; i < num;i++){
+    //     if(num % i === 0){
+    //         n++;
+    // }
+    // }
+
+    // if(n === 0){
+    //     console.log(`${num}是质数`);
+    // }else{
+    //     console.log(`${num}不是质数`);
+    // }
+
+
+    let num = +prompt("请输入大于1的整数：");
+    //用来记录num的状态，默认是true，num是质数
+    let flag = true;
+    for(let i = 2; i < num;i++){
+        if(num % i === 0){
+            flag=false;
+    }
+    }
+
+    if(flag===true){
+        console.log(`${num}是质数`);
+    }else{
+        console.log(`${num}不是质数`);
+    }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习</title>
+    <script>
+        /* 
+练习2：
+ 请求1000以内的水仙花数
+     - 一个n位数，其各位数字的n次方之和等于该数本身。例如：1^3 + 5^3 + 3^3 = 153。
+     - 水仙花数又称为超完全数字，它是一个3位数，其各位数字的3次方之和等于该数本身。例如：153。
+*/
+
+
+        //先求1000以内的所有数字
+        //    for(let i=100;i<=999;i++){
+        //         // console.log(i);
+        //         //判断是否为水仙花数
+        //         if(i==Math.pow(i%10,3)+Math.pow(Math.floor(i/10)%10,3)+Math.pow(Math.floor(i/100),3)){
+        //             console.log(i+"是水仙花数");
+        //         }
+        //    }
+
+
+        //先求1000以内的所有数字
+        //    for(let i=100;i<=999;i++){
+        //         // console.log(i);
+        //         //判断是否为水仙花数
+        //         let bai = parseInt(i/100);
+        //         let shi = parseInt((i-bai*100)/10);
+        //         let ge = i%10;
+        //         // console.log(i,"--",bai,"--",shi,"--",ge);
+        //         if(i==bai*bai*bai+shi*shi*shi+ge*ge*ge){
+        //             console.log(i+"是水仙花数");
+        //    }
+        // }
+
+        //     for(let i=100;i<=999;i++){
+        //         //  console.log(i);
+        //         //字符串才能用数组的方式取值
+        //          i = String(i);
+        //          let bai = parseInt(i[0]);
+        //          let shi = parseInt(i[1]);
+        //          let ge = parseInt(i[2]);
+        //          // console.log(i,"--",bai,"--",shi,"--",ge);
+        //          if(i==bai*bai*bai+shi*shi*shi+ge*ge*ge){
+        //              console.log(i+"是水仙花数");
+        //     }
+        // }
+
+        for (let i = 100; i <= 999; i++) {
+            //  console.log(i);
+            i = i + "";
+            if (i == i[0] ** 3 + i[1] ** 3 + i[2] ** 3) {
+
+
+                console.log(i + "是水仙花数");
+            }
+        }
+
+
+        /* 
+            获取用户输入大于1的整数（暂时不考虑用户输入错误的情况）
+            然后编写代码检查这个数字是否为质数，并打印出所有质数
+            - 质数：只能被1和自身整除的正整数。 
+            
+        */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
