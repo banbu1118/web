@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>break和continue</title>
+    <script>
+        /* 
+        break和continue:
+            - break: 用于终止当前循环，并跳出循环体。
+            - continue: 用于跳过当前循环的剩余语句，并开始下一次循环。
+        */
+
+        // for (var i = 0; i < 5; i++) {
+        //     console.log(i);
+        //     if(i === 3){
+        //         break; // 跳出循环
+        //     }
+        // }
+
+    //     for (var i = 0; i < 5; i++) {
+    //         console.log(i);
+    //        for(var j = 0; j < 3; j++){
+    //         if(j === 1){
+    //             break; // 跳出当前内层循环
+    //         }
+    //         console.log('内层循环:', j);
+    //     }
+    // }
+
+        // for (var i = 0; i < 5; i++) {
+        //     if(i === 1){
+        //         continue; // 跳过当前这一次循环
+        //     }
+        //     console.log( i);
+        // }
+
+        for (var i = 0; i < 5; i++) {
+            console.log(i);
+           for(var j = 0; j < 3; j++){
+            if(j === 1){
+                continue; // 跳过当前这一次循环
+            }
+            console.log('内层循环:', j);
+        }
+    }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

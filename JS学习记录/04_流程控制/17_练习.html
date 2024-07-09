@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习</title>
+    <script>
+        /* 
+        求100以内所有的质数
+        */
+
+        //获取100以内的数字
+        for (let i = 2; i < 100; i++) {
+            //判断是否为质数
+            //创建一个变量来记录i的状态
+            let flag = true;
+
+            //获取1-i之间的数
+            for(let j = 2; j < i; j++) {
+                //判断index是否为i的因数
+                if(i % j === 0) {
+                    //如果是，则i不是质数，标记为false
+                    flag = false;
+                }
+            }
+
+            //如果flag为true，则i是质数，打印出来
+            if(flag) {
+                console.log(i);
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

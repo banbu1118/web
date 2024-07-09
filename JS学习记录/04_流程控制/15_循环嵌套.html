@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>循环嵌套</title>
+    <script>
+        /* 
+            在循环中也可以嵌套其他循环
+
+             希望在网页中打印出如下图形：
+             *****
+             *****
+             *****
+             *****
+             *****
+
+             *
+             **
+             ***
+             ****
+             *****
+
+             *****
+             ****
+             ***
+             **
+             *
+             
+
+            当循环发生嵌套时，外层循环没执行一次，内层循环就执行1个完整的周期
+        */
+        // document.write("*****<br>");
+        // document.write("*****<br>");
+        // document.write("*****<br>");
+        // document.write("*****<br>");
+        // document.write("*****<br>");
+
+        //这个for循环用来控制图形的高度
+        for (let i = 0; i < 5; i++) {
+            //这个for循环控制图形的宽度
+            for (let j = 0; j < 5; j++) {
+                document.write("*&nbsp;&nbsp;");
+        }
+        document.write("<br>");
+    }
+
+document.write("<hr>");
+
+    //这个for循环用来控制图形的高度
+    for (let i = 0; i < 5; i++) {
+        // 这个for循环控制图形的宽度
+        for (let j = 0; j < i + 1; j++) {
+            document.write("*&nbsp;&nbsp;");
+        }
+        document.write("<br>");
+    }
+
+    document.write("<hr>");
+
+    // 这个for循环用来控制图形的高度
+    for (let i = 0; i < 5; i++) {
+        // 这个for循环控制图形的宽度
+        for (let j = 0; j < 5 - i; j++) {
+            document.write("*&nbsp;&nbsp;");
+        }
+        document.write("<br>");
+    }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
