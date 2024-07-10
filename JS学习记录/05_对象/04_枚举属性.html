@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>枚举属性</title>
+    <script>
+        /* 
+            枚举属性，指将对象中的所有属性全部获取
+
+            for-in语句
+                - 语法：
+                    for (let propName in obj) {
+                        语句..
+
+                    }
+
+                - for-in的循环会执行多次循环，有几个属性就会执行多少次循环
+                    每次执行时，都会将一个属性名赋值给变量propName，然后执行语句。
+
+                - 注意：并不是所有的属性都可以枚举，只有可枚举的属性才可以被for-in语句枚举。
+                    比如添加符号添加的属性就无法枚举
+         */
+
+         let obj = {
+             name: '张三',
+             age: 20,
+             gender: '男',
+             address: '花果山',
+             [Symbol('mySymbol')]: '这是我的符号属性' // 符号属性无法枚举
+
+         };
+
+         // 1. for...in 循环
+         for (let propName in obj) {
+             console.log(propName, obj[propName]); // name age gender
+         }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

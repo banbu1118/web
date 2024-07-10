@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象的属性</title>
+    <script>
+        /* 
+            属性名
+                - 通常属性名就是一个字符串，所以属性名可以是任何值，没有特殊要求
+                    但是如果你属性名太特殊了，不能直接使用
+                    虽然如此，但是我们还是强烈建议属性名也按照标识符的规范来命名
+
+                - 也可以使用符号Symbol()作为属性名，但是要注意，属性名不能以数字开头
+                    获取这种属性时，也必须使用Symbol()来获取
+                   使用symbol添加的属性，通常不希望被外界访问
+
+                - 使用[]去操作属性时，可以使用变量
+
+            属性值
+                - 属性值可以是任何类型的值，也可以是一个对象
+
+            使用typeof检查一个对象，返回object
+        */
+        let obj = Object()
+
+        obj.name = "孙悟空"
+        // obj.if ="嘻嘻"  //不建议
+        // obj["123@@@##"] = "哈哈哈"  // 属性名可以包含特殊字符，但是要用引号括起来，不建议
+
+        let mysymbol= Symbol()
+        let newsymbol= Symbol()
+
+        //使用symbol作为属性名
+        obj[mysymbol] = "通过symbol添加的属性"
+        obj[newsymbol] = "通过symbol添加的属性new"
+
+        let str = "address"
+
+        obj[str] = "花果山"  // 等价于 obj.address = "花果山"
+
+        obj.a = 123
+        obj.b = "hello"
+        obj.c = true
+
+        obj.f = Object()
+
+        obj.f.name = "猪八戒"
+        obj.f.age = 30
+
+        console.log(obj[mysymbol]);
+        console.log(obj[newsymbol]);
+        console.log(obj[str]);
+        console.log(obj);
+
+        // 访问对象中对象的属性
+        console.log(obj.f.name);
+        console.log(obj.f.age);
+
+        console.log(typeof obj);
+
+        /* 
+            in运算符
+                - 用于检查一个属性是否存在于一个对象中
+                - 语法：属性名 in 对象
+
+                - 返回true或false
+        */
+        //使用in运算符，检查属性是否存在
+        console.log(name in obj);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
