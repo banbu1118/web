@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数作为参数</title>
+    <script>
+
+        /* 
+            在js中,函数也是一个对象(一等函数\(一等公民\))
+                别的函数能做的事,函数也可以
+
+        */
+       function fn(a){
+           console.log("a:",a);
+        //    a()
+       }
+
+    //    fn(123)
+
+        let obj = {name:"孙悟空"}
+
+        function fn2(){
+            console.log("我是fn2");
+        }
+
+        // fn(obj)
+        // fn(fn2)
+
+        // fn(function(){
+        //     console.log("我是匿名函数")
+        // })
+
+        fn(()=>console.log("我是箭头函数"))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

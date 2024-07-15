@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        /* 
+            箭头函数的返回值可以直接写在箭头后面，不需要使用return关键字和括号，直接返回值即可。
+                如果直接在箭头后设置对象字面量为返回值,对象必须用括号包裹起来。
+        */
+
+
+        const sum =(a,b) => a+b;
+
+        const fn = () => ({name:"孙悟空"})
+
+        console.log(sum(1,2)); // 3
+
+        console.log(fn());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

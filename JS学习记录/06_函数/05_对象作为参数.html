@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象作为参数</title>
+    <script>
+        /* 
+        
+        */
+
+        function fn(a) {
+            // console.log("a=",a.name);
+            // a = {}
+            a.name = "猪八戒"; //修改对象属性值
+            console.log(a);
+        }
+
+        //对象可以作为参数传递
+        //对象作为实参传递时，传递的不是对象本身，而是变量中存储的值，即对象的引用地址
+        let obj = {
+            name: "孙悟空"
+
+        }
+
+        //函数每次调用,都会重新创建默认值对象
+        function fn2(a = {name:"沙和尚"}) {
+            console.log("a=", a);
+            a.name = "唐僧"
+            console.log("a=", a);
+        }
+
+        // fn(obj)
+        // console.log(obj);
+
+        fn2()
+        fn2()   //
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

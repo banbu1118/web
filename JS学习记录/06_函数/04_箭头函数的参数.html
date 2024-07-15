@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭头函数的参数</title>
+    <script>
+        /* 
+            箭头函数的参数：
+                
+        */
+
+        const fn = (a, b) => {
+            console.log("a=", a);
+        }
+
+        //只有一个参数时，可以简写
+        const fn1 = a => {
+            console.log("a=", a);
+        }
+
+        //定义参数时，可以为参数指定默认值
+        //默认值会在没有实参时生效
+        const fn3 = (a=1, b=2, c=3) => {
+                console.log("a=",a);
+                console.log("b=",b);
+                console.log("c=",c);
+            }
+
+        // fn(123,456)
+        // fn1(123, 456)
+        fn3(5)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

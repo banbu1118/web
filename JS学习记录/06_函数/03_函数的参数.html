@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数的参数</title>
+    <script>
+
+        /* 
+            定义一个可以求任意两个数的和的函数
+        */
+
+        // function sum(){
+        //     let a = 1
+        //     let b = 1
+        //     console.log(a+b)
+        // }
+            
+
+        // sum() // 2
+
+        /* 
+            形式参数
+                - 在定义函数时，可以在函数中定义参数（形参），参数可以是任意类型，可以有多个参数，也可以没有参数。
+                - 在函数中定义参数，就相当于在函数内部声明了对应的变量，但是没有赋值
+
+
+            实际参数
+                - 在调用函数时，可以在函数的()传递数量不等的实参
+                - 实际参数会被赋值给函数中定义的形参，按照顺序赋值。
+                - 参数： 
+                    1.如果形参和形参数量相同，则按照顺序赋值。
+                    2.如果形参和实参数量不同，则只会将实参赋值给前面形参。
+                    3.如果实参数量多于形参数量，则多余的实参会被忽略。
+                    4.如果实参数量少于形参数量，则缺少的形参会被赋值为undefined。
+
+                - 参数类型
+                    - js中不会检查参数的类型，可以传递任意类型的值。
+
+            1.函数声明
+                function 函数名([参数]) {
+                    // 函数体
+                }
+
+            2.函数表达式
+                const 函数名 = function() {
+                    // 函数体
+                }
+
+            3.箭头函数
+                const 函数名 = () => {
+                    // 函数体
+                }
+        */
+        function fn(a,b){
+            console.log("a=",a)
+            console.log("b=",b)
+        }
+
+        // fn(12,39)
+        // fn(true,false)
+        // fn(null)
+        // fn(BigInt)
+        // fn({name:"zhangsan"},"hello")
+
+        function sum(a,b){
+            console.log(a+b)
+        }
+
+        sum("hello ","world")
+        sum(1)
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

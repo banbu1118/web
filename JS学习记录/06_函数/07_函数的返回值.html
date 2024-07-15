@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <SCript>
+        /* 
+         */
+        function sum(a, b){
+            // console.log(a + b);
+            // 计算完成后, 返回结果
+            return a + b;
+        }
+
+        // sum(123, 456); // 3
+
+        function fn(){
+            /* 
+                在函数中,可以通过return关键字指定函数的返回值
+
+                任何值都可以成为html页面的返回值, 包括字符串, 数字, 数组, 对象等.
+                    如果函数没有指定返回值, 则默认返回undefined.
+                    如果不写return关键字, 则函数执行完毕后, 会自动返回undefined.
+
+                return一执行,函数立即结束,后面的代码不会执行.
+            */
+        //    return "hello"
+            //   return ()=>alert("hello")
+            // return
+            alert(123)
+            return
+            alert(456)
+        }
+
+        let result = fn()
+        // result = sum(123, 456)
+        // result =sum(10,result)
+        // console.log(result);
+
+        console.log("result: ", result);
+    </SCript>
+</head>
+<body>
+    
+</body>
+</html>
