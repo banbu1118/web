@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+
+            作用域链：
+                - 当我们使用一个变量时，
+                    js解释器会优先在当前作用域中寻找
+                        如果找到了则直接使用
+                        如果没有找到，则向上一级作用域寻找直到全局作用域
+                        如果全局作用域中也没有找到，则报错 xxx is not defined
+         */
+
+         let a = 10;
+
+         {
+            let a = 20;
+            {
+                let a = 30;
+                // console.log(a);
+            }
+         }
+
+         let b = 33
+         function fn(){
+            let b = 44;
+            // console.log(b);
+            function fn2(){
+                let b = 55;
+                console.log(b);
+         }
+         fn2();
+        }
+         fn();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

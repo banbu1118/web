@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            作用域(scope)：
+                 - 作用域是指变量和函数的可访问范围
+                 - 作用域有两种
+                    - 全局作用域：
+                        - 全局作用域在网页运行时创建，在网页关闭时销毁
+                        - 所有直接编写到script标签中的代码都在全局作用域中运行
+                        - 全局作用域的变量是全局变量，可以被任意位置访问
+
+                    - 局部作用域：
+                        - 块作用域
+                            - 块作用域是局部作用域
+                            - 块作用域在代码执行时创建，在代码执行完毕时销毁
+                            - 在块作用域中声明的变量是局部变量，只能在该块作用域中访问
+        
+        */
+
+        let a = "变量a"
+        
+       {
+           let b = "变量b"
+           console.log(b);
+           {    
+            console.log(b);
+           }
+       }
+
+       console.log(b);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
