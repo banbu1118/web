@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            变量的提升：
+                - 使用var声明的变量，它会在所有代码执行前被声明
+                    所以我们可以在变量声明前使用变量，而不用担心它还没有被声明
+            
+            函数的提升：
+                - 使用函数声明创建的函数，它会在所有代码执行前被创建
+                    所以我们可以在函数声明前使用函数，而不用担心它还没有被创建
+
+            let声明的变量实际也会提升，但是在赋值之前禁止浏览器访问
+
+        */
+
+        // console.log(a);
+
+        let a = 10;
+
+        // console.log(a);
+
+
+        // fn();
+
+        function fn(){
+            alert("我是fn")
+        }
+
+        // fn()
+
+        // console.log(a);
+
+        // var a = 10;
+        // a = 20; // window.a = 20;
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
