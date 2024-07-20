@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        /* 
+            js中运行代码有两个模式
+                - 正常模式：
+                    - 默认模式代码都运行在正常模式中
+                        在正常模式中，语法的检查并不严格
+                        它的原则，能不报错尽量不报错
+                        它会自动转换一些不规范的写法，比如自动添加分号，自动添加括号等
+
+                    -这种处理方式导致代码运行效率较差
+
+                - 严格模式：
+                    - 严格模式代码都运行在严格模式中
+                        在严格模式中，语法的检查非常严格
+                    - 1.禁止一些语法
+                      2.更容易报错
+                      3.提升了性能
+
+                 - 在开发中，我们应该尽量使用严格模式
+                    这样可以将一些隐藏的问题，暴露出来，从而更好地优化代码
+                    以提升代码的健壮性和运行效率
+
+        */
+
+        "use strict";         // 全局的启用严格模式
+
+        let a = 10;
+
+        // console.log(a);
+
+        function fn(){
+            "use strict";         // 局部启用严格模式
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
