@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            面向对象编程（Object-Oriented Programming，OOP）是一种编程范式，它将对象作为程序的基本单元，将程序和数据封装在对象中，通过消息传递来进行通信和协作。
+                1.程序是干嘛的
+                    - 程序就是对现实世界的抽象（照片就是对人的抽象）
+
+                2.对象是干嘛的
+                    - 一个事务抽象到程序中后就变成了对象
+                    - 在程序的世界中，一切皆对象
+                
+                3.面对对象的编程
+                    - 面对对象的编程指，程序中所有操作都是通过对象完成的
+                    - 做任何事之前都要先找到它的对象，然后调用它的方法来完成各种操作
+
+        */
+
+
+        /* 
+        
+            心仪的女人：王老五
+                - 一个事务通常由两部分组成：数据和功能
+                - 一个对象有两部分组成：属性和方法
+                - 事务的数据到了对象中，体现为属性
+                - 事务的功能到了对象中，体现为方法
+
+                - 数据：
+                    姓名：
+                    年龄
+                    身高
+                    体重
+                
+                - 功能：
+                    吃饭
+                    睡觉
+        */
+
+        const five ={
+            //添加属性
+            name: "王老五",
+            age: 35,
+            height: 170,
+            eight: 60,
+
+            //添加方法
+            sleep(){
+                console.log(this.name + "正在睡觉")
+            },
+
+            eat(){
+                console.log(this.name + "正在吃饭")
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

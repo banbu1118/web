@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            使用object创建对象的问题
+                1.无法区分出不同类型的对象
+                2.不方便批量创建对象
+
+            js中可以通过类(Class)来解决这个问题
+                1.类是创建对象的模板，可以将对象中的属性或方法直接定义在类中
+                    - 定义后，就可以直接通过类中创建对象
+                2.通过同一个类创建的对象，我们称为同类对象
+                    可以使用instanceof关键字来判断对象是否属于某个类
+                    如果某个对象是某个类的实例，则返回true，否则返回false
+                    如果某个对象是由某个类创建的，则我们称该对象是这个类的实例
+
+            语法：
+                class 类名 {} 类名要使用大驼峰命名法
+                const 类名 = class{}
+
+            通过类来创建对象
+                new 类名()
+        */
+
+        // person类专门用来创建人的类对象
+        class Person {
+        
+
+        }
+
+
+        //dog类专门用来创建狗的类对象
+        class Dog {
+
+        
+        }
+
+
+        const p1 = new Person(); // 调用构造函数创建对象
+        const p2 = new Person();
+
+        const d1 = new Dog(); // 调用构造函数创建对象
+        const d2 = new Dog();
+
+        console.log(p1);
+        console.log(p2);
+
+        console.log(d1);
+        console.log(d2);
+
+        console.log(p1 instanceof Person); // true
+        console.log(d1 instanceof Person); // false
+
+        const five = {
+            //添加属性
+            name: "王老五",
+            age: 35,
+            height: 170,
+            eight: 60,
+
+            //添加方法
+            sleep() {
+                console.log(this.name + "正在睡觉")
+            },
+
+            eat() {
+                console.log(this.name + "正在吃饭")
+            }
+        }
+
+        const yellow = {
+            name: '大黄',
+            age: 3,
+            sleep() {
+                console.log(`${this.name}正在睡觉...`)
+            },
+            eat() {
+                console.log(`${this.name}正在吃东西...`)
+            }
+        }
+
+        // console.log(five);
+        // console.log(yellow);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
