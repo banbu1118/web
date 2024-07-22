@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            方法：
+        */
+
+        class Person {
+            name = "孙悟空";
+
+            // sayHello = function() {
+            //添加方法
+            // }
+
+
+            //实例方法
+            sayHello() {
+                console.log("大家好，我是" + this.name);
+            }
+
+            //静态方法,静态方法中this指向类本身
+            static test() {
+                console.log("我是静态方法", this);
+            }
+
+        }
+
+        const p1 = new Person();
+
+        // console.log(p1);
+
+        p1.sayHello(); // 输出：哈哈哈
+
+        Person.test(); // 输出：我是静态方法
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
