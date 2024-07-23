@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            继承
+                - 通过继承可以在不修改一个类的情况下对其进行扩展
+                - OCP（Open Closed Principle）开闭原则
+                    - 程序应该对扩展开放，对修改关闭
+                    - 继承是一种扩展方式，而不是一种修改方式
+         */
+
+        class Animal {
+            constructor(name) {
+                this.name = name;
+            }
+
+            sayHello() {
+                console.log("动物在叫");
+            }
+        }
+
+
+        class Dog extends Animal {
+            //重写构造函数
+            //重写构造函数时，必须调用super方法，否则会报错
+            constructor(name, age) {
+                super(name) //调用父类的构造函数
+                this.age = age; //新增属性
+            }
+
+            //在子类中可以创建同名方法来重写父类的方法
+            sayHello() {
+                //调用父类的sayHello方法
+                super.sayHello();
+                 
+                console.log("汪汪汪");
+            }
+
+        }
+
+        class Cat extends Animal {
+            sayHello() {
+                console.log("喵��喵");
+            }
+        }
+
+
+        const dog = new Dog("旺财", 3);
+        const cat = new Cat("汤姆");
+
+        dog.sayHello(); // 输出 "汪汪汪"
+        cat.sayHello(); // 输出 "喵��喵"
+
+        console.log(dog);
+
+        console.log(cat);
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
