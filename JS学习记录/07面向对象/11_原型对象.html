@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            
+        */
+
+        class Person {
+            name = "孙悟空"
+            age = 18
+
+            sayHello() {
+                console.log(`你好，我是${this.name}`)
+            }
+        }
+
+
+        const p = new Person()
+
+        /* 
+            访问一个对象的原型对象
+                对象.__proto__
+
+            原型对象中的数据
+                1.对象中数据（属性、方法）
+                2.constructor（对象的构造函数）
+                
+            注意：
+                原型对象也有自己的原型对象，这样就构成了1条原型链
+                根据对象复杂程度不同，原型链的长度也不同
+                    p对象的原型链: p对象 -> 原型 -> 原型 -> null
+                    obj对象的原型链: obj对象 -> 原型 -> null
+
+            原型链：
+                - 读取对象属性时，会优先对象自身属性
+                    如果对象有，则使用，没有则取对象的原型中寻找
+                    如果原型中有，则使用，没有则继续向上寻找
+                    直到找到object的原型，object的原型没有对象，为null，则返回undefined
+
+            作用域链：找变量的链，找不到会报错
+            原型链：找属性的链，找不到会返回undefined
+        */
+
+        // console.log(p.__proto__);
+
+        // console.log(Object.getPrototypeOf(p) === p.__proto__); // true
+
+        // console.log(p.constructor);
+
+        // console.log(p.__proto__.__proto__.__proto__);
+
+        const obj = {}
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            大部分情况下，我们都不需要修改原型
+                注意：
+                    千万不要通过类的实例去修改原型
+                        1.通过一个对象影响所有同类对象，这么做不合适
+                        2.修改原型先得创建实例，麻烦
+                        3.危险 
+            除了通过__proto__属性修改原型外
+                还可以通过类的prototype属性修改原型，但不建议这么做，因为这会影响所有实例，不推荐
+                修改原型时，最好通过类来修改
+                好处：
+                    1.一修改就是修改所有实例的原型
+                    2.无需创建实例，直接修改原型，简单方便
+
+            原则：
+                1.原型尽量不要改
+                2.要改也不要通过实例去改
+                3.通过类__proto__属性修改原型
+                4.最好不要给prototype属性赋值，因为会影响所有实例
+        */
+
+        class Person {
+            name = "孙悟空"
+            age = 18
+
+            sayHello() {
+                console.log(`Hello, my name is {this.name}`);
+            }
+        }
+
+        class Dog{
+
+        }
+
+        const p = new Person();
+        const p2 = new Person();
+
+        //通过对象修改原型，像原型中添加方法，修改后所有同类型实例都能访问该方法
+        p.__proto__.run = function() {
+            console.log("I can run");
+        }
+
+        // p.__proto__ = new Dog(); //之间给对象赋值了一个原型，不要这么做
+
+        // console.log(p);
+        // console.log(p2);
+
+        // p.run(); // I can run
+        // p2.run(); // I can run
+
+        //访问Person实例的原型对象
+        // console.log(Person.prototype)
+
+        // console.log(Person.prototype===p.__proto__);     // true
+
+        Person.prototype.fly = function() {
+            console.log("I can fly");
+        }
+
+
+        p.fly(); // I can fly
+        p2.fly(); // I can fly
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
