@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            早期js中，直接通过函数定义类
+                - 一个函数直接调用 xxx() 那么这个函数就是一个普通函数
+                - 一个函数如果通过new调用 new xxx() 那么这个函数就是一个构造函数
+        */
+
+        /* 
+            等价于
+            class Person{
+
+            }
+        */
+
+        function Person(name, age){
+            //在构造函数中，this指向实例对象
+            this.name = name;
+            this.age = age;
+
+            // this.sayHello = function(){
+            //     console.log("Hello, my name is " + this.name);
+            // }
+
+        }
+
+        class MyClass{
+
+        }
+
+
+        //像原型中添加属性（方法）
+        Person.prototype.sayHello = function(){
+            console.log("Hello, my name is " + this.name);
+        }
+
+        //添加静态属性
+        Person.staticProperty = "state";
+
+        //添加静态方法
+        Person.staticMethod = function(){
+            console.log("static method");
+        }
+        const p = new Person("孙悟空", 18);
+
+        console.log(p);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
