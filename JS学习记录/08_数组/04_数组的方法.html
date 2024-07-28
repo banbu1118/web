@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+            Array.isArray() 方法用来判断一个值是否为数组。
+
+            at() 方法用来返回数组中指定位置的元素，如果索引超出范围则返回 undefined。
+                -at可以接收负数，表示倒数第几个元素，-1表示最后一个元素。
+
+            concat() 用来连接两个或多个数组
+                - 非破坏性方法，而是返回一个新数组
+
+        */
+
+        // console.log(Array.isArray({name:"孙悟空"}));    // false
+        // console.log(Array.isArray([1, 2, 3]));      // true
+
+
+        const arr = ["孙悟空", "猪八戒", "沙和尚", "唐僧"]
+
+        const arr2 = ["白骨精","蜘蛛精","玉兔精"]
+
+        arr3 =arr.concat(arr2);
+
+        console.log(arr3);
+
+        // console.log(arr.at(-2));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

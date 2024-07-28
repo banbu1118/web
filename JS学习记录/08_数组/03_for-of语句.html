@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            for-of语句可以用来遍历（迭代）数组
+
+            语法：
+                for(变量 of 可以遍历的对象){
+                    语句..
+                }
+
+            执行流程：
+                for-of循环的会执行多次，数组中有几个元素，循环就会执行几次。
+                    每次执行时，都会将一个元素赋值给变量，然后执行语句。
+        */
+
+        const arr = ["孙悟空","猪八戒","沙和尚","唐僧","白骨精"]
+
+        for(let value of arr){
+            console.log(value)
+        }
+
+        // 也可以用来遍历字符串
+        for(let value of "hello world"){
+            console.log(value)
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
