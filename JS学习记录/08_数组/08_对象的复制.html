@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            ...（展开运算符）
+                - 可以将一个数组中的元素展开到另一个数组中或作为函数的参数传递
+                - 可以通过它完成浅复制
+        */
+
+        const arr = ["孙悟空", "猪八戒", "沙和尚", "唐僧"]
+
+        // const arr2 = arr.slice()
+
+        // const arr2 = [arr[0], arr[1], arr[2], arr[3]]
+
+        //简写为[...arr]
+        // const arr2 = [...arr]
+
+
+        function sum(a,b,c){
+            return a+b+c
+        }
+
+        const arr3 = [10,20,30]
+
+        //result = sum(arr3[0], arr3[1], arr3[2])
+        let result = sum(...arr3)
+
+        // console.log(result)
+
+
+        /* 
+            对象的复制
+                - Object.assign(目标对象, 源对象)方法可以实现对象的浅复制
+                - 它接受两个参数，第一个参数是目标对象，第二个参数是源对象
+                - 它会将源对象的所有可枚举属性的值复制到目标对象中，并返回目标对象
+
+                - 也可以使用展开运算符来对对象进行浅复制
+
+        */
+
+        const obj = {name: "孙悟空", age: 18, height: 180}
+
+        // const obj2 = {address: "北京市海淀区西二旗",age: 20}
+        // Object.assign(obj2, obj)
+        // // const obj2 = Object.assign({}, obj)
+
+        // console.log(obj)
+        // console.log(obj2)
+
+        const obj3 = {...obj}
+
+
+        console.log(obj);
+        console.log(obj3);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

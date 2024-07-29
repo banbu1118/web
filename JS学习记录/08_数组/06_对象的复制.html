@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+
+        
+        */
+        const arr = ["孙悟空", "猪八戒", "沙和尚", "唐僧"]
+
+        //如何复制一个对象
+
+        //    const arr2 = arr         //这不是复制
+
+        //    arr2[0]="kk"
+
+        //复制必须产生一个新的对象，否则会影响原对象
+
+        //当调用slice时，会返回一个新的数组，不会影响原数组，从而完成复制
+        const arr3 = arr.slice()
+
+        arr3[0] = "kk"
+
+        console.log(arr);
+
+        console.log(arr3);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            前拷贝（shallow copy）
+                - 通常对象的拷贝都是浅拷贝
+                - 浅拷贝只拷贝对象的第一层属性，不会拷贝对象的内部属性
+                - 如果存储的对象是原始值，那么拷贝的深浅不重要
+                - 浅拷贝只会对对象本身进行复制，不会拷贝对象中的属性（或引用）
+
+            深拷贝（deep copy）
+                - 深拷贝不仅会复制对象本身，还会递归地拷贝对象中的所有属性（或引用）
+                - 通常情况不使用深拷贝，因为性能差
+        */
+
+        const arr = [{ name: "孙悟空" }, { name: "猪八戒" }]
+
+        // arr2 = arr.slice() // 浅拷贝
+
+        //深拷贝
+        arr3 = structuredClone(arr)
+
+        arr3[0].name = "唐僧"
+
+        console.log(arr) // [{name:"孙悟空"},{name:"猪八戒"}]
+        console.log(arr3) // [{name:"唐僧"},{name:"猪八戒"}]
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

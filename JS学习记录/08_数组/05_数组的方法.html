@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            indexOf() 
+                - 方法：查找数组中指定元素的第一个出现位置，如果不存在则返回 -1。
+                - 参数：
+                    1.要查询的元素
+                    2.要查询的起始位置
+
+            lastIndexOf() 
+                - 方法：查找数组中指定元素的最后一个出现位置，如果不存在则返回 -1。
+                - 参数：
+                    1.要查询的元素
+                    2.要查询的起始位置
+
+            join() 
+                - 将一个数组中的元素连接为一个字符串
+                - 参数：
+                    可以指定一个字符串作为连接符，如果没有指定则使用逗号作为连接符。
+            
+            slice() 
+                - 用来截取数组（非破坏性方法）
+                - 参数：
+                    1.开始索引（包括该位置）
+                    2.结束索引（可以省略，表示截取到数组末尾）
+                    3.索引可以是负值，表示从数组末尾开始计算索引
+
+                如果将两个参数都省略，可以则浅拷贝整个数组。
+
+        */
+
+        const arr = [1, 2, 3, 4, 5, 4, 3];
+        console.log(arr.indexOf(3)); // 2
+        console.log(arr.indexOf(6)); // -1
+
+        //从索引为3的位置开始查找
+        console.log(arr.indexOf(3, 3));   // 6
+
+        console.log(arr.lastIndexOf(3)); // 6
+        console.log(arr.lastIndexOf(3,3)); // 2
+
+        result = arr.join();
+        console.log(result); // "1-2-3-4-5-4-3"
+
+        result2 = arr.join("-");
+        console.log(result2); // "1-2-3-4-5-4-3"
+
+        result3 = arr.join("");
+        console.log(result3); // "1234543"
+        
+        k1 = arr.slice(0, 2);
+        console.log(k1); // [1, 2]
+
+        k2 = arr.slice(3);
+        console.log(k2); // [4, 5, 4, 3]
+
+        k3 = arr.slice();
+        console.log(k3); // [1, 2, 3, 4, 5, 4, 3]
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
