@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            递归
+                - 调用自身的函数称为递归
+                - 递归的作用和循环基本一致
+
+            如何用递归求解阶乘
+                5! = 5 * 4!
+                4! = 4 * 3!
+                3! = 3 * 2!
+                2! = 2 * 1!
+                1! = 1
+                0! = 1
+
+            递归的核心思想就是将一个大问题差分成小问题，直到最后小问题的规模足够小，就可以直接求解。
+
+            编写递归函数，一定要包含两个要件：
+                1. 基线条件
+                    递归的终止条件
+                2. 递归条件
+                    如何将大问题分解成小问题
+
+            递归的作用和循环是一致的，不同点在于，递归的思路比较简洁，循环的执行性能比较好
+                在开发中，一般的问题都用循环解决，也是尽量去使用循环，少用递归
+                只在一些用循环解决比较麻烦的场景下，才会使用递归
+        */
+
+        // function fn(){
+        //     fn()
+        // }
+
+        // fn()
+
+
+        //创建一个函数，可以用来求任意数的阶乘
+
+        /* 
+        1! 1
+        2! 1*2=2
+        3! 1*2*3=6
+        4! 1*2*3*4=24
+        5! 1*2*3*4*5=120
+        ...
+        n!
+        */
+
+        function jiesCheng(num) {
+            //创建一个变量记录结果
+            let result = 1;
+            for (i = 2; i <= num; i++) {
+                result *= i;
+            }
+            return result;
+        }
+
+        let  result = jiesCheng(10);
+        // console.log(result);
+
+        function jiesCheng2(num) {
+            //基线条件
+            if (num === 1) {
+                return 1;
+            }
+
+            //递归条件
+            //num! = num * (num-1)!
+            return num * jiesCheng2(num - 1);
+        }
+
+        /* 
+            jiesCheng2(5)
+                - return 5 * jiesCheng2(4)
+                - return 5 * 4 * jiesCheng2(3)
+                - return 5 * 4 * 3 * jiesCheng2(2)
+                - return 5 * 4 * 3 * 2 * jiesCheng2(1)
+                - return 5 * 4 * 3 * 2 * 1
+                - return 120
+        */
+
+
+        let result2 = jiesCheng2(3);
+        console.log(result2);
+
+
+        
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

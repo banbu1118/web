@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            一对兔子出生的两个月后，每个月都可以生一对兔子。
+                - 编写一个函数，计算第n个月兔子的数量
+
+            1   2   3   4   5   6   7   8   9   10  11  12
+            1   1   2   3   5   8   13  21  34  55  89  144
+                - 规律，当前数等于前两个数之和（斐波那契数列）
+        */
+
+        // 求斐波那契数列中的第n个数
+        function fib(n){
+            //基线条件
+            if(n === 1 || n === 2){
+                return 1;
+            }
+            //递归条件
+            return fib(n-1) + fib(n-2);
+        }
+
+        let result = fib(6);
+
+        console.log(result);
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
