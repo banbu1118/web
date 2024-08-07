@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        const obj = { name: "孙悟空", age: 18, gender: "男" }
+
+        // let { name, age, gender } = obj  //声明变量，解构对象
+
+        let name, age, gender; //声明变量
+        ({ name, age, gender } = obj); //()括号内解构对象
+
+        let { address } = obj; //没有的属性返回undefined
+
+        // console.log(name,age,gender);
+
+        let { name: a, age: b, gender: c, address: d = "花果山" } = obj //通过:给属性起其他名字;给没有的属性设置默认值
+
+        // console.log(a, b, c, address);
+
+        
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

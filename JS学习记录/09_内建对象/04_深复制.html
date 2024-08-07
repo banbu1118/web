@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        const obj = {
+            name: "孙悟空",
+            friend: {
+                name: "猪八戒",
+                age: 18
+            }
+        }
+
+        //浅复制
+        const obj2 = Object.assign({}, obj);//浅复制,friend对象修改后,obj2的friend也会跟着修改
+
+        //深复制
+        const obj3 = structuredClone(obj); //深复制,friend对象修改后,obj3的friend不会跟着修改
+        // console.log(obj3);
+
+        //利用JSON完成深复制,将对象序列化为JSON字符串,再将JSON字符串反序列化为对象
+        const str = JSON.stringify(obj);
+        const obj4 = JSON.parse(str); //深复制,friend对象修改后,obj4的friend不会跟着修改
+
+        const obj5 = JSON.parse(JSON.stringify(obj)); //利用JSON.stringify()和JSON.parse()完成深复制
+        console.log(obj4);
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
