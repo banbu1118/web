@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+        Map对象
+            - Map用来存储键值对结构的数据（Ke-Value）
+            - Object中存储的数据就可以认为是一种键值对结构
+            - Map和Object的区别在于：
+                - Object属性名只能是字符串或符号，如果传递其他类型的属性名
+                    js解释器会自动的转换为字符串
+                - Map中任何类型的值都可以成为数据的key
+                
+        */
+        const obj2 = {}
+
+        const obj = {
+            "name": "张三",
+            "age": 20,
+            "gender": "男",
+            [Symbol()]: "haha",
+            [obj2]: "kk"
+        }
+
+
+
+        // console.log(obj);
+
+
+        /* 
+            创建:
+                new Map()
+            
+            属性和方法：
+                map.size //返回Map中键值对的数量
+                map.set(key,value) //向Map中添加键值对
+                map.get(key) //获取Map中某个键对应的值
+                map.delete(key) //删除Map中某个键对应的值
+                map.has(key) //判断Map中是否存在某个键
+                map.clear() //清空Map中的所有数据
+               
+        
+        */
+        //创建一个Map对象
+        const map = new Map()
+
+        //向Map中添加键值对
+        map.set("name","孙悟空")
+        map.set(obj2,"呵呵")
+        map.set(NaN,"哈哈哈")
+
+        //获取Map中某个键对应的值
+        console.log(map.get("name"));
+        console.log(map.get(obj2));
+        console.log(map.get(NaN));
+
+        //删除指定的数据
+        map.delete(NaN)
+
+        //判断Map中是否存在某个键
+        console.log(map.has("name"));
+
+        //清空Map中的所有数据
+        map.clear()
+
+        console.log(map);
+        
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

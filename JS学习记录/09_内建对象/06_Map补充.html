@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+        
+        */
+
+        const map = new Map();
+        map.set("name", "孙悟空")
+        map.set("age", 18)
+        // map.set({},"哈哈哈")
+
+        //map转换为数组
+        // const arr = Array.from(map); //转化为了二维数组 [["name","孙悟空"],["age",18]]
+
+        //展开运算符
+        // const  arr = [...map]; //转化为了二维数组 [["name","孙悟空"],["age",18]]
+
+        const map2 = new Map([["name", "猪八戒"], ["age", 16], [{}, () => { }]])
+        // console.log(map2);
+
+        //遍历map
+        // for(let entry of map){
+        //     const [ket,value] = entry;
+        //     console.log(ket,value);
+        //     console.log(entry);
+        // }
+        
+        //直接解构，然后遍历
+        // for (let [key, value] of map2) {
+        //     console.log(key, value);
+        // }
+
+        //forEach方法遍历
+        // map.forEach((value, key) => {
+        //     console.log(key, value);
+        // });
+
+        /* 
+         map.keys() //返回map的键名
+         map.values() //返回map的键值
+         map.entries() //返回map的键值对数组
+        */
+
+    //    for(const key of map.keys()){
+    //     console.log(key);
+        
+    //    }
+
+    // for(let value of map.values()){
+    //     console.log(value);
+        
+    // }
+
+    for(let entry of map.entries()){
+        console.log(entry);
+        
+    }
+
+        // console.log(arr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
