@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            Math
+                - mdn：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math
+                - Math一个工具类
+                - Math提供了数学运算相关的常量和方法
+                - 常量：
+                    - Math.PI：圆周率
+                    - Math.E：自然常数
+                - 方法：
+                    - Math.abs(x)：返回x的绝对值
+                    - Math.min(x,y,z,...)：返回参数中最小的数
+                    - Math.max(x,y,z,...)：返回参数中最大的数
+                    - Math.random()：返回0到1之间的随机数
+                    - Math.pow(x,y)：返回x的y次方
+                    - Math.sqrt(x)：返回x的平方根
+
+                    - Math.floor(x)：返回x向下取整
+                    - Math.ceil(x)：返回x向上取整
+                    - Math.round(x)：返回x四舍五入
+                    - Math.trunc(x)：返回x的整数部分
+        */
+
+        // console.log(Math.PI);
+        // console.log(Math.E);
+
+        let result = Math.abs(-10);
+        result = Math.abs(-8)
+        result = Math.min(1, 2, 3, 4, 5)
+        result = Math.max(1, 2, 3, 4, 5)
+        result = Math.random()
+        result = Math.pow(2, 3) //等价于2**3
+        result = Math.sqrt(16) //等价于16**0.5
+
+        result = Math.floor(3.14) //3
+        result = Math.floor(-3.14) //-3
+        result = Math.ceil(3.14) //4
+        result = Math.round(3.14) //3
+        result = Math.round(3.5) //4
+        result = Math.round(3.4) //3
+        result = Math.trunc(3.14) //3
+        result = Math.trunc(-3.14) //-3
+
+
+        for (let i = 0; i < 50; i++) {
+            /* 
+                生成0到5之间的随机数
+                     Math.random() * 5
+                生成0-x之间的随机数
+                    Math.round(Math.random() * x)
+                    Math.floor(Math.random() * (x+1))
+
+                生成x到y之间的随机数
+                    Math.round(Math.random() * (y-x) + x)
+            */
+
+            // result = Math.round(Math.random() * 5);
+            // result = Math.floor(Math.random() * 6);
+
+            //生成1-6之间的随机数
+            result = Math.round(Math.random() * 5) + 1;
+
+            console.log(result);
+
+        }
+
+        console.log("执行完了");
+
+        // console.log(result);
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

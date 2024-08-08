@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        const d = new Date();
+
+        let result = d.toLocaleDateString(); //将日期格式化为本地日期字符串，如：2024/8/9
+        result = d.toLocaleTimeString(); //将时间格式化为本地时间字符串，如：00:39:33
+        result = d.toLocaleString(); //将日期和时间格式化为本地日期时间字符串，如：2024/8/9 00:39:33
+
+        /* 
+            toLocaleString()
+                - 可以将时间转换为本地时间的字符串形式。
+                - 参数：
+                    1. 描述国家和语言的字符串，比如:
+                        zh-CN 中国
+                        zh-TW 台湾
+                        zh-HK 香港
+                    2.需要一个对象作为参数，在对象中可以通过对象的属性来对日期的格式进行配置
+                        dateStyle：日期格式，值为"full"、"long"、"medium"、"short"，默认为"medium"
+                        timeStyle：时间格式，值为"full"、"long"、"medium"、"short"，默认为"medium"
+                        hour12：是否使用12小时制，值为true或false，默认为false
+                        weekday：星期几格式，值为"narrow"、"short"、"long"，默认为"long"
+                        year：年份格式，值为"numeric"、"2-digit"，默认为"numeric"
+                        month：月份格式，值为"numeric"、"2-digit"、"narrow"、"short"、"long"，默认为"numeric"
+                        day：日期格式，值为"numeric"、"2-digit"，默认为"numeric"
+                        hour：小时格式，值为"numeric"、"2-digit"，默认为"numeric"
+                        minute：分钟格式，值为"numeric"、"2-digit"，默认为"numeric"
+                        second：秒格式，值为"numeric"、"2-digit"，默认为"numeric"
+
+        */
+
+        // result = d.toLocaleString('en-US') //8/9/2024, 12:43:38 AM
+        // result = d.toLocaleString('zh-HK') //9/8/2024 上午12:44:59
+        // result = d.toLocaleString('zh-CN') //2024/8/9 00:45:36，本地zh-CN可以省略
+        // result = d.toLocaleString('zh-CN',{dateStyle:"full"}) //2024年8月9日星期五
+        // result = d.toLocaleString('zh-CN',{dateStyle:"full",timeStyle:"full"}) //2024年8月9日星期五 中国标准时间 00:49:44
+        // result = d.toLocaleString('zh-CN',{dateStyle:"full",timeStyle:"full",hour12:false}) //2024年8月9日星期五 中国标准时间 00:50:55
+        // result = d.toLocaleString('zh-CN', {weekday: "long" }) //星期五
+        result = d.toLocaleString('zh-CN', {year:"numeric" }) //2024年
+
+
+        console.log(result);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
