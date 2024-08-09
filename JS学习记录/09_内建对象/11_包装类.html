@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            在js中除了直接创建原始值以外，也可以创建原始值的对象
+
+                通过new String() 可以创建String对象
+                通过new Number() 可以创建Number对象
+                通过new Boolean() 可以创建Boolean对象
+                    - 但是千万不要这么做
+
+            包装类：
+                js中一共有5个包装类
+                    String -> 字符串包装为String对象
+                    Number -> 数字包装为Number对象
+                    Boolean -> 布尔值包装为Boolean对象
+                    BigInt -> 大整数包装为BigInt对象
+                    Symbol -> 符号包装为Symbol对象
+                        - 通过包装类可以将原始值转换为对象
+                            当我们对一个原始值调用原始值或属性时
+                            js会临时将其转换为对应的包装类对象
+                            然后再调用相应的方法或属性
+                        
+                - 由于原始值会被临时转换为对应的对象，这就意味着对象中的方法都可以直接通过原始值调用
+        */
+
+        // let str = new String("hello world");
+        // let num = new Number(123);
+        // let bool = new Boolean(true);
+        // let bool2 = new Boolean(true);
+
+        let str = "hello world";
+        str.name = "哈哈哈"
+
+        let num = 11
+        num = num.toString()
+        console.log(num)
+
+        // console.log(str.name);
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

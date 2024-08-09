@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+
+            字符串：
+                - 字符串其本质就是一个字符数组
+                - "hello"  ->  ["h", "e", "l", "l", "o"]
+                - 字符串的方法和数组类似:
+                    length: 获取字符串长度
+                    字符串[index]: 获取字符串的某个字符
+                    str.at(index): 获取字符串的某个字符
+                        - 根据索引获取字符，支持负数索引
+                        - 等同于 str[index]
+                    str.charAt(index): 获取字符串的某个字符
+                        - 根据索引获取字符
+                    str.concat(str2, str3...): 连接字符串
+                        - 推荐使用+拼串
+                    str.includes(str2): 判断字符串是否包含子串
+                        - 返回布尔值
+                    str.indexOf(str2): 查找子串的索引
+                        - 返回子串的索引，找不到返回-1
+                        - 推荐使用includes()
+                    str.lastIndexOf(str2): 从右边开始查找子串的索引
+                        - 返回子串的索引，找不到返回-1
+                        - 等同于lastIndexOf()
+                    str.endsWith(str2): 判断字符串是否以指定字符串结尾
+                        - 返回布尔值
+                    str.startsWith(str2): 判断字符串是否以指定字符串开头
+                        - 返回布尔值
+                    str.padStart(length, fillStr): 填充字符串
+                        - 填充字符串到指定长度
+                        - fillStr可选，默认为空格
+                    str.padEnd(length, fillStr): 填充字符串
+                        - 填充字符串到指定长度
+                        - fillStr可选，默认为空格
+                    str.replace(str1, str2): 替换字符串中的子串
+                        - 返回替换后的字符串
+                        - str1为要替换的子串，str2为替换后的子串
+                    str.replaceAll(str1, str2): 替换字符串中的所有子串
+                        - 返回替换后的字符串
+                        - str1为要替换的子串，str2为替换后的子串
+                    str.slice(start, end): 截取字符串
+                        - 返回子串
+                        - start可选，默认为0
+                        - end可选，默认为字符串长度
+                    str.substring(start, end): 截取字符串
+                        - 返回子串
+                        - start可选，默认为0
+                        - end可选，默认为字符串长度
+                    str.split(separator): 字符串分割
+                        - 返回分割后的数组
+                        - separator可选，默认为空格
+                        - 等同于split()
+                    str.toLowerCase(): 转为小写
+                        - 返回小写后的字符串
+                    str.toUpperCase(): 转为大写
+                        - 返回大写后的字符串
+                    str.trim(): 去除两端空格
+                        - 返回去除两端空格后的字符串
+                    str.trimStart(): 去除开头空格
+                        - 返回去除开头空格后的字符串
+                    str.trimEnd(): 去除结尾空格
+                        - 返回去除结尾空格后的字符串
+        */
+
+        let str = "hello"
+
+        // console.log(str.length);
+
+        // console.log(str[0]); // h
+        // console.log(str[1]); // e
+
+        // for(let char of str){
+        //     console.log(char);
+        // }
+
+        // console.log(str.at(0));
+        // console.log(str.at(-1));
+
+        // console.log(str.charAt(0)); // h
+        // console.log(str.charAt(1)); // e
+
+        str = "hello old are you?";
+
+        // console.log(str.includes("old")); // true
+        // console.log(str.includes("hello",0)); // true,从索引0开始查找
+
+        // console.log(str.endsWith("?")); // true
+        // console.log(str.startsWith("hello")); // true
+
+        str = "100"
+
+        // console.log(str.padStart(7)); // 100
+        // console.log(str.padStart(7,0)); // 000100,填充0
+
+        str = "hello old are you?";
+
+        // result = str.replace("old", "new"); // 替换字符串中的子串
+
+        // result = str.slice(0,2) // 截取字符串
+
+        // result = str.substring(3,5)
+
+        // console.log(result);
+
+        str = "abc@bcd@jqk"
+
+        // result = str.split("@") //['abc', 'bcd', 'jqk']
+        // result = str.split("c") //['ab', '@b', 'd@jqk']
+
+        str = "abcdBCD"
+
+        // result = str.toLowerCase(); // 全部转为小写
+        // result = str.toUpperCase(); // 全部转为大写
+
+
+        str = "          ab c         "
+
+        // result = str.trim(); // ab c 去除两端空格
+        // result = str.trimStart(); // ab c 去除开头空格
+        // result = str.trimEnd(); // ab c 去除结尾空格
+
+
+        console.log(result);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
