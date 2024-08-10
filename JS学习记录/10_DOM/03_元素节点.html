@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">点我一下</button>
+    <span class="s1">我是span</span>
+    <span class="s1">我是span</span>
+    <span class="s1">我是span</span>
+    <span class="s1">我是span</span>
+    <span class="s1">我是span</span>
+
+    <div>我是div</div>
+    <div>我是div</div>
+    <div>我是div</div>
+    <div>我是div</div>
+    <div>我是div</div>
+
+    <form>
+        <input type="text" name="username">
+
+        <input type="radio" name="gender" value="male"> 男
+        <input type="radio" name="gender" value="female"> 女
+    </form>
+    <SCript>
+        /* 
+            元素节点(element node)
+                - 在网页中，每个标签都是元素节点
+                - 如何获取元素节点对象？
+                    1.通过document对象来获取元素节点
+                    2.通过document对象来创建元素节点
+                - 通过document来获取已有的元素节点
+                    document.getElementById()
+                        - 根据id获取一个元素节点
+                    document.getElementsByClassNam()
+                        - 根据元素的class属性值获取一组元素节点
+                        - 返回的是类数组对象
+                        - 该方法返回的结果是一个实时更新的集合
+                            当网页添加了元素时，集合也会实时刷新
+                    document.getElementsByTagName()
+                        - 根据标签名获取一组元素节点
+                        - 返回的是类数组对象
+                        - 该方法返回的结果是一个实时更新的集合
+                    document.getElementsByTagName("*")
+                        - 获取所有元素节点
+                        - 返回的是类数组对象
+                        - 该方法返回的结果是一个实时更新的集合
+                    document.getElementsByName()
+                        - 根据name属性值获取元素节点
+                        - 返回的是类数组对象
+                        - 该方法返回的结果是一个实时更新的集合
+                        - 主要用于表单的元素获取
+                    document.querySelector()
+                        - 根据css选择器获取一个元素节点
+                        - 返回的是单个元素节点对象
+                        - 不会实时更新
+                    document.querySelectorAll()
+                        - 根据css选择器获取一组元素节点
+                        - 返回的是类数组对象
+                        - 不会实时更新
+
+                    document.createElment()
+                        - 根据标签名创建一个元素节点
+                        - 返回的是单个元素节点对象
+                        - 该方法可以创建各种元素节点
+                        
+        */
+        const btn = document.getElementById("btn");
+
+        const spans = document.getElementsByClassName("s1");
+
+        const divs = document.getElementsByTagName("div");
+
+        const genderInput = document.getElementsByName("gender");
+
+        const divs2 = document.querySelectorAll("div");
+
+        const h2 = document.createElement("h2");
+
+        // console.log(spans);
+
+        // console.log(btn);
+
+        // for (let i = 0; i < spans.length; i++) {
+        //     // alert(spans[i])
+        //     spans[i].innerText = "哈哈哈" + i;
+        // }
+    </SCript>
+</body>
+
+</html>
