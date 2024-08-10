@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            在正则表达式中大部分字符都可以直接写，但是有一些特殊字符需要用反斜杠转义，比如：
+            \d 匹配任意数字，等价于[0-9]
+            \w 匹配任意字母、数字、下划线，等价于[a-zA-Z0-9_]
+            \s 匹配任意空白字符，等价于[\f\n\r\t\v]
+            \D 匹配任意非数字，等价于[^0-9]
+            \W 匹配任意非字母、数字、下划线，等价于[^a-zA-Z0-9_]
+            \S 匹配任意非空白字符，等价于[^\f\n\r\t\v]
+            \b 匹配单词边界，等价于\w与\W之间的位置
+            \B 匹配非单词边界，等价于\w或\W之间的位置
+            . 匹配任意字符
+            ^ 匹配字符串开始
+            $ 匹配字符串结束
+            [] 匹配字符集
+            | 匹配或
+            (...) 匹配括号内的表达式
+            {n} 匹配前面字符出现 n 次
+            {n,} 匹配前面字符至少出现 n 次
+            {n,m} 匹配前面字符至少出现 n 次，至多出现 m 次
+            ? 匹配前面字符出现 0 次或 1 次
+            + 匹配前面字符至少出现 1 次
+            * 匹配前面字符出现 0 次或无限次
+            \ 转义字符
+        */
+
+        // let reg = /ab/ // 匹配是否包含ab
+
+        // let reg = /a|b/ // 匹配是否包含a或b
+
+        // let  reg = /a|b|c|d/ // 匹配是否包含a、b、c、d
+
+        // let reg = /[abcd]/ // 匹配是否包含a或b或c或d
+
+        // let reg = /[a-z]/ // 匹配是否包含a到z的任意一个字母
+
+        // let reg = /[A-Z]/ // 匹配是否包含A到Z的任意一个字母
+
+        // let reg = /[a-zA-Z]/ // 匹配是否包含a到z或A到Z的任意一个字母
+
+        // let reg = /[a-z]/i // 匹配是否包含a到z的任意一个字母，忽略大小写
+
+        // let reg = /[0-9]/ // 匹配是否包含0到9的任意一个数字
+
+        // let reg = /[0-9a-zA-Z]/ // 匹配是否包含0到9或a到z或A到Z的任意一个字符
+
+        // let reg = /[^a-z]/ // 匹配是否包含除了a到z的任意一个字符
+
+        // let reg = /./ // 匹配任意字符
+        
+        // let reg = /\./ // 匹配.
+
+        // let reg = /\w/ // 匹配任意字母、数字、下划线，等价于[a-zA-Z0-9_]
+
+        // let reg = /^a/ // 匹配a开头的字符串
+
+        // let reg = /a$/ // 匹配a结尾的字符串
+
+        let reg = /^a$/ // 只匹配a的字符串，完全匹配，要求字符串和正则表达式完全一致
+
+
+        let result = reg.test('abc')
+
+
+        console.log(result) // true
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
