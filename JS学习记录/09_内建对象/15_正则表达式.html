@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+           量词
+           {n} 匹配n个字符
+           {n,} 匹配n个字符及以上
+           {n,m} 匹配n到m个字符
+           * 匹配0个或多个字符
+           + 匹配1个或多个字符
+          ? 匹配0个或1个字符
+        */
+
+        //  let re = /a{3}/ // 匹配a出现3次
+        //  let re = /^a{3}$/ // 匹配a只出现3次
+        //  let re = /^(ab){3}$/ // 匹配ab只出现3次
+        // let re = /^[a-z]{3}$/ // 匹配3个小写字母
+        // let re = /^[a-z]{1}/ // 匹配1个小写字母
+        // let re = /^[a-z]{1,}/ // 匹配至少1个小写字母
+        // let re = /^[a-z]{1,3}$/ // 匹配1-3个小写字母
+        // let re = /^ba+$/ // 匹配以ba开头的字符串
+        // let re = /^ba*$/ // 匹配以ba开头的字符串，允许0个或多个ba
+        let re = /^ba?$/ // 匹配以ba开头的字符串，允许0个或1个ba
+
+        let result = re.test('ba')
+
+        console.log(result)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

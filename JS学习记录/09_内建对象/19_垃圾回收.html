@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            垃圾回收（Garbage Collection）：
+                - 和生活一样，生活时间长了会产生垃圾
+                    程序运行一段时间也会产生垃圾，这些垃圾会占用内存，影响程序的运行效率
+                        1. 自动回收不再使用的内存
+                        2. 自动释放内存，不需要手动释放
+                        3. 垃圾回收器会自动运行，不用手动触发
+                        4. 垃圾回收器会在内存不足时自动触发
+                        5. 垃圾回收器会将内存分为两个部分：可分配内存和不可分配内存
+                        6. 垃圾回收器会将不可分配的内存释放掉
+                */
+
+
+        let obj = { name: "孙悟空" }
+
+        obj2 = obj
+        
+        obj = null
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

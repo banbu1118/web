@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            re.exec()
+                - 获取字符串中符合正则表达式的内容
+        */
+        let str = "abcaecafcacc"
+
+        //提取出str中axc格式的字符串
+
+        let re = /a(([a-z])c)/ig //i表示忽略大小写，g表示全局匹配
+
+        let result = re.exec(str)
+
+        while (result) {
+            console.log(result[0],result[1],result[2]);
+            result = re.exec(str);
+        }
+
+
+        // console.log(result);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
