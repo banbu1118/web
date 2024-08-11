@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            img {
+                vertical-align: top;
+            }
+
+            ul {
+                list-style: none;
+            }
+
+            .outer {
+                width: 640px;
+                height: 390px;
+                margin: 100px auto;
+            }
+
+            .img-list {
+                height: 390px;
+            }
+
+            .img-list li {
+                position: absolute;
+                opacity: 0;
+                transition: opacity 1s;
+            }
+
+            li.current {
+                z-index: 1;
+                opacity: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="outer">
+            <ul class="img-list">
+                <li class="current">
+                    <a href="#">
+                        <img src="./images/1.png" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./images/2.png" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./images/3.png" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./images/4.png" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./images/5.png" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <script>
+            /* 
+            自动切换图片
+        */
+            setTimeout(function auto() {
+                // 获取当前显示的图片
+                const current = document.querySelector(".img-list .current")
+
+                // 获取下一个图片
+                const next = current.nextElementSibling || document.getElementsByTagName("li")[0]
+
+                // 切换显示状态
+                current.classList.remove("current")
+                next.classList.add("current")
+
+                setTimeout(auto, 3000)
+            }, 3000)
+        </script>
+    </body>
+</html>

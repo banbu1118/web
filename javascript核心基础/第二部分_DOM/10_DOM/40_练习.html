@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            img {
+                vertical-align: top;
+            }
+
+            ul {
+                list-style: none;
+            }
+
+            .outer {
+                width: 640px;
+                height: 390px;
+                margin: 100px auto;
+                position: relative;
+            }
+
+            .img-list {
+                height: 390px;
+            }
+
+            .img-list li {
+                position: absolute;
+                opacity: 0;
+                transition: opacity 1s;
+            }
+
+            li.current {
+                z-index: 1;
+                opacity: 1;
+            }
+
+            /* 
+                设置两个箭头的样式
+            */
+            .prev-next a {
+                font-size: 60px;
+                color: #fff;
+                font-weight: bold;
+                text-decoration: none;
+                position: absolute;
+                height: 60px;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                z-index: 2;
+                opacity: 0.5;
+            }
+
+            .prev-next a:hover {
+                opacity: 1;
+            }
+
+            #next {
+                right: 0;
+            }
+
+            /* 
+                设置导航点的样式
+            */
+            .dot {
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                z-index: 3;
+                left: 0;
+                right: 0;
+                bottom: 5px;
+                margin: auto;
+            }
+            .dot a {
+                width: 20px;
+                height: 20px;
+                margin: 5px;
+                border-radius: 50%;
+                background-color: #fff;
+                opacity: 0.5;
+            }
+
+            .dot a:hover,
+            .dot .active {
+                opacity: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="outer">
+            <ul class="img-list">
+                <li class="current">
+                    <a href="#">
+                        <img src="./images/1.png" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./images/2.png" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./images/3.png" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./images/4.png" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./images/5.png" />
+                    </a>
+                </li>
+            </ul>
+
+            <!-- 
+                添加切换按钮
+             -->
+
+            <div class="prev-next">
+                <a id="prev" href="javascript:;"><</a>
+                <a id="next" href="javascript:;">></a>
+            </div>
+
+            <!-- 
+                导航点
+             -->
+            <div class="dot">
+                <a class="active" href="javascript:;"></a>
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+            </div>
+        </div>
+
+        <script>
+            /* 
+                获取5个小点
+            
+            */
+            const dots = Array.from(document.querySelectorAll(".dot a"))
+            const imgArr = Array.from(document.querySelectorAll(".img-list li"))
+
+            document.addEventListener("click", (event) => {
+                const index = dots.indexOf(event.target)
+
+                if (index !== -1) {
+                    changeImg(index)
+                }
+            })
+
+            /* 
+                自动切换图片
+            */
+
+            const toggleChange = (function () {
+                let timer = null
+
+                return () => {
+                    // 判断timer是否是null
+                    if (timer === null) {
+                        timer = setTimeout(function auto() {
+                            changeImg("next")
+                            timer = setTimeout(auto, 3000)
+                        }, 3000)
+                    } else {
+                        clearTimeout(timer)
+                        timer = null
+                    }
+                }
+            })()
+
+            toggleChange()
+
+            // 获取outer
+            const outer = document.getElementsByClassName("outer")[0]
+            outer.onmouseenter = () => {
+                toggleChange()
+            }
+
+            outer.onmouseleave = () => {
+                toggleChange()
+            }
+
+            /* 
+                点击按钮切换图片
+            */
+
+            const prev = document.getElementById("prev")
+            const next = document.getElementById("next")
+
+            prev.onclick = () => {
+                changeImg("prev")
+            }
+
+            next.onclick = () => {
+                changeImg("next")
+            }
+
+            /* 
+                changeImg 用来切换图片
+                    参数：
+                        dir 切换图片的方向
+                            next
+                            prev
+            
+            */
+            function changeImg(dir) {
+                // 获取当前显示的图片
+                const current = document.querySelector(".img-list .current")
+
+                // 获取下一个图片
+                let next
+                if (dir === "next") {
+                    next = current.nextElementSibling || imgArr[0]
+                } else if (dir === "prev") {
+                    next = current.previousElementSibling || imgArr.at(-1)
+                } else if (typeof dir === "number") {
+                    next = imgArr[dir]
+                }
+
+                // 获取要显示的图片的索引
+                const index = imgArr.indexOf(next)
+
+                // 切换显示状态
+                current.classList.remove("current")
+                next.classList.add("current")
+
+                // 切换active
+                const currentActive = document.querySelector(".active")
+                currentActive.classList.remove("active")
+
+                // 获取到当前要显示的小点
+                dots[index].classList.add("active")
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            网页是自上而下加载的，当网页加载完成后，DOM就已经准备好了，
+            所以在DOM准备好之前，无法对DOM进行操作。
+
+            window.onload事件可以保证DOM已经准备好了，
+
+            document的DOMContentLoaded事件可以保证DOM已经准备好了，
+
+            如何解决这个问题
+                1.将script标签放在body标签的最后，这样可以保证DOM已经准备好了
+                2.将代码编写到window.onload事件中，这样可以保证DOM已经准备好了
+                3.使用addEventListener方法监听window的load事件，这样可以保证DOM已经准备好了
+                4.将代码编写到document对象的DOMContentLoaded事件中，这样可以保证DOM已经准备好了
+                5.将代码编写到外部的js文件中，然后以defer的形式进行引入
+        */
+        // window.onload = function () {
+        //     const btn = document.getElementById('btn');
+
+        //     console.log(btn);
+
+        // }
+
+        // window.addEventListener('load', function () {
+        //     const btn = document.getElementById('btn');
+
+        //     console.log(btn);
+        // })
+
+        // document.addEventListener('DOMContentLoaded', function () {
+        //     const btn = document.getElementById('btn');
+
+        //     console.log(btn);
+        // })
+
+    </script>
+</head>
+
+<body>
+    <button id="btn">点我一下</button>
+
+    <iframe src="https://www.baidu.com" frameborder="0"></iframe>
+
+    <!-- <script>
+        /* 
+
+        */
+        const btn = document.getElementById('btn');
+
+        console.log(btn);
+
+    </script> -->
+    <script defer src="https://www.google-analytics.com/analytics.js"></script>
+
+</body>
+
+</html>
