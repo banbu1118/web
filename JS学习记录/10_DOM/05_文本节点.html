@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box1">
+        <span style="text-transform: uppercase;">我是box1</span>
+    </div>
+    <script>
+        /* 
+            在dom中，网页中所有的文本内容都是文本节点对象
+                可以通过元素来获取其中的文本节点对象，但是我们通常不会这么做
+
+                我们可以直接通过元素去修改其中的文本内容
+                    修改文本的三个属性
+                        element.textContent // 直接修改元素的文本内容
+                        element.innerText // 仅仅修改元素的文本内容，不包含html标签
+                        element.innerHTML // 直接修改元素的innerHTML，包含html标签
+
+        */
+        const box1 = document.getElementById("box1");
+
+        // box1.innerText = "我是修改后的文本"; // 修改文本内容
+        // box1.textContent = "我是修改后的文本"; // 修改文本内容
+        // box1.innerHTML = "我是修改后的文本"; // 修改文本内容
+
+        // box1.innerHTML = "xxx"
+
+
+    </script>
+</body>
+
+</html>
