@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn01">按钮1</button>
+    <button id="btn02">按钮2</button>
+    <hr>
+    <ul id="list">
+        <li id="swk">孙悟空</li>
+        <li id="zbj">猪八戒</li>
+        <li id="shs">沙和尚</li>
+    </ul>
+
+
+    <script>
+        /* 
+            点击按钮后，向ul中添加一个唐僧
+        */
+
+        //获取ul
+        const list = document.getElementById("list");
+
+        //获取按钮
+        const btn01 = document.getElementById("btn01");
+
+        //按钮点击事件
+        btn01.onclick = function () {
+            //创建li
+            const li = document.createElement("li")
+
+            //向li中添加文本
+            li.innerText = "唐僧"
+
+            //li添加id属性
+            li.id = "ts"
+
+            //将li添加到ul中
+            // list.appendChild(li)
+
+            //向元素的任意节点添加元素
+            //两个参数，1.位置 2.元素
+            // list.insertAdjacentElement("afterbegin", li)
+
+            //向元素的任意节点添加HTML代码
+            list.insertAdjacentHTML("beforeend", "<li id='bgj'>白骨精</li>")
+        }
+
+
+        const btn02 = document.getElementById("btn02");
+        btn02.onclick = function () {
+            //创建蜘蛛精替换孙悟空
+            const li = document.createElement("li")
+            li.textContent = "蜘蛛精"
+            li.id = "zzj"
+            
+            //获取孙悟空li
+            const swk = document.getElementById("swk")
+
+            //将蜘蛛精替换孙悟空
+            //replaceWith()方法，将一个元素替换另一个元素
+            // swk.replaceWith(li)
+
+            //删除孙悟空li
+            swk.remove()
+        }
+
+    </script>
+</body>
+
+</html>

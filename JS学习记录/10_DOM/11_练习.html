@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            /* 
+                全选
+                取消
+                反选
+                提交
+                让4个小的checkbox和大checkbox关联起来，当大checkbox选中时，小checkbox都选中
+            */
+
+            /* 
+                全选功能
+                    - 点击按钮后，使得4个多选框都选中
+            */
+            //获取4个多选框
+            const hobbied = document.getElementsByName("hobby");
+
+            //获取全选按钮
+            const allBtn = document.getElementById("all");
+
+            //获取全选按钮
+            const checkAllBox = document.getElementById("check-all");
+
+            //给全选按钮绑定点击事件
+            allBtn.onclick = function () {
+                //将多选框全部选中
+                for (let i = 0; i < hobbied.length; i++) {
+                    hobbied[i].checked = true;
+                }
+
+                checkAllBox.checked = true;
+            }
+
+            // 取消功能
+            //获取取消按钮
+            const noBtn = document.getElementById("no");
+
+            //给取消按钮绑定点击事件
+            noBtn.onclick = function () {
+                //将多选框全部选中
+                for (let i = 0; i < hobbied.length; i++) {
+                    hobbied[i].checked = false;
+                }
+
+                checkAllBox.checked = false;
+            }
+
+            // 反选功能
+            //获取反选按钮
+            const reservesBtn = document.getElementById("reserves");
+
+            //给反选按钮绑定点击事件
+            reservesBtn.onclick = function () {
+                for (let i = 0; i < hobbied.length; i++) {
+                    //对当前状态取反
+                    hobbied[i].checked = !hobbied[i].checked;
+                }
+
+                const checkedBox = document.querySelectorAll("[name=hobby]:checked")
+
+                //判断是否全选
+                if (hobbied.length === checkedBox.length) {
+                    checkAllBox.checked = true;
+                } else {
+                    checkAllBox.checked = false;
+                }
+            }
+
+            // 提交功能
+            // 这里省略提交功能的代码，因为提交功能需要后端支持，这里只做演示
+            // 这里提交功能演示为将内容显示出来
+
+            //获取提交按钮
+            const sendBtn = document.getElementById("send");
+
+            //给提交按钮绑定点击事件
+            sendBtn.onclick = function () {
+                for (let i = 0; i < hobbied.length; i++) {
+                    // if (hobbied[i].checked) {
+                    //     alert(hobbied[i].value);
+                    // }
+
+                    // 优化代码，使用&&运算符，当条件成立时执行alert
+                    hobbied[i].checked && alert(hobbied[i].value);
+                }
+
+            }
+
+            /* 
+                check-all功能
+                    - 点击全选按钮后，使得4个多选框都选中
+            */
+
+
+
+            //给全选按钮绑定点击事件
+            checkAllBox.onchange = function () {
+
+                // console.log(this);
+                //在事件的响应函数中，this绑定的是谁，this就是谁（箭头函数除外，箭头函数的this绑定的是外层作用域）
+
+                for (let i = 0; i < hobbied.length; i++) {
+                    hobbied[i].checked = this.checked;
+                }
+            }
+
+            //反向同步，当小checkbox都被选中时，大checkbox都选中
+
+            for (let i = 0; i < hobbied.length; i++) {
+                hobbied[i].onchange = function () {
+                    //判断hobbied[i]是否被选中
+                    //获取所有选中的checkbox
+                    const checkedBox = document.querySelectorAll("[name=hobby]:checked")
+
+                    //判断是否全选
+                    if (hobbied.length === checkedBox.length) {
+                        checkAllBox.checked = true;
+                    } else {
+                        checkAllBox.checked = false;
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <form action="#"></form>
+        <div>
+            请选择你的爱好：
+            <input type="checkbox" id="check-all"> 全选
+        </div>
+        <div>
+            <input type="checkbox" name="hobby" value="乒乓球"> 乒乓球
+            <input type="checkbox" name="hobby" value="篮球"> 篮球
+            <input type="checkbox" name="hobby" value="羽毛球"> 羽毛球
+            <input type="checkbox" name="hobby" value="足球"> 足球
+        </div>
+        <div>
+            <button type="button" id="all">全选</button>
+            <button type="button" id="no">取消</button>
+            <button type="button" id="reserves">反选</button>
+            <button type="button" id="send">提交</button>
+        </div>
+    </div>
+</body>
+
+</html>
