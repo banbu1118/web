@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 200px;
+            height: 200px;
+            padding: 50px;
+            margin: 50px;
+            border: 10px red solid;
+            background-color: #bfa;
+            overflow: auto;
+        }
+
+        #box2 {
+            width: 100px;
+            height: 500px;
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">点我一下</button>
+    <hr>
+    <div style="position: relative;">
+        <div id="box1">
+            <div id="box2"></div>
+        </div>
+    </div>
+
+    <script>
+        const btn = document.getElementById("btn");
+        const box1 = document.getElementById("box1");
+
+        btn.onclick = function () {
+            /* 
+                元素.clientHeight
+                元素.clientWidth
+                    - 获取元素内部的宽高（包括内容区和内边距）
+                元素.offsetHeight
+                    - 获取元素可见框的高度（包括内容区、内边距、边框）
+                元素.offsetWidth
+                    - 获取元素可见框的宽度（包括内容区、内边距、边框）
+                元素.scrollWidth
+                    - 获取元素内容区的总宽度（包括滚动区）
+                元素.scrollHeight
+                    - 获取元素内容区的总高度（包括滚动区）
+                元素.offsetTop
+                    - 获取元素相对于其定位父元素的偏移量
+                元素.offsetLeft
+                    - 获取元素相对于其定位父元素的左侧距离
+                元素.offsetParent
+                    - 获取元素的定位父元素
+                    - 定位父元素：离当前元素最近的具有定位属性的祖先元素，如果没有，则返回body
+                元素.scrollTop
+                    - 获取或设置元素滚动条的垂直位置
+                元素.scrollLeft
+                    - 获取或设置元素滚动条的水平位置
+                
+            */
+            console.log(box1.clientWidth);
+            console.log(box1.clientHeight);
+            console.log(box1.offsetHeight);
+            console.log(box1.offsetWidth);
+            console.log(box1.scrollWidth);
+            console.log(box1.scrollHeight);
+            console.log(box1.offsetTop);
+            console.log(box1.offsetLeft);
+            console.log(box1.offsetParent);
+            console.log(box1.scrollTop);
+            
+
+
+
+
+
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">点我一下</button>
+
+    <hr>
+
+    <div class="box1"></div>
+
+    <script>
+        /* 
+            点击按钮后，修改box1的宽度
+        */
+        const btn = document.getElementById('btn');
+        const box1 = document.querySelector('.box1');
+        btn.onclick = function () {
+            //修改box1的样式
+            //元素.style.属性名 = 值;
+            //如果样式名包含连字符-，则需要使用驼峰命名法，如backgroundColor
+            box1.style.width = '400px';
+            box1.style.height = '400px';
+            box1.style.backgroundColor = 'blue';
+        }
+    </script>
+</body>
+
+</html>
