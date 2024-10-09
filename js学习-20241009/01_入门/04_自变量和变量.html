@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自变量和变量</title>
+    <script>
+        /*
+            字面量
+                - 字面量其实就是一个值，它所代表的含义就是它的字面意思。
+                - 比如：1 2 3 4 100 "hello" true false null undefined 等都是字面量。
+                - js中所有字面量都可以直接使用，但是直接使用字面量不方便
+
+            变量
+                - 变量可以用来“存储”字面量
+                - 并且变量存储的字面量可以随意修改
+                - 通过变量可以对字面量进行描述，并且变量比较方便修改
+        */
+
+        let x
+        x = 80
+        x = "哈哈"
+        console.log(x);
+
+        let age
+        age = 80
+        age = 81
+        console.log(age); // 80
+
+        /*
+            多行数值：shift + alt + a
+            变量的使用
+                - 声明变量 -> let 变量名
+                - 赋值 -> 变量名 = 值
+                - 声明和赋值同时进行 -> let 变量名 = 值
+        */
+        let a
+        let b, c, d
+
+        a = 10
+        a = "hello"
+        a = true
+
+        console.log(a);
+
+        //var是旧的变量声明方式，let是新的变量声明方式，推荐使用let
+        var f
+        f = 10
+        console.log(f); // 10
+
+        let i = 100
+        console.log(i);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
