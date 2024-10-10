@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>类型转换_字符串</title>
+    <script>
+        /* 
+            类型转换：将一种数据类型转换为其他数据类型
+                主要将其他类型转换为（字符串、数字和布尔值）
+
+            转换字符串
+                1.调用toString()方法将其他类型转换为字符串
+                    - 调用方法：
+                        xxx的yyy方法 -> xxx.yyy()
+                    - 由于null和undefined没有toString()方法，所以不能转换为字符串
+                2.调用String()函数将其他类型转换为字符串
+                    - 调用函数：
+                        调用xxx的函数 -> 函数名(xxx)
+                    - 原理：
+                        对于拥有toString()方法的值调用String()函数时，
+                            实际上就是在调用toString()方法。
+                        对于null和undefined调用String()函数时，
+                            实际上返回字符串"null"和"undefined"。
+         */
+
+        let a = 10
+        a = true
+        a = 11n
+        // a = null //报错，null不能转换为字符串
+        // a = undefined //报错，undefined也不能转换为字符串
+        a = a.toString();   //将a转换为字符串
+        console.log(typeof a, a);   //typeof a,a 输出变量a的类型和值
+
+        let b = 33
+        b = null    //"null"
+        b = undefined    //"undefined"
+        b = String(b);   //将b转换为字符串
+        console.log(typeof b, b)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符串</title>
+    <script>
+        /* 
+            字符串
+                - js中，使用单引号或双引号括起来的字符串，都属于字符串类型
+                - 转义字符 \
+                    \" -> "
+                    \' -> '
+                    \\ -> \
+                    \n -> 换行符
+                    \t -> 制表符
+                - 模板字符串
+                    - 使用反单引号`来表示模板字符串
+                    - 模板字符串可以嵌入变量
+                - 使用typeof检查一个字符串时，会返回"string"
+        */
+
+        let a = 'hello';
+        a = "你好"
+        a = "这是一个'字符串'"
+        a = '这是一个"字符串"'
+        a = "这是一个\"字符串\""    //\转义字符
+        a = '这是一个\'字\\符串\''   //\转义字符
+        a = "这是一个\n换行符"      //\n换行符
+        a = "这是一个\t制表符"      //\t制表符
+
+        a = "今天天气真不错"
+        a = `今天天气
+        挺好的` //模板字符串可以跨行使用
+
+        console.log(a);
+
+        let name = "孙悟空"
+        let str = `你好, ${name}`
+        console.log(str);
+
+        let b = 10
+        console.log(`b = ${b}`);
+
+        let c = 5   //数字5
+        c = "5"   //字符串"5"
+        console.log(typeof c);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

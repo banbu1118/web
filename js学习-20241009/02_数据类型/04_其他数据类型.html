@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>其他数据类型</title>
+    <script>
+        /*
+            整数（Number）
+                - js中，整数和浮点数统称为数字
+                - 整数可以使用十进制、八进制、十六进制表示
+                - 整数可以使用前缀0x或0o表示
+                - 使用typeof检查一个数字时，会返回"number"
+
+            字符串（String）
+                - js中，使用单引号或双引号括起来的字符串，都属于字符串类型
+                - 转义字符 \
+                    \" -> "
+                    \' -> '
+                    \\ -> \
+                    \n -> 换行符
+                    \t -> 制表符
+                - 模板字符串
+                    - 使用反单引号`来表示模板字符串
+                    - 模板字符串可以嵌入变量
+                - 使用typeof检查一个字符串时，会返回"string"
+
+            布尔值（Boolean）
+                - 布尔值主要用来进行逻辑判断
+                - 只有两个值：true 和 false
+                - 使用typeof检查一个布尔值会返回"boolean"
+
+            空值（null）
+                - 空值表示一个空对象，它是一个特殊的值，表示“没有值”
+                - 空值只有一个值：null
+                - 使用typeof检查一个空值会返回"object"
+                - 使用typeof无法检查空值
+
+            未定义值（undefined）
+                - 当声明一个变量而没有赋值时，它的值就是undefined
+                - 未定义值只有一个值：undefined
+                - 使用typeof检查一个未定义值会返回"undefined"
+
+            符号（Symbol）
+                - 用来创建一个唯一的标识
+                - 使用typeof检查一个符号会返回"symbol"
+
+            js中原始值一共有7种
+                1. 数字（Number）
+                2.大整数（BigInt）
+                3.字符串（String）
+                4.布尔值（Boolean）
+                5.空值（null）
+                6.未定义值（undefined）
+                7.符号（Symbol）
+            
+            这7种原始值是构成各种数据的基石
+                原始值在js中是不可变类型，一旦创建就无法改变（原始值在内存中被创建，并在使用完毕后被销毁）
+        */
+
+        let bool = true //真
+        bool = false    //假
+        console.log(bool);
+        console.log(typeof bool);   //"boolean"
+
+        let a = null;
+        console.log(a);
+        console.log(typeof a);   //"object"
+
+        let b
+        console.log(b);
+        console.log(typeof b);   //"undefined"
+
+        let c = Symbol()    //调用Symbol函数创建一个唯一的标识符
+        console.log(c);        //Symbol()
+        console.log(typeof c);   //"symbol"
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

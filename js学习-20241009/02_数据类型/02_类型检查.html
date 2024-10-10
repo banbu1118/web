@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>类型检查</title>
+    <script>
+        let a = 10
+        let b = 10n
+
+        console.log(a);
+        console.log(b);
+
+        // a + b // 运行报错，类型不匹配
+
+        /* 
+            typeof 运算符可以用来检查变量的类型。
+            typeof 运算符返回一个字符串，该字符串表示变量的类型。
+        */
+
+        console.log(typeof a); // "number"
+        console.log(typeof b); // "bigint"
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
