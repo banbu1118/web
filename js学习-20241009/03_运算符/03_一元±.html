@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一元±</title>
+    <script>
+        /* 
+            一元±运算符
+                + 正好
+                    - 不会改变数值的符号
+
+                - 负号
+                    - 可以对符号位取反，将正数变成负数，将负数变成正数。
+
+                当我们对非数值类型进行正负运算时，会先将其转换为数值然后再运算。
+        */
+
+        let a = 10
+        a = +a
+        a = -a
+        console.log(a);
+
+        let b = '123'
+        b = +b // 123，隐式类型转换
+
+        console.log(b);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自增和自减</title>
+    <script>
+        /* 
+            ++ 自增运算符
+                - ++ 使用会使得原来的变量立刻增加1
+                - 自增分为前置和后置两种形式，前置形式 ++a，后置形式 a++
+                - 无论是a++还是++a，都表示变量a的值增加1
+                - 不同的是++a和a++所返回的值不同
+                    a++返回的是a的旧值
+                    ++a返回的是a的新值
+        */
+        let a = 10
+
+        // let b = a++ //a++返回的是a的旧值，即10，而a自增后的值为11
+        let b = ++a // ++a返回的是a的新值，即11，而a自增后的值为11
+
+        console.log(a);
+        console.log(b);
+
+        let n = 5
+        let result = n++ + ++n + n // 5+7+7=19
+        console.log(result); // 19
+
+        /* 
+            -- 自减运算符
+                - -- 使用会使得原来的变量立刻减少1
+                - 自减分为前置和后置两种形式，前置形式 --a，后置形式 a--
+                - 无论是a--还是--a，都表示变量a的值减少1
+                - 不同的是--a和a--所返回的值不同
+                    a--返回的是a的旧值
+                    --a返回的是a的新值
+        */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

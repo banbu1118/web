@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赋值运算符</title>
+    <script>
+        /* 
+            赋值运算符用来将一个值赋给一个变量。
+                =   赋值运算符
+                    - 将右侧的值赋给左侧的变量
+                +=  加等于运算符
+                    - 相当于 a = a + b
+                -=  减等于运算符
+                    - 相当于 a = a - b
+                *=  乘等于运算符
+                    - 相当于 a = a * b
+                /=  除等于运算符
+                    - 相当于 a = a / b
+                %=  取模等于运算符
+                    - 相当于 a = a % b
+                **= 幂等于运算符
+                    - 相当于 a = a ** b
+                ??= 三元赋值运算符
+                    - 相当于 a = a ?? b
+                    - 只有变量的值为null或undefined时才会赋值，否则不会赋值。
+        */
+        let a = 10
+        a = 20   //将右边的值赋值给左边的变量
+        let b = a   //将变量a的值赋值给变量b
+
+        a = 66
+        a = a + 11   //大部分运算符都不会改变变量的值，只有赋值运算符会改变变量的值。
+
+        a = 5
+        a += 5   //相当于 a = a + 5
+
+        a = undefined
+        a??=20
+
+        console.log(a)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
