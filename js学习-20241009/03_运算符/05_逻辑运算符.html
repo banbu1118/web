@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>逻辑运算符</title>
+    <script>
+        /* 
+            ! 非运算符
+                - 可以用来对一个值进行非运算，即取反。
+                - 它可以对一个布尔值进行非运算，将其取反。
+                    true -> false
+                    false -> true
+                - 如果对一个非布尔值取反，则会先将其转换为布尔值，然后再取反。
+                    可以利用这个特点将其他值转换为布尔值。
+                
+                - 类型转换
+                    转换为字符串
+                        显式转换
+                            String()
+                        隐式转换
+                            + ""
+
+                    转换为数值
+                        显式转换
+                            Number()
+                        隐式转换
+                            + 0
+
+                    转换为布尔值
+                        显式转换
+                            Boolean()
+                        隐式转换
+                            !!
+                
+
+            && 与运算符
+
+            || 或运算符
+        */
+        let a = 1
+        a = !a
+        console.log(a)
+
+        a = 123
+        // a = Boolean(a)
+        a = !!a // 取两次反可以转换为布尔值
+
+        console.log(typeof a, a);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

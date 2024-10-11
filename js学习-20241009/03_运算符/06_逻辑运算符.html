@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>逻辑运算符</title>
+    <script>
+        /* 
+            && 逻辑与
+                - 可以对两个值进行与运算
+                - && 左右两边的表达式都为真，结果才为真
+                - 否则，结果为假
+                - 与运算是找flase的，如果找到false则直接返回，没有false才会执行第二个
+                - 对应非布尔值进行运算，它会先转换为布尔值再进行运算
+                    但是最后回返回的是原值，而不是布尔值
+                    - 如果第一个值为false，则直接返回第一个值
+                    - 如果第一个值为true，则返回第二个值
+
+            || 逻辑或
+                - 可以对两个值进行或运算
+                - 当||左右两边的表达式有一个为真，结果为真
+                - 否则，结果为假
+                - 或运算时找true的，如果第一个值为true，则不看第二个
+                - 对应非布尔值进行运算，它会先转换为布尔值再进行运算
+                    但是最后回返回的是原值，而不是布尔值
+                    - 如果第一个值为true，则直接返回第一个值
+                    - 如果第一个值为false，则返回第二个值
+        */
+        let result = true && true; // true
+        result = true && false; // false
+        result = false && true; // false
+
+        //    true && alert("hello"); // 第一个为true，alert会执行
+        // false && alert("hello"); // 第一个为false，alert不会执行
+
+        result = 1 && 2; // 2
+        result = 1 && 0; // 0
+        result = 0 && NaN; // 0，第一个为false，直接返回第一个
+
+        result = true || false; // true
+        result = false || true; // true
+        result = false || false; // false
+
+        // false || alert("hello"); // 第一个为false，alert会执行
+        true || alert("hello"); // 第一个为true，alert不会执行
+        console.log(result);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
