@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关系运算符</title>
+    <script>
+        /* 
+            关系运算符：
+                - 关系运算符用来检查两个值之间的关系是否成立
+                    成立：返回true
+                    不成立：返回false
+                >   大于
+                    - 用来检查左值是否大于右值
+                <   小于
+                    - 用来检查左值是否小于右值
+                >=  大于等于
+                     - 用来检查左值是否大于等于右值
+                <=  小于等于
+                     - 用来检查左值是否小于等于右值
+
+            注意：
+                当对非数值运算时，它会先将其转换为数值再进行比较。
+                当关系运算符的两端是两个字符串时，它会先将字符串转换为unicode编码的比较，再进行比较。
+                
+                ==  等于
+                    - 用来检查两个值是否相等
+                === 全等（值和类型都相等）
+                     - 用来检查两个值是否全等（值和类型都相等）
+               !=  不等于
+                  - 用来检查两个值是否不相等
+               !== 不全等（值或类型不相等）
+                    - 用来检查两个值是否不全等（值或类型不相等）
+        */
+        let result = 10 > 5; // true
+        result = 5 > 5; // false
+        result = 5 >= 5; // true
+
+        result = 5 < "10"   // true
+        result = 1 > false; // true
+        result = "a" < "b"  // true
+
+        console.log(result);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
