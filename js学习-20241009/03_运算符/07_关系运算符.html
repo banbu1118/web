@@ -23,6 +23,9 @@
             注意：
                 当对非数值运算时，它会先将其转换为数值再进行比较。
                 当关系运算符的两端是两个字符串时，它会先将字符串转换为unicode编码的比较，再进行比较。
+                    - 字符串的比较是按照unicode编码的顺序逐位进行的。
+                      利用这个特点可以对字符串安装字母排序
+                    - 注意比较字符串和数字时一定要进行类型转换
                 
                 ==  等于
                     - 用来检查两个值是否相等
@@ -40,9 +43,15 @@
         result = 5 < "10"   // true
         result = 1 > false; // true
         result = "a" < "b"  // true
+        result = "abc" < "b"     // false
 
+        result = "12" < "2" //ture，字符串比较，从左往右比较，"1" < "2"
+        result = +"12" < "2" //false，转换为数字，12 < 2
+
+        //检查number是否在5和10之间
+        let num = 6
+        result = 5 < num && num < 10; // true
         console.log(result);
-
     </script>
 </head>
 
