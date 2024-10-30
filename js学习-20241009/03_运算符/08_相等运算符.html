@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>相等运算符</title>
+    <script>
+        /* 
+            == 
+                - 相等运算符，用来比较两个值是否相等，如果相等返回true，否则返回false。
+                - 使用相等运算符比较两个不同类型的值时
+                    它会转换为相同类型后再比较，通常转换为数字比较
+                    类型转换后值相同，也会返回true
+                - 对于null和undefined，相等运算符会返回true
+                - NaN与任何值都不相等，包括它自己
+
+            ===
+                - 全等运算符，用来比较两个值是否全等，如果全等返回true，否则返回false。
+                - 它不会进行类型转换，如果两个值类型不同，则返回false
+                - 对于null和undefined，全等运算符会返回false
+
+            !=
+                - 不等于运算符，用来比较两个值是否不相等，如果不相等返回true，否则返回false。
+                - 它也会进行类型转换，如果两个值类型不同，则返回true
+
+            !==
+                - 不全等运算符，用来比较两个值是否不全等，如果不全等返回true，否则返回false。
+                - 它不会进行类型转换，如果两个值类型不同，则返回true
+        */
+        let result = 1 == 1   //true
+        result = 1 == "2"    //false
+        result = 1 == "1"   //true
+        result = true == "1"    //true
+
+        result = null == undefined   //true
+        result = NaN == NaN   //false
+
+        result = 1 === 1   //true
+        result = 1 === "1"    //false
+        result = null === undefined   //false
+
+        result = 1 != 1   //false
+        result = 1 != "1"    //false
+
+        result = 1 !== "1"   //false
+
+        console.log(result);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

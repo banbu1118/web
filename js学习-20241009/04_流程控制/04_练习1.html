@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_练习1</title>
+    <script>
+        /* 
+            编写一个程序，获取一个用户输入的整数。然后通过程序显示这个数是奇数还是偶数。
+        */
+
+        //声明一个变量，接收用户输入的整数
+        let num = +prompt("请输入一个整数：");
+        // let num = parseInt(prompt("请输入一个整数：")); //parseInt()函数可以将用户输入的字符串转换为整数，比如输入10.5，则会自动转换为整数10
+
+
+        //验证一下用户的输入是否合法，只有是有效数字时，我们才判断是否为偶数
+        //我们不能使用==或===来判断NaN，因为NaN是唯一一个不等于自身的值
+        //可以使用isNaN()函数来判断是否为NaN
+        //num%1!=0可以判断是否为整数，因为整数的余数为0，而非整数的余数不为0
+        if (isNaN(num) || (num % 1 != 0)) {
+            alert("你的输入有问题，请输入一个有效整数！")
+        } else if (num % 2 == 0) {
+            alert(`${num}是偶数`); //如果输入的整数是偶数，则显示"num是偶数"
+        } else {
+            alert(`${num}是奇数`); //如果输入的整数是奇数，则显示"num是奇数"
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
