@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习1</title>
+    <script>
+        /* 
+            求100内所有3的倍数(求他们的个数和总和)
+
+            思路；
+                先求100以内所有的数
+        */
+
+        // //计数器
+        let count = 0
+
+        //累加器
+        let sum = 0
+
+        // for (let i = 1; i < 100; i++) {
+        //     // 判断是否是3的倍数
+        //     if (i % 3 == 0) {
+        //         count++
+        //         sum = sum + i;
+        //     }
+        // }
+
+        // 优化版，使用for循环的步长为3，从3开始，直到100结束
+
+        for (let i = 3; i < 100; i += 3) {
+            if (i % 3 == 0) {
+                count++;
+                sum = sum + i;
+            }
+        }
+        // 输出结果
+        console.log(`3的倍数一共有${count}个，总和为${sum}`);
+
+        /* 
+            求1000以内的水仙花数
+                - 一个n位数的水仙花数，是指一个n位数（n>=3），它的每个位上的数字的n次方之和等于它本身。例如，153是一个3位数的水仙花数，因为1^3 + 5^3 + 3^3 = 153。
+        */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

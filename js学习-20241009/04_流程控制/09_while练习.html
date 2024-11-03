@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while练习</title>
+    <script>
+        /* 
+            假设银行存款的年利率为5%，求存1000多少年可以变成5000
+        */
+
+        //创建一个计数器，记录存款1000年后变成5000需要多少年
+        let year = 0;
+
+        //初始化余额为1000
+        let balance = 1000;
+
+        //判断表达式，当余额小于5000时，执行循环
+        while (balance < 5000) {
+            balance = balance * (1 + 0.05);
+            year++;
+        }
+        console.log(`存款1000后变成5000需要${year}年`);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>循环嵌套</title>
+    <script>
+        /* 
+            在循环中，也可以嵌套其他的循环
+
+            希望在网页中打印如下图像
+            *****
+            *****
+            *****
+            *****
+            *****
+
+            *
+            **
+            ***
+            ****
+            *****
+
+            *****
+            ****
+            ***
+            **
+            *
+
+            当循环发生嵌套时，外层循环执行1次，内层循环就执行一个完整的周期
+
+            练习：
+                打印99乘法表
+                1*1=1
+                1*2=2 2*2=4
+                1*3=3 2*3=6 3*3=9
+                ...
+        */
+
+        //for循环控制图像的高度
+        // for (let i = 0; i < 5; i++) {
+        //     //<br>标签用于换行
+        //     document.write('*****<br>');
+        // }
+
+        //创建一个外层循环，来控制图像的高度
+        // for (let i = 0; i < 5; i++) {
+        //     //创建一个内层循环，来控制图片的宽度
+        //     for (let j = 0; j < 5; j++) {
+        //         //使用&nbsp标签来控制图形的间距
+        //         document.write('*&nbsp;&nbsp;');
+        //     }
+        //     document.write('<br>');
+        // }
+
+        // for (let i = 0; i < 5; i++) {
+        //     //创建一个内层循环，来控制图片的宽度
+        //     for (let j = 0; j < i + 1; j++) {
+        //         //使用&nbsp标签来控制图形的间距
+        //         document.write('*&nbsp;&nbsp;');
+        //     }
+        //     document.write('<br>');
+        // }
+
+        for (let i = 0; i < 5; i++) {
+            //创建一个内层循环，来控制图片的宽度
+            for (let j = 0; j < 5 - i; j++) {
+                //使用&nbsp标签来控制图形的间距
+                document.write('*&nbsp;&nbsp;');
+            }
+            document.write('<br>');
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

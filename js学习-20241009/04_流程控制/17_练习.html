@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习</title>
+    <script>
+        /* 
+            编写代码，求100以内所有的质数
+        */
+        //求100以内所有的数
+        for (let i = 2; i < 100; i++) {
+            //判断i是否为质数
+            //记录i的状态，默认i是质数
+            let flag = true;
+
+            //获取1-i直接的数
+            for (let j = 2; j < i; j++) {
+                //判断i能不能被i整除
+                if (i % j == 0) {
+                    //进入判断，i不是质数
+                    flag = false;
+                }
+            }
+            //判断结果
+            if (flag) {
+                console.log(`${i}是质数`);
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

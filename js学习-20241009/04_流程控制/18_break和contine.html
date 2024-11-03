@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18_break和contine</title>
+    <script>
+        /* 
+            break和contine
+                - break
+                    - break用来终止swich或循环语句
+                    - break执行后，switch或循环语句会立即停止
+                    - break会终止离它最近的循环
+
+                - contine
+                    - contine跳过本次循环
+
+
+        */
+
+        // for (let i = 0; i < 5; i++) {
+        //     if (i === 3) {
+        //         break; // 遇到i=3时，终止循环
+        //     }
+        //     console.log(i);
+        // }
+
+        // for (let i = 0; i < 5; i++) {
+        //     console.log(i);
+
+        //     for (let j = 0; j < 5; j++) {
+        //         if (j === 1) break
+        //             console.log('内层循环--->', j);
+        //     }
+        // }
+
+        // for (let i = 0; i < 5; i++) {
+        //     if (i === 3) {
+        //         continue; // 遇到i=3时，跳过本次循环
+        //     }
+        //     console.log(i);
+        // }
+
+        for (let i = 0; i < 5; i++) {
+            console.log(i);
+
+            for (let j = 0; j < 5; j++) {
+                if (j === 1) continue
+                console.log('内层循环--->', j);
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习</title>
+    <script>
+        /* 
+            优化前
+                1.10000以内：191ms
+                2.100000以内：18043ms
+
+            优化后
+                1.10000以内：27ms
+                2.100000以内：1948ms
+
+            问题：如何修改代码，使得优化后运行速度更快？
+         */
+
+        //开始一个计时器
+        //计时器名称，可以随便起，但要保证唯一性，即开始计时器和结束计时器的名称要一致
+        console.time('质数练习');
+
+        for (let i = 2; i < 10000; i++) {
+            //判断i是否为质数
+            //记录i的状态，默认i是质数
+            let flag = true;
+
+            //获取1-i直接的数
+            for (let j = 2; j < i; j++) {
+                //判断i能不能被i整除
+                if (i % j == 0) {
+                    //进入判断，i不是质数
+                    flag = false;
+
+                    //进入判断，说明i不是质数，退出循环
+                    break;
+                }
+            }
+            //判断结果
+            if (flag) {
+                // console.log(`${i}是质数`);
+            }
+        }
+
+        //结束计时器
+        console.timeEnd('质数练习');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
