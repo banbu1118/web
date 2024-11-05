@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>参数</title>
+    <script>
+        /* 
+            定义一个可以求任意两个数的和的函数
+        */
+
+        // 方式1：使用函数声明
+        function sum() {
+            console.log(1 + 1);
+        }
+
+        // 方式2：使用函数表达式
+        const sum2 = function () {
+            console.log(1 + 1);
+        }
+
+        // 方式3：使用箭头函数
+        const sum3 = () => console.log(1 + 1);
+
+        sum(); // 输出2
+        sum2(); // 输出2
+        sum3(); // 输出2
+
+        /* 
+            形式参数：
+                - 在定义函数时，可以指定数量不等的参数
+                - 在函数中定义形参，就相当于在函数内部声明了内部变量，但是没有赋值
+                - 参数：
+                    1.如果实参和形参数量相同，则按顺序对应
+                    2.如果实参多于形参数，则多余的实参会被忽略
+                    3.如果实参少于形参数，则缺少的形参数会被赋值为undefined
+
+                - 参数的类型：
+                    - js中不会检查参数的类型，可以传递任何类型的值作为参数
+            
+            实际参数：
+                - 调用函数时，在函数()中传入数量不等的实参
+                - 实参会被传递给对应的形参
+
+            1.函数声明
+                function 函数名([参数]) {
+                    // 函数体
+                }
+
+            2.函数表达式
+                const 函数名 = function([参数]) {
+                    // 函数体
+                }
+
+            3.箭头函数
+                const 函数名 = ([参数]) => {
+                    // 函数体
+                }
+        */
+        function sum4(a, b) {
+            console.log(a + b);
+        }
+
+        sum4(1, 2); // 输出3
+        sum4(2, 3); // 输出5
+        sum4("hello", "world"); // 输出 helloworld
+        sum4(1); // 输出 NaN，因为缺少第二个参数
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

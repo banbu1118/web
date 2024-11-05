@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>枚举属性</title>
+    <script>
+        /* 
+            枚举属性：将对象中所有的属性全部获取
+
+            for in语法：
+                - 语法
+                    for(let proName in 对象){
+                        ...
+                    }
+
+                - for-in的循环多执行多次，有几个属性就会执行多少次
+                    每次执行时，都会把属性名赋值给proName变量
+
+                - 注意：并不是所有属性都可以枚举，比如使用符号添加的属性无法枚举
+        */
+
+        let obj = {
+            name: "孙悟空",
+            age: 18,
+            gender: "男",
+            address: "花果山",
+            [Symbol()]: "测试的属性"   //符号属性不可枚举
+        }
+
+        for (let value in obj) {
+            //获取属性名和属性值
+            console.log(value, obj[value]);
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

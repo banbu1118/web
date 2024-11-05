@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭头函数的参数</title>
+    <script>
+        /* 
+            
+        */
+        const fn = (a, b) => {
+            console.log("a = ", a);
+            console.log("b = ", b);
+        }
+
+        //只有一个参数时，可以省略括号
+        const fn1 = a => {
+            console.log("a = ", a);
+        }
+
+        //定义参数时，可以指定默认值
+        const fn3 = (a = 10, b = 20, c = 30) => {
+            console.log("a = ", a);
+            console.log("b = ", b);
+            console.log("c = ", c);
+        }
+
+        fn(123, 456);
+        fn1(789);
+        fn3(1, 2, 3);
+
+        //当没有传入参数时，默认值就会生效
+        fn3();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

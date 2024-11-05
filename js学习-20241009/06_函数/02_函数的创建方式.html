@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_函数的创建方式</title>
+    <script>
+        /* 
+            函数的定义方式：
+                1.函数声明
+                    function 函数名() {
+                        // 函数体
+                    }
+
+                2.函数表达式
+                    const 函数名 = function() {
+                        // 函数体
+                    }
+
+                3.箭头函数
+                    const 函数名 = () => {
+                        // 函数体
+                    }
+        */
+        //声明函数
+        function fn() {
+            console.log("函数声明定义的函数");
+        }
+
+        //函数表达式定义的函数
+        const fn2 = function () {
+            log("函数表达式定义的函数");
+        }
+
+        //箭头函数定义的函数
+        const fn3 = () => {
+            console.log("箭头函数定义的函数");
+        }
+
+        //如果箭头函数只有一行，可以简写成如下形式
+        const fn4 = () => console.log("箭头函数定义的函数");
+
+        console.log(typeof fn);
+        console.log(typeof fn2);
+        console.log(typeof fn3);
+        console.log(typeof fn4);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

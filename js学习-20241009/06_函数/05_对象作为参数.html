@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象作为参数</title>
+    <script>
+
+        function fn(a) {
+            // console.log("a = ", a);
+
+            //对象属性也可以作为参数传递给函数
+            // console.log(a.name);
+
+            a = {}
+            a.name = "猪八戒";
+            console.log(a);
+        }
+
+        //对象可以作为参数传递给函数
+        let obj = { name: "孙悟空" }
+
+        // fn(123)
+
+        //传递实参时，传递的不是变量本身，而是变量所指向的对象
+        fn(obj)
+
+        console.log(obj);
+
+        //函数每次调用时，都会创建一个新的对象，因此，函数内部的修改不会影响到外部的对象
+        function fn2(a = { name: "沙和尚" }) {
+            console.log("a = ", a);
+            a.name = "唐僧"
+            console.log("a = ", a);
+        }
+
+        fn2()   //沙和尚, 唐僧
+        fn2()   //沙和尚, 唐僧
+
+        //传递实参时，传递的不是变量本身，而是变量所指向的对象
+        let obj2 = { name: "沙和尚" }
+
+        function fn3(a = obj2) {
+            console.log("a = ", a);
+            a.name = "唐僧"
+            console.log("a = ", a);
+        }
+
+        fn3()   //沙和尚, 唐僧
+        fn3()   //唐僧, 唐僧
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

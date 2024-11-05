@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>可变类型</title>
+    <script>
+        /* 
+            原始值都属于不可变类型，一旦创建就不能改变。
+            原始值包括：字符串、数字、布尔值、null、undefined。
+            在内存中不会重复创建相同的值，因此可以直接使用。
+            对于原始值来说，可以直接使用，不需要考虑引用的问题。
+        */
+        let a = 10
+        let b = 10
+        a = 12
+
+        console.log("a =", a);
+        console.log("b =", b);
+
+        /* 
+            对象属于可变类型
+            对象创建完成后，可以修改其属性
+            注意：
+                - 当对两个对象进行相等或全等比较时，比较的是对象的内存引用地址。
+                - 如果有两个变量同时指向一个对象，
+                    通过一个变量修改对象时(实质上只有一个对象，对象的内存地址没变，修改的是对象内存地址中的属性)，
+                    对另一个变量也会造成影响。
+        */
+
+        let obj = Object()
+        obj.name = "孙悟空"
+        obj.age = 18
+
+        let obj2 = Object()
+        let obj3 = Object()
+
+        // console.log("obj =", obj);
+
+        // console.log(obj2 === obj3);
+
+        let obj4 = obj
+        obj4.name = "猪八戒"
+
+        console.log("obj =", obj);
+        console.log("obj4 =", obj4);
+        console.log(obj === obj4);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
