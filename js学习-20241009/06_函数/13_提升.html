@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>提升</title>
+    <script>
+        /* 
+            变量的提升：
+                - 使用var声明的变量，它会在所有代码执行前被声明
+                    所以我们可以在变量声明之前使用它
+
+            函数的提升：
+                - 使用函数声明创建的函数，会在其他代码执行前被创建
+                    所以我们可以在函数声明之前调用它
+
+            let声明的变量实际上也会提升，但是在赋值之前被禁止访问
+        */
+
+        // fn();
+        // fn2();    //报错，fn2未定义
+        console.log(b); //报错，Cannot access 'b' before initialization
+        
+
+        console.log(a);
+
+        var a = 10;
+        // a = 10  //等价于window.a = 10;
+
+        // console.log(a);
+
+        function fn(){
+            alert("我是fn函数")
+        }
+
+        //这个函数声明不行，这不会被提升
+        var fn2 = function(){
+            alert("我是fn2函数")
+        }
+
+        // fn();
+
+        let b = 10
+
+        // console.log(b);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

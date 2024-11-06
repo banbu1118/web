@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习</title>
+    <script>
+        // var a = 1
+
+        // function fn() {
+        //     a = 2;
+        //     console.log(a);  // 2
+        // }
+
+        // fn(); 
+
+        // console.log(a); // 2
+
+
+        //变量和函数的提升同样适用于函数作用域
+        // var a = 1
+
+        // function fn() {
+        //     //var提升到函数作用域顶部，此时a的值为undefined
+        //     console.log(a);  // undefined
+        //     var a = 2;
+        //     console.log(a);  // 2
+        // }
+
+        // fn();
+
+        // console.log(a); // 1
+
+
+        // var a = 1
+
+        // //定义形参，就相当于在函数作用域中声明了变量a，但是没有赋值
+        // function fn(a) {
+        //     console.log(a);  // undefined
+        //     //给形参赋值，此时形参a的值为2，而不是函数作用域中的a
+        //     a = 2;
+        //     console.log(a);  // 2
+        // }
+
+        // fn();
+
+        // console.log(a); // 1
+
+
+        // var a = 1
+
+        // //定义形参，就相当于在函数作用域中声明了变量a，但是没有赋值
+        // function fn(a) {
+        //     console.log(a);  // 1
+        //     //给形参赋值，此时形参a的值为2，而不是函数作用域中的a
+        //     a = 2;
+        //     console.log(a);  // 2
+        // }
+
+        // fn(a);
+
+        // console.log(a); // 1
+
+
+        //练习
+        console.log(a); //2
+        var a = 1
+        console.log(a); //1
+        
+        //提升后，赋值a为函数，此时a的值为函数，而不是函数的返回值
+        function a() {
+            alert(2)
+        }
+        console.log(a);//1
+        
+        var a = 3
+        console.log(a);//3
+        
+        var a = function () {
+            alert(4)
+        }
+        console.log(a);//4
+        
+        var a
+        console.log(a);//4
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

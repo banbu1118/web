@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数的返回值</title>
+    <script>
+        function sum(a, b) {
+            // console.log(a + b);
+            //计算完成后，将结果返回而不是直接打印
+            return a + b;
+        }
+
+        // sum(1, 2); // 3
+        // sum(123, 456); // 579
+
+        function fn() {
+            /* 
+                在函数中，可以通过return关键字来指定函数的返回值。
+                    返回值就是函数的执行结果，函数调用完毕，返回值便会作为结果返回
+
+                任何值都可以作为函数的返回值（包括对象，函数，数组等）
+                    如果return后没有指定返回值，则默认返回undefined
+                    如果不写return，函数的返回值依然是undefined
+
+                return一执行，函数立即结束，后续代码不会再执行
+            */
+            // return "hello"
+            // return { name: "孙悟空" }
+            // return () => alert(123)
+        }
+
+        let result = fn(); // 调用函数并将结果赋值给变量result
+
+        result = sum(1, 2)
+        console.log(result); // hello
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
