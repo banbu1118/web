@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>立即执行函数</title>
+    <script>
+        /*
+            在开发中应该减少在全局作用域中编写代码
+
+            所以我们的代码要尽可能编写到局部作用域中
+
+            如果使用let声明变量，可以使用{}来创建块作用域
+        */
+        // let a = 10
+        // let a = 20  // 这行代码会导致语法错误，因为变量a已经被声明过了
+
+        // var a = 10;
+        // var a = 20; // 这行代码不会导致语法错误，但是会覆盖之前的变量a的值，导致不可预测的结果
+
+        // {
+        //     let a = 10
+        // }
+
+        // {
+        //     let a = 20
+        // }
+
+        // {
+        //     var a = 10;
+        // }
+
+        // {
+        //     var a = 20; // 这行代码不会导致语法错误，但是会覆盖之前的变量a的值，导致不可预测的结果
+        // }
+
+        // function fn() {
+        //     var a = 10;
+        // }
+
+        // fn()
+
+        // function fn2() {
+        //     var a = 20;
+        // }
+
+        // fn2()
+
+        //希望只创建一个只执行一次的匿名函数
+
+        /* 
+            立即执行函数(Immediately-Invoked Function Expression, IIFE)
+                - 语法：
+                    (function () {
+                        // 这里是函数体
+                    })()
+                - 立即执行函数是一个匿名函数，并且它只会调用一次
+                - 可以利用IIFE来创建一个一次性的函数作用域，避免污染全局作用域
+        */
+        (function () {
+            let a = 10;
+            console.log(a);
+        })();
+
+        //两个立即执行函数直接要用;隔开，否则会报错
+        (function () {
+            let a = 20;
+            console.log(a);
+        })()
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
