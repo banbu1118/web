@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原型对象</title>
+    <script>
+        class Person {
+            name = "孙悟空"
+            age = 18
+
+            sayHello() {
+                console.log("Hello,我是", this.name);
+            }
+        }
+
+        const p = new Person();
+
+        // console.log(p.__proto__);    //打印p的原型对象
+
+        /* 
+            访问一个对象的原型对象
+                对象.__proto__
+            
+            原型对象中的数据
+                1.对象中的数据(属性和方法)
+                2.constructor属性，指向构造函数
+
+            注意：
+                原型对象也有自己的原型对象，这样就构造了一个链条，称为原型链
+                根据对象的复杂程度，原型链的长度也不同
+                p的原型链：p对象->原型->原型->null
+                obj的原型链：obj对象->原型->null
+
+            原型链：
+                - 对象读取属性时，有优先读取自身的属性
+                    如果对象自身中没有，则读取原型对象中的属性
+                    如果原型对象中也没有，则继续读取原型对象的原型对象中的属性，直到找到Object对象的原型null为止
+                    如果依然没有找到，则返回undefined
+
+                - 作用域链，是找变量的链，找不到会报错
+                - 原型链，是找属性的链，找不到会返回undefined
+        */
+
+        //检查某个对象的原型
+        console.log(Object.getPrototypeOf(p));
+
+        //两个方法获取原型对象，Object.getPrototypeOf()和__proto__属性
+        // console.log(Object.getPrototypeOf(p) === Person.prototype);   //true
+
+        // console.log(p.constructor);
+        // console.log(p.__proto__);
+        // console.log(p.__proto__.__proto__);
+        // console.log(p.__proto__.__proto__.__proto__); //null
+
+        const obj = {}
+
+        console.log(obj);
+        console.log(obj.__proto__);
+        console.log(obj.__proto__.__proto__);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

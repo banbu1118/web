@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>封装</title>
+    <script>
+        /* 
+            面向对象的特点：
+                封装、继承、多态
+
+            1.封装
+                - 对象就是存储不同数据的容器
+                - 对象不仅负责存储属性，还有负责数据的安全
+                - 直接添加到对象中的属性，并不安全，因为它们可以被外部代码随意修改
+                - 如何确保数据的安全性？
+                    1.私有化数据
+                        - 将需要保护的属性设置为私有，只能在内部使用
+                    2.提供setters和getters方法来开放属性的访问权限
+                        - 属性设置私有，通过getter和setter方法操作属性带来的好处
+                            1.可以控制属性的读取权限
+                            2.可以在方法中对属性的值进行验证
+                        
+                - 封装主要用来保证数据的安全
+                - 实现封装的方式
+                    1.属性私有化
+                    2.通过getters和setters方法来控制属性的访问权限
+                        get 属性名() {
+                            return this._属性名;
+                        }
+
+                        set 属性名(value) {
+                            //对属性值进行验证
+                            if (value < 0) {
+                                console.log('属性值不能为负数');
+                                return;
+                            }
+                            this._属性名 = value;
+                        }
+        */
+
+        class Person {
+            //使用#开头定义私有属性
+            //私有属性只能在类的内部访问，外部代码无法访问
+            #address = '花果山'
+
+            //私有化属性，必须先声明属性，再定义构造函数
+            #name
+            #age
+            #gender
+
+            constructor(name, age, gender) {
+                this.#name = name;
+                this.#age = age;
+                this.#gender = gender;
+            }
+
+            sayHello() {
+                console.log(this.#name, this.#address);
+            };
+
+
+            //getter方法用来读取私有属性
+            getName() {
+                return this.#name;
+            }
+
+            //setter方法用来修改私有属性
+            setName(name) {
+                this.#name = name;
+            }
+
+            getAge() {
+                return this.#age;
+            }
+
+            setAge(age) {
+                if (age < 0) {
+                    console.log('年龄不能为负数');
+                    return;
+                }
+                this.#age = age;
+            }
+
+            //上面的getter和setter方法是旧的写法
+            //ES6提供了更简洁的写法，直接在属性前加上get和set关键字
+            get gender() {
+                return this.#gender;
+            }
+
+            set gender(gender) {
+                this.#gender = gender;
+            }
+        }
+
+        const p1 = new Person('孙悟空', 18, '男');
+
+        // p1.age = 'hello'  // 直接修改属性，不安全
+
+        p1.setName('猪八戒');
+
+        //错误的赋值，年龄不能为负数
+        p1.setAge(-19);
+
+        p1.gender = '女'; //这个时候调用的是set gender方法
+
+        console.log(p1);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

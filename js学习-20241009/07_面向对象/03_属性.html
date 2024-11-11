@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>属性</title>
+    <script>
+        /* 
+            类是创建对象的模板，要创建第一件事就是创建类。
+
+            类自带严格模式，所以不需要使用"use strict"语句。
+        */
+
+        class Person {
+            /* 
+                类的代码块，默认就是严格模式            
+                    类的代码块是用来设置对象属性的，不是什么代码可以都可以写
+            */
+            name = "孙悟空"   //Person的实例属性name p1.name
+            age = 18  //实例属性，只能通过实例访问age p1.age
+
+            static test = "test"  //静态属性，只能通过类名访问 Person.test
+        }
+
+        const p1 = new Person();
+        const p2 = new Person();
+
+        console.log(p1);
+        console.log(p2);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
