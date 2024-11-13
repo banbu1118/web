@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原型对象</title>
+    <script>
+        class Person {
+            name = "孙悟空"
+            age = 18
+
+            sayHello() {
+                console.log("hello, my name is " + this.name);
+            }
+        }
+
+        class Dog {
+
+        }
+
+        const p = new Person();
+        const p2 = new Person();
+
+        const d = new Dog();
+        const d2 = new Dog();
+
+        /* 
+            所有的同类对象它们的原型对象都是同一个
+                也就意味着同类对象它们的原型对象是相同的
+
+            原型的作用：
+                原型就相当于一个公共的区域，它可以被所有该类实例访问
+                    可以将一个该类实例中，所有的公共属性和方法，都放在原型上，
+                    这样就可以让所有该类实例都可以访问到这些属性和方法。
+
+                js中继承就是通过原型来实现的
+                    当我们继承时，子类的原型就是父类的实例
+                
+            在对象中有些值是对象独有的，像属性(name,age,gender)，每个对象都有自己的属性，
+                但是有些值对于每个对象都是一样的，比如一些方法，这些方法对于每个对象都是一样的，
+                所以可以将这些方法放在原型上，这样就可以让所有该类实例都可以访问到这些方法。
+
+            尝试：
+                函数的原型链是什么样？
+                Object的原型链是什么样？
+        */
+
+        console.log(p);
+        console.log(p2);
+        console.log(p === p2);  // false
+
+        //同类对象它们的原型对象都是同一个
+        console.log(p.__proto__ === p2.__proto__);  // true
+
+        //不同类对象它们的原型对象不同
+        console.log(d.__proto__ === p2.__proto__);  //false
+
+        class Animal { }
+
+        class Cat extends Animal { }
+
+        const cat = new Cat();
+
+        console.log(cat);
+        console.log(cat.__proto__);
+        console.log(cat.__proto__.__proto__);
+        console.log(cat.__proto__.__proto__.__proto__);
+        console.log(cat.__proto__.__proto__.__proto__.__proto__);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
