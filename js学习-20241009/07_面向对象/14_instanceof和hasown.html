@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <title>instanceof和hasown</title>
+    <script>
+        class Animal { }
+        class Dog extends Animal { }
+        const dog = new Dog();
+
+        /* 
+            instanceof用来检查一个对象是否是某个类的实例，返回true或false。
+                - instanceof检查的是该对象的原型链是否有该类实例
+                    只要原型链上有该类实例，就返回true，否则返回false。
+
+                - 
+                    dog -> animal -> Object -> null
+                    dog -> Dog -> Animal -> Object -> null
+
+                - object是所有对象的原型，所以任何和对象object进行instanceof的操作，都会返回true。
+        */
+        // console.log(dog instanceof Dog);     // true
+        // console.log(dog instanceof Animal);  // true
+        // console.log(dog instanceof Object);  // true
+
+        const obj = new Object();
+        // console.log(obj.__proto__);
+        // console.log(Object.prototype);
+        // console.log(Object.prototype ===obj.__proto__); // true
+
+        class Person {
+            name = "孙悟空"
+            age = 18
+
+            sayHello() {
+                console.log("hello,我是" + this.name);
+            }
+        }
+        const p = new Person()
+        /* 
+            in
+                - in用来判断对象是否有某个属性，返回true或false
+                - 无论属性是在对象本身还是原型链上，都可以用in判断。
+
+            hasOwnProperty(不推荐使用了)
+                - 用法
+                    对象.hasOwnProperty(属性名)
+                    判断对象本身是否有该属性，返回true或false。
+                    注意：hasOwnProperty只判断对象本身的属性，不包括原型链上的属性。
+
+            Object.hasOwn(推荐使用)
+                - 用法
+                    Object.hasOwn(对象,属性名)
+                    判断对象本身是否有该属性，返回true或false。
+                    注意：Object.hasOwn只判断对象本身的属性，不包括原型链上的属性。
+
+        */
+        console.log("name" in p)      //true
+        console.log("sayHello" in p)    //true
+
+        console.log(p.hasOwnProperty("name"))    //true
+        console.log(p.hasOwnProperty("sayHello"))    //false
+
+        //hasprototype也在原型当中
+        console.log(p.__proto__.__proto__.hasOwnProperty("hasOwnProperty"));    //true
+
+        //Object.hasOwn
+        //用来判断对象是否有某个属性，返回true或false。
+        //注意：Object.hasOwn只判断对象本身的属性，不包括原型链上的属性。
+        console.log(Object.hasOwn(p, "name"));    //true
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
