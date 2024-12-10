@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组里的方法</title>
+    <script>
+        const arr = ["孙悟空", "猪八戒", "沙和尚", "唐僧", "沙和尚"]
+
+        /* 
+            indexof()
+                - 获取元素在数组中第一次出现的索引，如果不存在则返回-1。
+                - 参数：
+                    1.要查询的元素
+                    2.查询的起始位置（可选，默认为0）
+                
+            lastIndexOf()
+                - 获取元素在数组中最后一次出现的索引，如果不存在则返回-1。
+                - 参数：
+                    1.要查询的元素
+                    2.查询的起始位置
+
+            join()
+                - 将一个数组中元素连接成一个字符串。
+                - 参数：
+                    1.分隔符（可选，默认为逗号）
+
+            slice()
+                - 截取数组的一部分，返回一个新数组。(非破坏性操作)
+                - 参数：
+                    1.起始索引（可选，默认为0）
+                    2.结束索引，不包括该位置（可选，默认为数组长度）
+                        - 第二个参数可以省略，表示截取到数组末尾
+                        - 索引可以是负值，表示从数组末尾向前数的位置
+                    3.如果两个参数都省略，则返回整个数组的浅拷贝。
+
+        */
+
+        // let result = arr.indexOf("沙和尚",3)    // 从索引3开始查询
+
+        // let result = arr.lastIndexOf("沙和尚")    // 从数组末尾开始查询
+        // let result = arr.lastIndexOf("沙和尚", 3)
+
+        // result = arr.lastIndexOf("白骨精")    // 没有查询到，返回-1
+
+        // result = arr.join()    // 将数组元素连接成一个字符串，默认使用逗号分隔
+        // result = arr.join("-")    // 将数组元素连接成一个字符串，使用"-"分隔
+
+        // result = arr.slice(0,2)    // 截取数组的前两个元素，返回一个新数组
+
+        // result = arr.slice(2)    // 截取数组的从索引2开始到末尾的所有元素，返回一个新数组
+
+        // result = arr.slice(-2)    // 截取数组的最后两个元素，返回一个新数组
+
+        result = arr.slice()     // 截取整个数组，返回一个新数组
+
+        console.log(result)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
