@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象的复制</title>
+    <script>
+        const arr = ["孙悟空", "猪八戒", "沙和尚"]
+
+        // 数组的浅拷贝
+        const arr2 = arr.slice()
+
+        // console.log(arr2 === arr);     // false
+
+        /* 
+            ...(展开运算符)
+                - 可以将一个数组中的元素展开到另一个数组中或作为函数的参数传递
+        */
+        //手动实现数组的浅拷贝
+        // const arr3 = [arr[0], arr[1], arr[2]]
+
+        //利用展开运算符实现浅拷贝，和上面手动拷贝的结果一样
+        const arr3 = [...arr]
+
+        //复制的同时修改原数组的值
+        // const arr3 = ["唐僧", ...arr, "白骨精"] //
+
+        // console.log(arr);
+        // console.log(arr3);
+
+        function sum(a, b, c) {
+            return a + b + c;
+        }
+
+        const arr4 = [10, 20, 30]
+
+        // let result = sum(arr4[0], arr4[1], arr4[2])
+
+        //简写为
+        const result = sum(...arr4)
+
+        // console.log(result);
+
+        /* 
+        
+            对象的复制
+                - Object.assign(目标对象,被复制对象)
+                - 被复制对象中的属性元素复制到目标对象，并返回目标对象
+
+            - 也可以使用展开运算符对对象进行复制
+        */
+
+        const obj = { name: "孙悟空", age: 18 }
+
+
+        // const obj2 = ({}, obj)
+
+        //把后面这个对象属性和元素复制到前面这个对象中
+        //会增加新属性，会覆盖已有属性
+        const obj2 = { address: "北京市海淀区西二旗", age: 20 }
+
+        Object.assign(obj2, obj)
+
+        // console.log(obj2);
+
+        // console.log(obj2 === obj); // false
+
+        //利用展开运算符实现对象浅拷贝
+        //会增加新属性，会覆盖已有属性,18会覆盖5,后面的25会覆盖前面的18
+        const obj3 = { address: "高老庄", age: 5, ...obj, age: 25 }
+
+        console.log(obj3);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

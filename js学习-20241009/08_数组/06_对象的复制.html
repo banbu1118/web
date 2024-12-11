@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象的复制</title>
+    <script>
+        const arr = ["孙悟空", "猪八戒", "沙和尚"]
+
+        // const arr2 = arr
+
+        //这不是复制，只是创建了两个变量，指向同一个数组对象
+        // arr[0] = "唐僧" // 修改arr的第一个元素，会影响arr2的第一个元素
+
+        //复制必须产生一个新对象
+        //当调用slice()方法时，会产生一个新的数组对象，从而完成数组的复制
+        const arr3 = arr.slice()
+
+        arr[0] = "唐僧"
+
+        console.log(arr);
+        console.log(arr3);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
