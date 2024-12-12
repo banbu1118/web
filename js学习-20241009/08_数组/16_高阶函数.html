@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高阶函数</title>
+    <script>
+        /* 
+            高阶函数：
+                - 如果一个函数的参数或者返回值是一个函数，那么这个函数就称为高阶函数
+                - 为什么要将函数作为参数传递(回调函数的作用)？
+                    - 将函数作为参数，意味着可以对另一个函数可以动态的传递代码，从而实现代码的可复用
+        */
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+        }
+
+        const personArr = [
+            new Person("孙悟空", 18),
+            new Person("沙和尚", 38),
+            new Person("猪八戒", 8),
+            new Person("白骨精", 16),
+        ]
+
+        //filter函数用来过滤数组中的元素
+        /* 
+            目前我们的函数只能过滤age小于18的对象
+                希望过滤更加灵活
+                    比如：过滤数组中大于18的对象
+                            age大于60的对象
+                            age大于n的对象
+                        过滤数组中的偶数
+                        过滤数组中的奇数
+                        ...
+
+            一个函数的参数也可以是函数
+                如果将函数作为参数，我们就称这个函数为回调函数(callback function)
+        */
+        function filter(arr, cd) {
+
+            const newArr = []
+
+            // console.log("-->", cd);
+
+            for (let i = 0; i < arr.length; i++) {
+                // if (arr[i].age < 18) 
+                // if (arr[i].age < 18) 
+                // if (arr[i].age < 60)
+                if (cd(arr[i])) {
+                    newArr.push(arr[i])
+                }
+            }
+            return newArr
+        }
+
+        //我们这样定义回调函数的形式比较少见，通常回调函数都是匿名函数
+
+        // function fn(a) {
+        //     // return a.age < 18
+        //     return a.name === "孙悟空"
+        // }
+
+        // let result = filter(personArr, a => a.name === "孙悟空")
+        let result = filter(personArr, a => a.name === "孙悟空")
+
+        const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+        result = filter(arr, a => a % 2 === 0)
+
+        console.log(result);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

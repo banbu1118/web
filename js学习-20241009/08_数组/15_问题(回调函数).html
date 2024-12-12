@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>问题(回调函数)</title>
+    <script>
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+        }
+
+        const personArr = [
+            new Person("孙悟空", 18),
+            new Person("沙和尚", 38),
+            new Person("猪八戒", 8),
+            new Person("白骨精", 16),
+        ]
+
+        //filter函数用来过滤数组中的元素
+        /* 
+            目前我们的函数只能过滤age小于18的对象
+                希望过滤更加灵活
+                    比如：过滤数组中大于18的对象
+                            age大于60的对象
+                            age大于n的对象
+                        过滤数组中的偶数
+                        过滤数组中的奇数
+                        ...
+
+            一个函数的参数也可以是函数
+                如果将函数作为参数，我们就称这个函数为回调函数(callback function)
+        */
+        function filter(arr, cd) {
+
+            const newArr = []
+
+            // console.log("-->", cd);
+
+            for (let i = 0; i < arr.length; i++) {
+                // if (arr[i].age < 18) 
+                // if (arr[i].age < 18) 
+                // if (arr[i].age < 60)
+                if (cd(arr[i])) {
+                    newArr.push(arr[i])
+                }
+            }
+            return newArr
+        }
+
+        function fn(a){
+            // return a.age < 18
+            return a.name === "孙悟空"
+        }
+
+        let result = filter(personArr, fn)
+        console.log(result);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
