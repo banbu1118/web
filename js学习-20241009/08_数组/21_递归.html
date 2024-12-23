@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>递归</title>
+    <script>
+        /* 
+            递归：
+                - 调用自身的函数称为递归
+                - 递归的作用和循环是基本一致的 
+        */
+
+        //想创建一个函数，用来求任意数的阶乘
+        /* 
+           1! = 1
+           2! = 1 * 2 = 2
+           3! = 1 * 2 * 3 = 6
+           4! = 1 * 2 * 3 * 4 = 24
+          ...
+           n! = 1 * 2 * 3 *... * n = n * (n-1) * (n-2) *... * 2 * 1
+
+           如何用递归来解决这个问题呢？
+                5! = 5 * 4!
+                4! = 4 * 3!
+                3! = 3 * 2!
+                2! = 2 * 1!
+                1! = 1
+
+            递归的核心思想就是将一个问题分解成更小的子问题，然后递归地解决这些子问题，最后再合并这些子问题的结果得到原问题的解。
+
+            编写递归的条件：
+                1. 基线条件-递归的终止条件
+                2. 递归条件-如何对问题就行分解
+
+            递归的作用和循环是一致的，不同点在于，递归的思路比较清晰，循环的性能更好
+                在开发中，一般的问题都可以用循环，少用递归
+                只在一些使用循环比较麻烦的情况下，才会使用递归
+        */
+
+        //用for循环来求阶乘
+        function jieChen(num) {
+            //创建一个变量，用来保存结果
+            let result = 1;
+            //创建一个循环，用来求阶乘
+            for (let i = 2; i <= num; i++) {
+                result *= i;
+            }
+            //返回结果
+            return result;
+        }
+
+        // let result = jieChen(3)
+        // console.log(result);
+
+        //用递归来求阶乘
+        function jieChen2(num) {
+            //基线条件
+            //如果num等于1，则返回1
+            if (num === 1) {
+                return 1;
+            }
+            //递归条件
+            //否则，返回num乘以jieChen2(num-1)
+            return num * jieChen2(num - 1);
+        }
+
+        let result2 = jieChen2(3);
+        console.log(result2);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
