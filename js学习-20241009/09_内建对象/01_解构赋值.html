@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解构赋值</title>
+    <script>
+        /* 
+            结构赋值
+         */
+        const arr = ["孙悟空", "猪八戒", "沙和尚"]
+        let a, b, c
+
+        // a = arr[0]
+        // b = arr[1]
+        // c = arr[2]
+
+        // [a, b, c] = ["孙悟空", "猪八戒", "沙和尚"]
+
+        // 结构赋值的简写
+        // [a, b, c] = arr
+
+
+        // let [d, e, f, g] = [1, 2, 3]   //声明同时解构 1 2 3 undefined
+
+        // [d, e, f, g = 10] = [1, 2, 3]   //给g赋默认值 10
+        // [d, e] = [1, 2, 3]   //只解构 1 2
+        [n1, n2, ...n3] = [1, 2, 3, 7] //解构数组时，...表示剩余元素，n3是一个数组
+
+        // console.log(n1, n2, n3)
+
+        function fn() {
+            return ["二郎神", "猪八戒"]
+        }
+
+        // let [name1, name2] = fn()
+        // console.log(name1, name2)
+
+        //可以通过解构赋值来快速交换两个变量的值
+        let a1 = 10
+        let a2 = 20
+
+            // let temp = a1
+            // a1 = a2
+            // a2 = temp
+
+            ;[a1, a2] = [a2, a1]    //开头添加;表示这行单独执行
+
+        // console.log("a1 =", a1);
+        // console.log("a2 =", a2);
+
+        const arr2 = ["孙悟空", "猪八戒"]
+            // console.log(arr2);
+
+            ;[arr2[0], arr2[1]] = [arr2[1], arr2[0]]
+
+        // console.log(arr2)
+
+        /* 
+            数组中可以存储任意类型的数据，也可以存数组
+                如果一个数组中的元素还是数组，则这个数组我就称为是二维数组
+        */
+        //    const arr3 = [[1,2,3],[3,4,5]]
+
+        //    console.log(arr3[0][1]); //访问数组中数组的元素
+
+        const arr3 = [["孙悟空", 18, "男"], ["猪八戒", 28, "男"]]
+
+        //遍历二维数组
+        // for (let stu of arr3) {
+        //     for (let val of stu) {
+        //         console.log(val);
+        //     }
+        // }
+
+        let [[name, age, gender], obj] = arr3
+        console.log(name, age, gender, obj) //孙悟空 18 男 (3) ['猪八戒', 28, '男']
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

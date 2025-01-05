@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象的解构</title>
+    <script>
+        const obj = { name: '孙悟空', age: 20, gender: '男' }
+
+        // let  name = obj.name
+        // let  age = obj.age
+        // let  gender = obj.gender
+
+        //对象的解构用{}
+        // let { name, age, gender } = obj;    //声明变量同时解构对象赋值
+
+        let name, age, gender;    //先声明变量
+        ({ name, age, gender } = obj);    //再解构对象赋值，注意前后添加括号
+
+        // console.log(name, age, gender);
+
+        let { address } = obj
+        // console.log(address)     //没有的属性，返回undefined
+
+        // let { name: a, age: b, gender: c, add = "花果山" } = obj   //别名赋值,add为默认值
+        let { name: a, age: b, gender: c, add: d = "花果山" } = obj   //别名赋值,add为默认值,如果d没有值，则赋值默认值"花果山"
+
+        console.log(a, b, c, d);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
