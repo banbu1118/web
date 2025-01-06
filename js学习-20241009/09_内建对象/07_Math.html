@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math</title>
+    <script>
+        /* 
+            Math
+                - Math 一个工具类
+                - Math 中为我们提供了一些常用的数学计算的常量和方法
+                - 常量
+                    Math.PI 圆周率
+                    Math.E 自然常数
+                - 方法
+                    Math.abs(x) 返回 x 的绝对值
+                    Math.min()   返回所有参数中的最小值
+                    Math.max()   返回所有参数中的最大值
+                    Math.pow(x,y) 返回 x 的 y 次方
+                    Math.sqrt(x)  返回 x 的平方根
+
+                    Math.round(x) 四舍五入
+                    Math.floor(x) 向下取整
+                    Math.ceil(x)  向上取整
+                    Math.trunc(x) 去除小数部分，返回整数部分
+
+                    Math.random() 返回 0-1 之间的伪随机数
+        */
+
+        // 常量PI
+        console.log(Math.PI);
+
+        // 常量E
+        console.log(Math.E);
+
+        //绝对值
+        let resul = Math.abs(-10);
+
+        // 最小值
+        resul = Math.min(1, 2, 3, 4, 5);
+
+        // 最大值
+        resul = Math.max(1, 2, 3, 4, 5);
+
+        // 平方根
+        resul = Math.sqrt(16);  // 4
+
+        // x的y次方
+        resul = Math.pow(2, 3);  // 2***3=8
+
+        // 四舍五入
+        resul = Math.round(3.5);  // 4
+
+        // 向下取整
+        resul = Math.floor(3.1);  // 3
+
+        // 向上取整
+        resul = Math.ceil(3.1);  // 4
+
+        // 去除小数部分，返回整数部分
+        resul = Math.trunc(3.5);  // 3
+
+        // 随机数
+        resul = Math.random();  // 0-1 之间的随机数
+        resul = Math.random() * 100;  // 0-100 之间的随机数
+
+        //随机整数
+        resul = Math.floor(Math.random() * 100);  // 0-99 之间的随机整数
+        resul = Math.floor(Math.random() * 1000);   // 0-999 之间的随机整数
+        resul = Math.floor(Math.random() * 10 + 1);   // 1-10 之间的随机整数
+
+        console.log(resul);
+
+        //得到一个两数之间的随机数
+        function getRandomArbitrary(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        //得到一个两数之间的随机整数
+        function getRandomInt(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); // 不包含最大值，包含最小值
+        }
+
+        //得到一个两数之间的随机整数，包括两个数在内
+        function getRandomIntInclusive(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); // 包含最小值和最大值
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

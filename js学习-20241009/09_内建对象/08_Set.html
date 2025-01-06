@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>set</title>
+    <script>
+        /* 
+            set
+                -set用来创建集合
+                - 它的功能和数组类似，不同点在于set不能存储重复的值
+
+            使用方式：
+                创建
+                    - new Set() 创建一个空的set
+                    - new Set(item ...)
+
+                方法
+                    - add(item) 添加元素
+                    - delete(item) 删除元素
+                    - has(item) 判断元素是否存在
+                    - clear() 清空set
+                    - size 获取set的长度
+        */
+       // 创建一个空的set
+        const set = new Set();
+
+        // 添加元素
+        set.add(10)
+        set.add("孙悟空")
+        set.add(10) // 重复的元素不会被添加
+
+        // 删除元素
+        // set.delete(10)
+
+        // 判断元素是否存在
+        // console.log(set.has(10)); // false
+
+        // 遍历set
+        // for(let item of set){
+        //     console.log(item);
+        // }
+
+        // 转换成数组
+        const arr = [...set]
+        // console.log(arr);
+
+        //数组去重
+        const arr2 = [1,2,3,2,1,3,5,6,2,4,5,6,7,8,9,5,10]
+        const set2 = new Set(arr2)
+        const arr3 = [...set2]
+        console.log(arr3);
+
+        // console.log(set);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

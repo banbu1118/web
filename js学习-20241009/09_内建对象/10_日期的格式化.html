@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日期的格式化</title>
+    <script>
+        const d = new Date();
+
+        //把日期转化为本地字符串格式
+        let result = d.toLocaleDateString();    //2025/1/7
+
+        result = d.toLocaleTimeString();    //01:52:36
+
+        result = d.toLocaleString();        //2025/1/7 01:52:48
+
+        /* 
+            toLocalString()
+                - 可以将一个日期转化为本地时间格式的字符串。
+                - 参数：
+                    1.描述语言和国家地区的字符串
+                        zh-CN 中文-中国
+                        zh-HK 中文-香港
+                        zh-TW 中文-台湾
+                        en-US 英文-美国
+                    2.需要一个对象作为参数，在对象中可以通过对象的属性来设置语言和时区。
+                        datestyle: "full" 日期的风格
+                        timestyle: "short" 时间的风格
+                            full long medium short
+                        hour12: true/false 是否使用12小时制
+                            false true
+                        weekday: "long" 星期的名称
+                            long short narrow
+                        year:"numeric" 年份的格式
+                            2-digit numeric
+        */
+        // result = d.toLocaleString("zh-CN", { dateStyle: "full", timeStyle: "medium", hour12: false})
+        // result = d.toLocaleString({ weekday: "narrow" })
+        result = d.toLocaleString({ year: "2-digit", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", second: "2-digit" })
+        console.log(result);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
