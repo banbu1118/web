@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则表达式语法-2</title>
+    <script>
+        /* 
+            量词
+                {m} 匹配m次
+                {m,} 至少匹配m次
+                {m,n} 匹配m到n次
+                + 匹配1次或多次，等价于{1,}
+                * 匹配0次或多次，等价于{0,}
+                ? 匹配0次或1次，等价于{0,1}
+        */
+        let re = /a{3}/ // 匹配a出现3次的字符串
+        re = /^a{3}$/ // 匹配a出现3次的字符串，并且字符串的开头和结尾都为a
+        re = /^[a-z]{3}$/ // 匹配3个小写字母，完全匹配
+        re = /^[a-z]{1,}$/ // 匹配1到多个小写字母，至少1个
+        re = /^[a-z]{1,3}$/ // 匹配1到3个小写字母，至少1个，最多3个
+        re = /^ba+$/ // 匹配b后面跟着1个或多个a的字符串
+        re = /^ba*$/ // 匹配b后面跟着0个或多个a的字符串
+        re = /^ba?$/ // 匹配b后面跟着0个或1个a的字符串
+
+        let result = re.test("b")
+
+        console.log(result);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

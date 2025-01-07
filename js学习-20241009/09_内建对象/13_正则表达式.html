@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则表达式</title>
+    <script>
+        /* 
+            正则表达式
+                - 用来定义一个规则
+                - 通过这个规则，计算机是否符合规则
+                    或者将字符串中符合规则的部分提取出来
+                - 正则表达式也是js中的一个对象
+                    所以要使用正则表达式，必须先创建正则表达式对象
+        */
+
+        // 通过构造函数创建正则表达式对象
+        //new RegExp()可以接收两个参数，1. 正则表达式字符串，2. 匹配模式
+        let reg = new RegExp("a", "i");
+
+        // 通过字面量创建正则表达式对象
+        reg = /a/i;    // 等价于new RegExp("a","i")
+
+        reg = /\w/
+
+        reg = new RegExp("\\w")   // 等价于 /\w/
+
+        // console.log(reg);
+
+        //检查一个字符串中是否有a
+        reg = new RegExp("a")
+
+        //通过正则表达式来检查一个字符串是否符合规则
+        let str = "a"
+
+        //用reg检查str是否符合规则
+        let result = reg.test(str)   // true
+
+        result = reg.test("b")   // false
+        result = reg.test("abc")     // true
+        result = reg.test("ABC")     // false
+
+        console.log(result);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

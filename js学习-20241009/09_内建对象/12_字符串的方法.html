@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符串的方法</title>
+    <script>
+        /* 
+            https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+
+            字符串：
+                - 字符串其本质就是一个字符数组
+                - "hello" -> ["h", "e", "l", "l", "o"]
+                - 字符串的很多方法都和数组类似
+                - 属性和方法：
+                    - str.length：返回字符串的长度
+                    - str.charAt(index)：返回指定索引处的字符，老方法，不推荐使用
+                        - 不支持负数索引
+                    - str.at(index)：返回指定索引处的字符，新方法，推荐使用
+                        - 支持负数索引
+                    - str.concat(str2, str3,...)：返回一个新的字符串，该字符串是将多个字符串连接后的结果
+                    - str.includes(str2)：判断字符串是否包含指定字符串，返回布尔值
+                    - str.indexOf(str2)：返回指定字符串第一次出现的索引，如果没有找到，返回-1
+                    - str.lastIndexOf(str2)：返回指定字符串最后一次出现的索引，如果没有找到，返回-1
+                    - str.endsWith(str2)：判断字符串是否以指定字符串结尾，返回布尔值
+                    - str.startsWith(str2)：判断字符串是否以指定字符串开头，返回布尔值
+                    - str.padStart(length, padString)：返回一个新的字符串，该字符串是原字符串在左侧填充指定字符后的结果
+                    - str.padEnd(length, padString)：返回一个新的字符串，该字符串是原字符串在右侧填充指定字符后的结果
+                    - str.repeat(count)：返回一个新的字符串，该字符串是原字符串重复指定次数后的结果
+                    - str.replace(str1, str2)：返回一个新的字符串，该字符串是原字符串中所有出现的str1替换为str2后的结果
+                    - str.replaceAll(str1, str2)：返回一个新的字符串，该字符串是原字符串中所有出现的str1替换为str2后的结果，与replace的区别是replaceAll是全局替换，而replace只替换第一个出现的str1
+                    - str.slice(start, end)：返回一个新的字符串，该字符串是原字符串从start开始到end结束的切片结果
+                    - str.substring(start, end)：返回一个新的字符串，该字符串是原字符串从start开始到end结束的切片结果
+                    - str.split(separator, limit)：返回一个数组，该数组是原字符串按照separator切割后的结果，如果limit指定了，则最多返回limit个元素
+                    - str.toLowerCase()：将字符串转换为小写，返回新的字符串
+                    - str.toUpperCase()：将字符串转换为大写，返回新的字符串
+                    - str.trim()：去除字符串两端的空格，返回新的字符串
+                    - str.trimLeft()：去除字符串左侧的空格，返回新的字符串
+                    - str.trimRight()：去除字符串右侧的空格，返回新的字符串
+
+        */
+        let str = "hello"
+        // console.log(str.length);
+        // console.log(str[0]);
+
+        // for(let char of str){
+        //     console.log(char);
+        // }
+
+        // console.log(str.at(0));
+
+        str = "hello hello how are you"
+
+        //13表示从第13个字符开始查找
+        // console.log(str.includes("how", 13));
+
+        // console.log(str.indexOf("hello"));  // 0
+        // console.log(str.lastIndexOf("hello")); // 13
+        // console.log(str.indexOf("hhh")); // -1
+
+        // console.log(str.endsWith("you")); // true
+        // console.log(str.startsWith("hello")); // true
+
+        str = "100"
+
+        //第二个参数表示填充的字符，默认为空格
+        // console.log(str.padStart(5, "0")); // "00100", 字符串长度不够时，在左侧填充0
+        // console.log(str.padEnd(5, "0")); // "10000", 字符串长度不够时，在右侧填充0
+        // console.log(str.padStart(6, "-"));   // "----100", 字符串长度不够时，在左侧填充-
+
+        // console.log(str.repeat(3)); // "100100100", 重复字符串
+
+        str = "hello hello how are you"
+
+        // let result = str.replace("hello", "abc")    // 替换一个字符串, 返回abc hello how are you
+        // result = str.replaceAll("hello", "abc")   // 替换所有字符串, 返回abc abc how are you
+
+        result = str.slice(12, 15)    // 截取字符串
+        result = str.substring(12, 15)    // 截取字符串
+
+        // console.log(result);
+
+        str = "abc@bcd@cde@def@jqk"
+
+        // console.log(str.split("@"))    // ["abc", "bcd", "cde", "def", "jqk"]
+
+        str = "abcdABCD"
+
+        // console.log(str.toLowerCase()); // "abcdabcd"
+        // console.log(str.toUpperCase()); // "ABCDABCD"
+
+        str = "   a  b  c    "
+
+        console.log(str.trim());    // "a  b  c",去除前后空格
+        console.log(str.trimLeft());    // "a  b  c    ",去除左侧空格
+        console.log(str.trimRight());    // "   a  b  c",去除右侧空格
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
