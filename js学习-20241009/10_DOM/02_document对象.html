@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document对象</title>
+</head>
+
+<body>
+    <a href="#"></a>
+    <script>
+        /*
+            document对象：
+                - document对象表示的是整个网页
+                - document对象的原型链
+                    HTMLDocument -> Document -> Node -> EventTarget -> Object -> null
+                - 凡是在原型链上存在的属性和方法，都可以在document对象上使用
+                - 部分属性
+                    document.documentElement：返回网页的根元素（html）
+                    document.body：返回网页的body元素
+                    document.title：返回网页的标题
+                    document.head：返回网页的head元素
+                    document.linsk：返回当前页面的URL
+                    ...
+        */
+        console.log(document.links);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符串正则匹配</title>
+    <script>
+        /* 
+            split()
+                - 可以根据正则表达式来对一个字符串进行拆分
+            search()
+                - 可以去搜索符合正则表达式的内容第一次在字符串中出现的位置
+            replace()
+                - 根据正则表达式替换字符串的内容
+            match()
+                - 根据正则表达式去匹配字符串中要求的内容
+            matchAll()
+                - 必须设置g参数
+                - 根据正则表达式去匹配字符串中所有符合要求的内容，返回的是一个迭代器
+        */
+        let str = "a@b@c@d"
+
+        let result = str.split("@")
+
+        str = "孙悟空abc猪八戒adc沙和尚"
+
+        result = str.split(/a[bd]c/) //可以把拆分为['孙悟空', '猪八戒', '沙和尚']
+
+        str = "dajsdh13715678903jasdlakdkjg13457890657djashdjka13811678908sdadadasd"
+
+        result = str.search("abc")
+
+        result = str.search(/1[3-9]\d{9}/)
+
+        result = str.replace(/1[3-9]\d{9}/g, "哈哈哈") //加上g表示全局替换，不加g表示只替换第一个匹配项
+
+        result = str.match(/1[3-9]\d{9}/g) //返回所有匹配项
+
+        result = str.matchAll(/1[3-9]\d{9}/g) //返回所有匹配项，返回的是一个迭代器
+
+        // 迭代器的用法,直接用
+        for (let item of result) {
+            // console.log(item)
+            console.log(item[0]);    // 索引0匹配手机号
+        }
+
+        // console.log(result);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
