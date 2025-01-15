@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>属性节点</title>
+</head>
+
+<body>
+    <input disabled="disabled" class="a" type="text" name="username" value="admin">
+
+    <script>
+        /*
+            属性节点(Attribute Node)
+                - 在dom中也是一个对象，通常不需要获取对象，而是直接通过元素即可完成对其的各种操作
+                - 如何操作属性节点
+                    方式一：
+                        读取：元素.属性名(class属性需要使用className来改)
+                            读取一个布尔值，会返回true或false
+
+                        修改: 元素.属性名 = 属性值
+
+                    方式二：
+                        读取：元素.getAttribute(属性名)
+
+                        修改：元素.setAttribute(属性名, 属性值)
+
+                        删除：元素.removeAttribute(属性名)
+
+        */
+        //const input = document.getElementsByName("username")[0]   //[0]
+
+        const input = document.querySelector("[name=username]")
+
+        // 读取属性值
+        // console.log(input.name);
+        // console.log(input.value);
+        // console.log(input.type);
+
+        // 读取属性
+        console.log(input.getAttribute("type"));
+
+        // 修改属性值
+        input.setAttribute("value", "孙悟空");
+
+        // 删除属性
+        input.removeAttribute("disabled");
+    </script>
+
+</body>
+
+</html>

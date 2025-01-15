@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文档的加载</title>
+    <script>
+        /*
+            网页是自上向下加载的，如果js代码编写在网页上面
+                js代码执行时，网页还没有加载完成，这时候会出现无法获取到dom对象的情况
+
+                window.onload事件会在窗口的内容加载完毕后才触发
+                document.addEventListener会在当前文档加载完毕后才触发
+
+                解决方法：
+                    1.将script标签放在body标签的最后面，这样网页加载完成后才会执行js代码(这个速度最快)
+                    2.将我们的代码编写到window.onload回调函数中
+                    3.将代码编写到document对象的DOMContentLoaded回调函数中(执行时机更早)
+                    4.将代码编写到外部的js文件中，然后以defer或async的方式引入到网页中(这个的执行时间比第三个还早)
+         */
+
+        // window.onload = function () {
+        //     const btn = document.getElementById('btn');
+
+        //     console.log(btn);
+        // }
+
+        // window.addEventListener('load', function () {
+        //     const btn = document.getElementById('btn');
+
+        //     alert(btn);
+        // })
+
+        // document.addEventListener("DOMContentLoaded", function () {
+        //     const btn = document.getElementById('btn');
+
+        //     alert(btn);
+        // })
+
+    </script>
+    <script defer src="./script/script.js"></script>
+</head>
+
+<body>
+    <button id="btn">点我一下</button>
+
+    <iframe src="https://www.lilichao.com/" frameborder="0"></iframe>
+</body>
+
+</html>
