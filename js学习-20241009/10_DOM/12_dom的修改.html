@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom的修改</title>
+
+</head>
+
+<body>
+
+    <button id="btn01">按钮1</button>
+    <button id="btn02">按钮2</button>
+    <hr>
+
+    <ul id="list">
+        <li id="swk">孙悟空</li>
+        <li id="zbj">猪八戒</li>
+        <li id="shs">沙和尚</li>
+    </ul>
+
+    <script>
+         /* 
+            点击按钮后，向ul中添加一个唐僧
+         */
+
+         // 获取按钮元素
+         const btn01 = document.getElementById('btn01');
+
+         // 获取ul元素
+         const list = document.getElementById('list');
+
+         // 绑定点击事件
+         btn01.onclick = function() {
+            //新增一个<li id="ts">唐僧</li>元素
+
+            // 创建一个新的li元素
+            const li = document.createElement('li');
+
+            // 设置li的id属性
+            li.id = 'ts';
+
+            // 设置li的文本内容
+            li.textContent = '唐僧';
+
+            // 将li添加到ul中，默认加到最后
+            // list.appendChild(li);
+
+            //将li添加到ul中
+            list.insertAdjacentElement('beforeend', li);    //加到结束标签前
+            // list.insertAdjacentElement('afterbegin', li);   //加到开始标签后
+            // list.insertAdjacentElement('beforebegin', li) //加到开始标签前(兄弟元素)
+            // list.insertAdjacentElement('afterend', li)    //加到结束标签后(兄弟元素)
+
+            //也可以用这种方式添加
+            list.insertAdjacentHTML('beforeend', '<li id="bgj">白骨精</li>'); 
+         }
+
+         const btn02 = document.getElementById('btn02');
+
+         btn02.onclick = function() {
+            //创建一个蜘蛛精替换孙悟空
+            const li = document.createElement('li');
+            li.textContent = '蜘蛛精';
+            li.id = 'zzj'
+
+            //获取孙悟空元素
+            const swk = document.getElementById('swk');
+
+            //将蜘蛛精元素替换孙悟空元素
+            // list.replaceChild(li, swk);
+
+            //也可以用这种方式替换
+            // swk.replaceWith(li);
+
+            //也可以用这种方式删除
+            swk.remove();
+
+            //增加zzj
+            list.insertAdjacentElement('beforeend', li);
+
+         }
+    </script>
+
+</body>
+
+</html>

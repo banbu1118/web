@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习-2</title>
+    <style>
+        .outer {
+            width: 400px;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        table {
+            width: 400px;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        td,
+        th {
+            border: 1px black solid;
+            padding: 10px 0;
+        }
+
+        form div {
+            margin: 10px 0;
+        }
+    </style>
+
+    <script>
+
+        // window.onload = function () {
+
+        //使用DOMContentLoaded事件代替window.onload事件，因为window.onload事件在页面所有资源加载完毕后才会触发，而DOMContentLoaded事件只会在DOM树构建完成后触发。
+        document.addEventListener('DOMContentLoaded', function () {
+            /* 
+                点击超链接后，删除员工信息
+            */
+
+            function delEmpHandler() {
+                //本练习的超链接，我们不希望它发生跳转，但是跳转行为是超链接的默认行为
+                //只有添加超链接就会触发跳转，事件中可以通过取消默认行为来阻止跳转
+                //使用return false来取消默认行为，只在xxx.xxx = function(){}这种绑定的事件中有效
+                // return false
+
+                //删除当前员工信息，删除当前超链接所在的tr
+                // console.log(this);
+                // this表示当前的超链接
+                //获取this的父节点的父节点tr
+                const tr = this.parentNode.parentNode;
+
+                //获取要删除的员工信息
+                // const empName = tr.getElementsByTagName('td')[0].innerText
+                const empName = tr.firstElementChild.textContent
+
+
+                //弹出一个友好的提示，是否删除
+                //使用confirm()方法弹出一个确认框
+                // confirm()方法返回true表示点击确定，false表示点击取消
+                //如果点击确定，则删除tr
+                if (confirm(`是否删除${empName}信息？`)) {
+                    tr.remove()
+                }
+            }
+
+            //获取所有的超链接
+            const links = document.links
+
+            //为他们绑定点击事件
+            for (let i = 0; i < links.length; i++) {
+                links[i].onclick = delEmpHandler
+
+                //     links[i].addEventListener('click', function (event) {
+                //         alert(123)
+                //         // return false    //无法取消默认行为
+                //     })
+            }
+
+            /* 
+                添加按钮后，将员工信息添加到表格中
+            */
+            //获取添加按钮
+            const btn = document.getElementById('btn')
+
+            //获取tbody
+            const tbody = document.querySelector('tbody')
+
+            //为按钮绑定点击事件
+            btn.onclick = function () {
+                //获取用户输入框的值
+                const name = document.getElementById('name').value
+                const email = document.getElementById('email').value
+                const salary = document.getElementById('salary').value
+
+                //将获取到数据设置为dom对象
+                //这种写法有被xss注入的风险，不建议使用
+                tbody.insertAdjacentHTML('afterend', `
+                <tr>
+                    <td>${name}</td>
+                    <td>${email}</td>
+                    <td>${salary}</td>
+                    <td><a href="javascript:;">删除</a></td>
+                </tr>`)
+
+                //取消跳转的默认行为
+                // return false
+
+                //由于上面的超链接是新添加的，所以它上面没有绑定单击响应函数，所以无法删除
+                //解决办法：为新添加的超链接绑定单击响应函数
+                links[links.length - 1].onclick = delEmpHandler
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div class="outer">
+        <table>
+            <tbody>
+                <tr>
+                    <th>姓名</th>
+                    <th>邮件</th>
+                    <th>薪资</th>
+                    <th>操作</th>
+                </tr>
+                <tr>
+                    <td>孙悟空</td>
+                    <td>swk@hgs.com</td>
+                    <td>10000</td>
+                    <td><a href="javascript:;">删除</a></td>
+                </tr>
+                <tr>
+                    <td>猪八戒</td>
+                    <td>zbj@glz.com</td>
+                    <td>8000</td>
+                    <td><a href="javascript:;">删除</a></td>
+                </tr>
+                <tr>
+                    <td>沙和尚</td>
+                    <td>shs@lsh.com</td>
+                    <td>6000</td>
+                    <td><a href="javascript:;">删除</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <form action="#">
+            <div>
+                <label for="name">姓名</label>
+                <input type="text" id="name" />
+            </div>
+            <div>
+                <label for="email">邮件</label>
+                <input type="email" id="email" />
+            </div>
+            <div>
+                <label for="salary">薪资</label>
+                <input type="number" id="salary" />
+            </div>
+            <button id="btn" type="button">添加</button>
+        </form>
+    </div>
+</body>
+
+</html>
