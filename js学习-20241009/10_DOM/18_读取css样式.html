@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>读取css样式</title>
+    <style>
+        .box1 {
+            /* width: 200px !important; */
+            width: auto;
+            height: 200px;
+            background-color: #bfa !important;
+        }
+
+        .box1::before {
+            content: "hello";
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <button id="btn">点我一下</button>
+
+    <hr />
+
+    <div class="box1"></div>
+
+    <script>
+        /* 
+            点击按钮后，去读元素的css样式
+        */
+        const btn = document.getElementById('btn');
+        const box1 = document.querySelector('.box1');
+
+        btn.onclick = function () {
+
+            /* 
+                getComputedStyle() 
+                    - 方法返回一个对象，包含了指定元素最终所有生效的样式。
+                    - 参数
+                        1.要获取样式的对象
+                        2.要获取的伪元素
+                    - 返回值：
+                        返回的是一个对象，对象中存储了当前的样式
+
+                    - 注意：
+                        样式对象的返回值，不一定能拿来直接使用，所以使用时一定要确保值是可以计算的
+            */
+            const obj = getComputedStyle(box1)
+
+            //获取box1的width属性值
+            console.log(obj.width);
+
+            //注意返回的width属性值是字符串类型，需要转换成数字类型才能进行运算
+            console.log(parseInt(obj.width) + 100);
+
+            //设置样式加上单位
+            box1.style.width = parseInt(obj.width) + 100 + 'px';
+
+            //获取box1的background-color属性值
+            console.log(obj.backgroundColor);
+
+            //获取box1的::before伪元素的样式
+            const beforeStyle = getComputedStyle(box1, '::before')
+
+            console.log(beforeStyle);
+        }
+
+    </script>
+
+</body>
+
+</html>
