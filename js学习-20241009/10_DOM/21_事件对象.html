@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件对象</title>
+    <style>
+        #box1 {
+            width: 300px;
+            height: 300px;
+            border: 10px greenyellow solid;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1"></div>
+
+    <script>
+        /*
+            event 事件对象
+                - 事件对象
+                - 事件对象是浏览器在事件触发时创建的对象
+                    这个对象中封装了事件相关的各种信息
+                - 通过事件对象可以获取到事件的详细信息
+                    如：鼠标点击的位置、按键的按下状态、鼠标滚轮的滚动方向等
+                - 浏览器在创建事件对象后，会将事件对象作为响应函数的参数传递
+                    所以我们可以在事件的回调函数定义一个形参来接收事件对象
+        */
+        const box1 = document.getElementById('box1');
+        // box1.onmousemove = function (event) {
+        //     console.log(event);
+
+        // }
+
+        box1.addEventListener('mousemove', function (event) {
+            console.log(event.clientX, event.clientY);
+
+            box1.textContent = event.clientX + ',' + event.clientY;
+
+        })
+    </script>
+</body>
+
+</html>
