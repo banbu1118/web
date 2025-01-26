@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location</title>
+</head>
+
+<body>
+    <button id="btn">点我一下</button>
+
+    <form action="#">
+        <input type="text" name="username">
+    </form>
+
+
+    <script>
+        const btn = document.getElementById('btn');
+        btn.addEventListener('click', function () {
+
+            /* 
+                location 表示的是浏览器地址栏的信息
+                    - 可以直接将location的值修改为一个新的地址，这样会使得网页发生跳转
+                    - location.assign() 跳转到一个新的url地址
+                    - location.replace() 跳转到一个新的url地址，无法回退
+                    - location.href 表示当前页面的完整URL地址
+                    - location.reload() 重新加载当前页面
+            */
+            // console.log(location.href);
+
+            // location = "https://www.baidu.com"
+
+            // location.assign("https://www.baidu.com")
+
+            // location.replace("https://www.baidu.com")
+
+            location.reload(true)    // 重新加载当前页面，true表示强制刷新
+        })
+
+    </script>
+
+</body>
+
+</html>

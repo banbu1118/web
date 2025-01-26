@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>history</title>
+</head>
+
+<body>
+    <button id="btn">点我一下</button>
+
+    <script>
+        const btn = document.getElementById('btn');
+        btn.addEventListener('click', function () {
+
+            /* 
+                history.back() 后退
+                history.forward() 前进
+                history.go(-1) 后退一步，数字为步数，可正可负
+            */
+            // console.log(history.length);
+
+            // history.back();
+
+            // history.forward();
+
+            history.go(-1)
+        })
+
+    </script>
+</body>
+
+</html>
