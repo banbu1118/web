@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery对象的方法</title>
+    <script src="./scripts/jquery-3.6.1.js"></script>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+
+        .box2 {
+            border: 10px solid red;
+        }
+
+        .box3 {
+            background-color: orange;
+        }
+    </style>
+    <script>
+        $(function () {
+            //为按钮绑定响应函数
+            $("#btn").click(function () {
+
+                //为box1添加class
+                //addClass()可以为元素添加一个或多个类
+                // $(".box1").addClass(["box2", "box3"])
+
+                //addClass()可以接收一个回调函数作为参数
+                // $(".box1").addClass(function (index, className) {
+                //在回调函数中，this表示当前的元素
+
+                // if (index % 2 === 0) {
+                //     //添加box=2
+                //     this.classList.add("box2");
+
+                // } else {
+                //     //添加box=3
+                //     thi
+                // s.classList.add("box3");
+                // }
+
+                // if (index % 2 === 0) {
+                //     //添加box=2
+                //     $(this).addClass("box2");
+
+                // } else {
+                //     //添加box=3
+                //     $(this).addClass("box3");
+                // }
+                // })
+
+                $(".box1").addClass(function (index) {
+                    //回调函数的返回值会成为当前元素是class
+                    // return ["box2", "box3"]
+                    if (index % 2 === 0) {
+                        //添加box=2
+                        return "box2";
+
+                    } else {
+                        //添加box=3
+                        return "box3";
+                    }
+                })
+            })
+
+        })
+    </script>
+</head>
+
+<body>
+    <button id="btn">点我</button>
+
+    <hr>
+
+    <div class="box1"></div>
+    <div class="box1"></div>
+    <div class="box1"></div>
+</body>
+
+</html>
