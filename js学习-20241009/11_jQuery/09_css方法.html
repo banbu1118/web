@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        #box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            padding: 100px;
+            border: 10px solid #f00;
+        }
+
+        #box2 {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+        }
+
+        #box3 {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+    <script src="./scripts/jquery-3.6.1.js"></script>
+    <script>
+        $(function () {
+
+            var $li = $("li:nth-child(1)");
+
+            $li.click(function () {
+                alert("哈哈哈")
+            })
+
+
+            $("#btn").click(function () {
+                /* 
+                    css 可以用来读取或设置元素的样式
+                */
+                var $width = $("#box1").css("width")
+
+                //读取宽度
+                // alert($width)
+
+                //读取背景色
+                // alert($("#box1").css("background-color"))
+
+                //设置宽度
+                // $("#box1").css("width", "300px")
+                // $("#box1").css("width", 300) //也可以用数字
+
+                //设置多个样式
+                // $("#box1").css({ width: 300, height: 500, "background-color": "red" })
+
+                // alert($("#box1").innerHeight())
+
+                // $("#box1").innerHeight(500)
+
+                // alert($("#box1").offset().top + "--" + $("#box1").offset().left)
+
+                $("#box1").offset({ top: 500, left: 300 })
+
+            })
+
+            $("#btn2").click(function () {
+
+            })
+
+            $("#btn3").click(function () {
+
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <button id="btn">点我</button>
+    <button id="btn2">点我</button>
+
+
+    <hr>
+
+    <div id="box1"></div>
+
+    <hr>
+
+    <button id="btn3">点我3</button>
+
+</body>
+
+</html>

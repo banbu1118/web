@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>筛选方法</title>
+    <script src="./scripts/jquery-3.6.1.js"></script>
+    <style>
+        .box1 {
+            float: left;
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            margin: 10px;
+        }
+
+        .box2 {
+            float: left;
+            width: 200px;
+            height: 200px;
+            border: 1px solid orange;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("#btn01").click(function () {
+                // $(".box1").filter(".a").css("background-color", "#bfa")
+                // $(".box1")
+                //     .css("border-color", "blue")
+                //     .filter(".a")
+                //     .css("background-color", "#bfa")
+
+                //end()方法可以返回选择器的初始状态
+                // $(".box1")
+                //     .filter(".a")
+                //     .css("background-color", "#bfa")
+                //     .end()
+                //     .css("border-color", "blue")
+
+                // add() 向jQuery对象中添加元素
+                // $(".box1").add(".box2").css("background-color", "#bfa")
+
+                //contents() 获取当前jQuery对象中所有元素的内容
+                //addBack() 向jQuery对象中添加当前选择器的所有元素和内容
+                $(".box1").contents().addBack().css("background-color", "#bfa")
+            })
+        })
+    </script>
+</head>
+
+<body>
+
+    <button id="btn01">点我</button>
+
+    <hr>
+
+    <div class="box1"><span>我是span</span></div>
+    <div class="box1"><span>我是span</span></div>
+    <div class="box1"><span>我是span</span></div><span>我是span</span>
+    <div class="box1 a"><span>我是span</span></div>
+    <div class="box1"><span>我是span</span></div>
+    <div class="box1 a"></div>
+    <div class="box1"></div>
+    <div class="box1 a"></div>
+    <div class="box1"></div>
+
+    <div class="box2"></div>
+</body>
+
+</html>
