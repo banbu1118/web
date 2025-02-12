@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习-2</title>
+    <script src="./scripts/jquery-3.6.1.js"></script>
+    <style>
+        .outer {
+            width: 400px;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        table {
+            width: 400px;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        td,
+        th {
+            border: 1px black solid;
+            padding: 10px 0;
+        }
+
+        form div {
+            margin: 10px 0;
+        }
+    </style>
+
+    <script>
+        $(function () {
+            //删除
+            $(document).on("click", "a", function () {
+                // alert(this)  //委托时，jQuery将this设置为触发事件的对象
+                //获取当前的tr
+                // var tr = this.parentNode.parentNode
+
+                //parents() 在当前祖先元素中寻找tr
+                var $tr = $(this).parents("tr")
+
+                if (confirm("确定删除【" + $tr.children()[0].textContent + "】吗？")) {
+                    //移除当前的tr
+                    $tr.remove()
+                }
+
+                return false
+            })
+
+            //添加
+            $("#btn").on("click", function () {
+                //获取用户输入的内容
+                var name = $("#name").val().trim()
+                var email = $("#email").val().trim()
+                var salary = $("#salary").val().trim()
+
+                //这样写不安全，有xss注入风险
+                // $("tbody").append("<tr><td>" + name + "</td><td>" + email + "</td><td>" + salary + "</td><td><a href='javascript:;'>删除</a></td></tr>")
+
+                //更安全的写法
+                //创建一个tr
+                var $tr = $("<tr><td/><td/><td/><td><a href='javascript:;'>删除</a></td></tr>")
+
+                //添加内容
+                var $tds = $tr.find("td")
+                $tds.eq(0).text(name)
+                $tds.eq(1).text(email)
+                $tds.eq(2).text(salary)
+
+                //将tr添加到tbody中
+                $("tbody").append($tr)
+
+
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="outer">
+        <table>
+            <tbody>
+                <tr>
+                    <th>姓名</th>
+                    <th>邮件</th>
+                    <th>薪资</th>
+                    <th>操作</th>
+                </tr>
+                <tr>
+                    <td>孙悟空</td>
+                    <td>swk@hgs.com</td>
+                    <td>10000</td>
+                    <td><a href="javascript:;">删除</a></td>
+                </tr>
+                <tr>
+                    <td>猪八戒</td>
+                    <td>zbj@glz.com</td>
+                    <td>8000</td>
+                    <td><a href="javascript:;">删除</a></td>
+                </tr>
+                <tr>
+                    <td>沙和尚</td>
+                    <td>shs@lsh.com</td>
+                    <td>6000</td>
+                    <td><a href="javascript:;">删除</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <form action="#">
+            <div>
+                <label for="name">姓名</label>
+                <input type="text" id="name" />
+            </div>
+            <div>
+                <label for="email">邮件</label>
+                <input type="email" id="email" />
+            </div>
+            <div>
+                <label for="salary">薪资</label>
+                <input type="number" id="salary" />
+            </div>
+            <button id="btn" type="button">添加</button>
+        </form>
+    </div>
+</body>
+
+</html>
