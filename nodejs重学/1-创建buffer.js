@@ -3,7 +3,7 @@
 let buf = Buffer.alloc(10)
 // console.log(buf);
 
-// 2.allocUnsafe
+// 2.allocUnsafe，速度要快一点
 let buf_2 = Buffer.allocUnsafe(1000)
 // console.log(buf_2);
 
