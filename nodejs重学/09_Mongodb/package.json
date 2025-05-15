@@ -1,0 +1,17 @@
+{
+  "name": "09_mongodb",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "mongoose": "^8.14.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.18"
+  }
+}
