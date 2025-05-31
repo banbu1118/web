@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="qpp">
+        {{ msg }}
+        <h2>{{ web.title }}</h2>
+        <h2>{{ web.url }}</h2>
+        <h2>{{ number }}</h2>
+    </div>
+    <script type="module">
+        import { createApp, reactive, ref } from './vue.esm-browser.js'
+        createApp({
+            //用于设置响应式数据和方法等
+            setup() {
+                const number = ref(10)
+                number.value = 20
+
+                const web = reactive({
+                    title: "kk编程",
+                    url: "banbu1118.githu.io"
+                })
+                return {
+                    msg: "success",
+                    number,
+                    web
+                }
+            }
+        }).mount("#qpp")
+    </script>
+</body>
+
+</html>
