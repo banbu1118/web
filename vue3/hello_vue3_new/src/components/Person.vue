@@ -1,68 +1,27 @@
 <template>
     <div class="person">
-        <h2>姓名：{{ name }}</h2>
-        <p>年龄：{{ age }}</p>
-        <button @click="changeName">修改名字</button>
-        <button @click="changeAge">修改年龄</button>
-        <button @click="showTel">查看练习方式</button>
-        <hr>
-        <h2>测试1：{{ a }}</h2>
-        <h2>测试2：{{ c }}</h2>
-        <h2>测试3：{{ d }}</h2>
-        <button @click="b">测试</button>
+        姓：<input type="text" v-model="firstName"><br>
+        名：<input type="text" v-model="lastName"><br>
+        全名：<span>{{ fullName}}</span>
     </div>
 
 </template>
 
 <script>
+import { ref,computed } from 'vue'
 export default {
-    name: 'Person',
-
-    data() {
-        return {
-            a: 100,
-            c: this.name,
-            d: 900
-        }
-    },
-    methods: {
-        b() {
-            console.log("b");
-
-        }
-    },
-
-    setup() {
-        let name = '张三'
-        let age = 25
-        let tel = '13812345678'
-        // let x = d
-
-        function changeName() {
-            name = 'zhang-san'
-        }
-        function changeAge() {
-            age += 1
-        }
-
-        function showTel() {
-            alert(tel)
-        }
-        return {
-            name,
-            age,
-            tel,
-            changeName,
-            changeAge,
-            showTel
-        }
-
-        // return function() {
-        //     return "哈哈哈"
-        // }
-    }
-
+    name: 'Person'
 }
+</script>
+
+<script setup>
+let firstName = ref('zhang')
+let lastName = ref('san')
+
+let fullName = computed(() => {
+    return 678
+})
+
 </script>
 
 <style scoped>
@@ -75,5 +34,9 @@ export default {
 
 button {
     margin: 0 5px
+}
+
+li {
+    font-size: 20px;
 }
 </style>
