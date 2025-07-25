@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let web = "dengruicode.com"
+
+        // 字符串长度
+        let len = web.length
+        console.log("字符串长度:", len)
+
+        // 转小写
+        let str1 = "DAVID".toLowerCase()
+        console.log("转小写:", str1)
+
+        // 转大写
+        let str2 = "luna".toUpperCase()
+        console.log("转大写:", str2)
+
+        // 返回字符串在索引处的字符
+        let str3 = web[2]
+        console.log("返回字符串在索引处的字符:", str3)
+
+        // 字符串转为字符数组
+        let str4 = [...web]
+        console.log("字符串转为字符数组:", str4)
+
+        // 字符串转 int
+        let number = parseInt("168")
+        console.log("字符串转int:", number)
+
+        // 字符串替换
+        let str6 = web.replaceAll("co", "y")
+        console.log("替换全部字符串:", str6)
+
+        let str7 = web.replace("co", "y")
+        console.log("替换1个字符串:", str7)
+
+        // 去除字符串两侧指定的字符
+        let str8 = "   dengruicode.com   ".trim()
+        console.log("去除字符串两侧指定的字符:", str8)
+
+        // 判断是否包含某个字符串
+        let result = web.includes("dengrui") // true
+        console.log("是否包含某个字符串:", result)
+
+        // 返回字符串中第一次出现某个字符串的位置,若不存在则返回-1
+        let result2 = web.indexOf("dengrui")
+        console.log("返回字符串中第一次出现某个字符串的位置:", result2)
+
+        let result3 = "www.dengruicode.com".indexOf("dengrui")
+        console.log("返回字符串中第一次出现某个字符串的位置:", result3)
+
+        // 判断一个字符串是否以指定的前缀开头
+        let result4 = "www.dengruicode.com".startsWith("www")
+        console.log("判断一个字符串是否以指定的前缀开头:", result4)
+
+        // 判断一个字符串是否以指定的后缀结尾
+        let result5 = "www.dengruicode.com".endsWith("net")
+        console.log("判断一个字符串是否以指定的后缀结尾:", result5)
+
+        // 将字符串按照指定字符分割成数组
+        let arr = "a,b,c,d".split(",")
+        console.log("将字符串按照指定字符分割成数组:", arr)
+
+        // 字符串截取 substr(开始位置,截取长度)
+        let subStr = web.substr(0, 7) //dengrui
+        console.log("截取字符串的前7个字符:", subStr)
+
+        let subStr2 = web.substr(-3) //com
+        console.log("截取字符串的最后3个字符:", subStr2)
+
+        let subStr3 = web.substr(4) //ruicode.com [字符串下标是从 0 开始]
+        console.log("从字符串的第5个位置开始截取直至字符串末尾:", subStr3)
+
+        //重复字符串
+        let repeatstr = "David".repeat(3)
+        console.log("重复3次字符串", repeatstr)
+
+        //在字符串前添加指定数量的填充字符, 直到该字符串达到指定的长度
+        let padStart = "David".padStart(15, "-") //由于 David 占 5 个字符, 因此只需要再添加 10 个横线, 即可达到总长度 15
+        //let padStart = "David".padStart(15) //默认空格
+        console.log("padStart:", padStart)
+
+        //在字符串后添加指定数量的填充字符, 直到该字符串达到指定的长度
+        let padEnd = "David".padEnd(10, "-")
+        console.log("padEnd:", padEnd)
+    </script>
+</body>
+
+</html>

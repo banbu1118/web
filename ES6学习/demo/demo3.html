@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [10, 11]
+        console.log(arr);
+
+        let arrLength = arr.push(12, 13)
+        console.log(arr);
+        console.log(arrLength);
+
+        arrLength = arr.unshift(9, 8)
+        console.log(arr);
+        console.log(arrLength);
+
+        let delElement = arr.shift()
+        console.log(arr);
+        console.log(delElement);
+
+        delElement = arr.pop()
+        console.log(arr);
+        console.log(delElement);
+
+        let delArr = arr.splice(2, 2)
+        console.log(arr);
+        console.log(delArr);
+
+        arr.reverse()
+        console.log(arr);
+
+        let arr2 = ["banana", "apple", "orange"]
+        arr2.sort()
+        console.log(arr2);
+
+        let arr3 = [5, 20, 13, 1, 4]
+        arr3.sort()
+        console.log(arr3);
+
+        arr3.sort((a, b) => a - b)
+        console.log(arr3);
+
+        let arr4 = [10, 11, 12, 13, 14, 15]
+        let newArr = arr4.filter((value) => { return value >= 12 })
+        console.log(newArr);
+
+        let arr6 = ["邓瑞", "dengruicode.com", 100]
+        for (let value of arr6) {
+            console.log(value);
+        }
+
+        arr6.forEach((value, index) => {
+            console.log(value, index);
+        })
+
+    </script>
+</body>
+
+</html>

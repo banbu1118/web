@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let teacher = {
+            name: "邓瑞",
+            gender: "男",
+            web: "dengruicode.com"
+        }
+        console.log(teacher);
+
+        teacher.height = 170;
+        console.log(teacher);
+
+        teacher.web = "www.dengruicode.com"
+        console.log(teacher);
+
+        delete teacher.gender
+        console.log(teacher);
+
+        let has = "name" in teacher;
+        console.log(has);
+
+        console.log(Object.keys(teacher));
+
+        for (let key in teacher) {
+            console.log(key, teacher[key]);
+        }
+
+        console.log(Object.entries(teacher));
+
+        Object.entries(teacher).forEach(([key, value]) => {
+            console.log(key, value)
+        })
+
+        teacher = {}
+        console.log(teacher);
+    </script>
+</body>
+
+</html>

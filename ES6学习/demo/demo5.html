@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let teacher = new Map([
+            ["name", "邓瑞"],
+            ["gender", "男"],
+            ["web", "dengruicode.com"]
+        ])
+
+        console.log(teacher);
+
+        teacher.set("height", 175)
+        console.log(teacher);
+
+        teacher.delete("web")
+        console.log(teacher);
+
+        console.log(teacher.has("gender"));
+
+        console.log(teacher.size);
+
+        let arr = Array.from(teacher)
+        console.log(arr);
+
+        let arr2 = [...teacher]
+        console.log(arr2);
+
+        for (let value of teacher) {
+            console.log(value);
+
+        }
+
+
+        for (let [key, value] of teacher) {
+            console.log(key, value);
+        }
+
+        teacher.forEach((value, key) => console.log(key, value));
+
+        teacher.clear()
+        console.log(teacher);
+    </script>
+</body>
+
+</html>

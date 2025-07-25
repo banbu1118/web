@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Person {
+            naem
+            gender
+
+            constructor(name, gender) {
+                this.name = name
+                this.gender = gender
+            }
+
+            sleep() {
+                return `${this.name} is sleeping.`
+            }
+        }
+
+        class Dengrui extends Person {
+            web
+
+            constructor(name, gender, web) {
+                super(name, gender)
+                this.web = web
+            }
+
+            eat() {
+                return `${this.name} is eating.`
+            }
+        }
+
+        let dengrui = new Dengrui("邓瑞","男","dengruicode.com")
+        console.log(dengrui.web);
+        console.log(dengrui.sleep());
+        console.log(dengrui.eat());
+        console.log(dengrui.name);
+    </script>
+</body>
+
+</html>

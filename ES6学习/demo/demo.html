@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let name = "邓瑞"
+        console.log(name);
+        console.log(typeof name);
+
+        let balance = 100
+        console.log(balance);
+        console.log(typeof balance);
+
+        const PI = 3.14
+        console.log(PI);
+        console.log(typeof PI);
+
+        // PI = 3.15 // 报错，常量不能被修改
+        // console.log(PI);
+
+        let tv = true
+        console.log(tv);
+        console.log(typeof tv);
+
+        let boy = {
+            name: "David",
+            age: 20,
+            weight: 60.5
+        }
+        console.log(boy);
+        console.log(typeof boy);
+
+        let girl = new Map([
+            ["name", "Emily"],
+            ["age", 21],
+            ["weight", 55.5]]
+        )
+        console.log(girl);
+        console.log(typeof girl);
+
+        let number = new Set([1, "2", 2, 2, 3, 4, 5])
+        console.log(number);
+        console.log(typeof number);
+
+        let arr = ["a", "b", "c", "d", "e"]
+        console.log(arr);
+        console.log(typeof arr);
+
+        function add(a, b) {
+            return a + b;
+        }
+        console.log(add(1, 2));
+
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            info() {
+                console.log("姓名" + this.name + "年龄" + this.age);
+
+            }
+        }
+
+        const person = new Person("邓瑞", 25);
+        person.info();
+
+    </script>
+</body>
+
+</html>

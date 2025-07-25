@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getWeb() {
+            let web = "dengruicode.com"
+
+            // console.log(web);
+            return web
+        }
+
+        console.log(getWeb());
+
+        function add(number) {
+            return number + 10
+        }
+        console.log(add(20));
+
+        function getPage(page = 10) {
+            return page
+        }
+        console.log(getPage(20));
+
+        let sub = function (x, y) {
+            return x - y
+        }
+        console.log(sub(10, 5));
+
+        let plus = (a, b) => {
+            return a + b
+        }
+        console.log(plus(10, 5));
+
+        let plus2 = (a, b) => a + b
+        console.log(plus2(20, 5));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let fruits = new Set(['apple', 'banana', 'orange']);
+        console.log(fruits);
+
+        fruits.add("mango")
+        console.log(fruits);
+
+        fruits.delete("banana")
+        console.log(fruits);
+
+        console.log(fruits.has("banana"));
+
+        console.log(fruits.size);
+
+        let arr = Array.from(fruits);
+        console.log(arr);
+
+        // let web = "dengruicode.com"
+        web = "邓瑞编程"
+        let webArr = [...web]
+        console.log(webArr);
+
+        let arr2 = [...fruits]
+        console.log(arr2);
+
+        for (let value of fruits) {
+            console.log(value);
+        }
+
+        fruits.forEach(value => {
+            console.log(value);
+        })
+
+        let numberArr = [1, 2, 3, 3, 2, 1]
+        let numberSet = new Set(numberArr)
+        console.log(numberSet);
+    </script>
+</body>
+
+</html>
