@@ -1,0 +1,13 @@
+访问 /home 来自 ::ffff:127.0.0.1 
+访问 /home 来自 ::ffff:192.168.1.174 
+访问 /home 来自 ::ffff:127.0.0.1 
+访问 /admin 来自 ::1 
+访问 /admin 来自 ::1 
+来自::ffff:127.0.0.1的/home请求
+来自::ffff:127.0.0.1的/home请求
+来自::1的/admin请求
+来自::1的/admin请求
+来自::ffff:127.0.0.1的/kk请求
+来自::ffff:127.0.0.1的/.well-known/appspecific/com.chrome.devtools.json请求
+来自::ffff:127.0.0.1的/kk请求
+来自::ffff:127.0.0.1的/.well-known/appspecific/com.chrome.devtools.json请求
