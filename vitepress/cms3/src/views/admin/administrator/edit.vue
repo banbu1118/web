@@ -1,12 +1,10 @@
 <script setup>
-import { reactive } from 'vue'
+import { reactive, onMounted } from 'vue'
 import { ElMessage } from 'element-plus'
+import { useRoute, useRouter } from 'vue-router'
 import AxiosDR from '@/utils/AxiosDR.js'
-import TimeDR from '@/utils/TimeDR.js'
-import { useRouter, useRoute } from 'vue-router'
 
-
-
+//数据
 const data = reactive({
     name: '',
     password: '',
@@ -15,50 +13,49 @@ const data = reactive({
     remark: 'dengruicode.com',
 })
 
-
-const route = useRoute()
-const router = useRouter()
+//初始化
+const route = useRoute() //路由
+const router = useRouter() //路由器
 
 //参数
 let id = route.query.id
-console.log(id);
+//console.log(id)
 
-AxiosDR.get(`/api/adm/getById?id=${id}`).then(result => {
-    console.log(result);
+onMounted(() => {
+    //获取当前记录
+    AxiosDR.get(`/api/adm/getById?id=${id}`).then(result => {
+        console.log(result)
 
-    if (!result.status) {
-        ElMessage.error(result.msg)
-        return
-    }
+        if (!result.status) {
+            ElMessage.error(result.msg)
+            return
+        }
 
-    data.name = result.data.name
-    data.email = result.data.email
-    data.gender = String(result.data.gender)
-    data.remark = result.data.remark
-
-}).catch(err => {
-    console.log("err:", err)
+        data.name = result.data.name
+        data.email = result.data.email
+        data.gender = String(result.data.gender)
+        data.remark = result.data.remark
+    }).catch(err => {
+        console.log("err:", err)
+    })
 })
-
-
 
 //编辑
 const edit = () => {
-    // console.log(data)
+    //console.log(data)
 
     if (data.name == '') {
-        ElMessage.error('请填写名称')
+        ElMessage.error("请填写名称")
         return
     }
 
-    data.id = id
-
-    if (data.password == "") {
+    data.id = id //添加属性
+    if (data.password == '') {
         delete data.password //删除属性
     }
 
     AxiosDR.post('/api/adm/edit', data).then(result => {
-        console.log(result);
+        console.log(result)
 
         if (!result.status) {
             ElMessage.error(result.msg)
