@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h3>{{ web.show }}</h3>
+        <p v-show="web.show">邓瑞编程 dengruicode.com</p>
+
+        <button @click="toggle">点击切换显示状态</button>
+    </div>
+    <script type="module">
+        import { createApp, reactive } from './vue.esm-browser.js'
+
+        createApp({
+            setup() {
+                const web = reactive({
+                    show: true
+                })
+
+                const toggle = () => {
+                    web.show = !web.show
+                }
+
+                return {
+                    web,
+                    toggle
+                }
+            }
+        }).mount("#app")
+
+    </script>
+</body>
+
+</html>
