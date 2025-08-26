@@ -87,7 +87,7 @@ li {
     font-size: 13px;
 }
 
-.dr-home .header .info .admin .exit {
+.dr-home .header .info .admin .logout {
     width: 90px;
     height: 55px;
     line-height: 55px;
@@ -114,6 +114,22 @@ li {
     overflow-y: auto;
 }
 
+/* color */
+.blue {
+    color: #1e9eff;
+}
+
+.green {
+    color: #15baaa;
+}
+
+.orange {
+    color: #feb801;
+}
+
+.red {
+    color: #f75a23;
+}
 
 /* 重写 ElementPlus 默认样式 */
 /* 表格 */
