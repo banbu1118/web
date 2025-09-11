@@ -1,6 +1,6 @@
 {
-  "type":"module",
-  "name": "demo6",
+  "type": "module",
+  "name": "express-learn",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {

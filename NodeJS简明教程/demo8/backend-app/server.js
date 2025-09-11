@@ -3,6 +3,7 @@ import { readFile } from 'fs/promises';
 import cors from 'cors';
 
 const app = express();
+
 app.use(cors());
 
 const port = 3000;

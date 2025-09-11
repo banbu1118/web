@@ -1,13 +1,8 @@
-// import { readFile, } from 'node:fs/promises'
-import { readFile } from 'node:fs'
+import { readFile } from 'node:fs/promises';
 
-await readFile('./data.json', 'utf8',(err,data)=>{
-    if(err){
-        console.log(err.message);
-        
-    }
-
+try {
+    const data = await readFile('data.json', 'utf8'); // 异步+await
     console.log(data);
-})
-
-// console.log(kk)
+} catch (err) {
+    console.error('捕获到错误:', err.message);
+}
