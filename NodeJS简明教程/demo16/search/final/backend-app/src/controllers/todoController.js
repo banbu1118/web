@@ -6,6 +6,7 @@ import {
   updateTodo as updateTodoApi,
   countTodo as countTodoApi,
 } from '../services/todoService.js';
+import AppError from '../utils/AppError.js';
 
 export async function getTodos(req, res) {
   const page = req.query.page || 1;
@@ -20,14 +21,14 @@ export async function getTodos(req, res) {
 }
 
 export async function getTodoById(req, res) {
-  if (!req.params.todoId) {
-    return res.status(400).send('todoId is required');
-  }
+  // if (!req.params.todoId) {
+  //   return res.status(400).send('todoId is required');
+  // }
 
   const todo = await getTodoByIdApi(req.params.todoId);
 
   if (todo) {
-    return res.status(200).json(todo);
+    return res.status(200).json({message: 'Todo found', data: todo});
   }
 
   return res.status(404).send('404 Not Found');
@@ -53,13 +54,19 @@ export async function createTodo(req, res) {
   if (!addTodo) {
     return res.status(400).send('Bad request');
   }
-
-  const addedTodo = await createTodoApi(addTodo);
+try{
+    const addedTodo = await createTodoApi(addTodo);
 
   return res.status(200).json({
     message: 'Todo added successfully',
     data: addedTodo,
   });
+}catch(err){
+  // console.log("err from controller",err);
+  
+  throw new AppError(`The id ${addTodo.id} already exists `,400,err.name)
+}
+
 }
 
 export async function updateTodo(req, res) {

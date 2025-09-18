@@ -1,4 +1,5 @@
 import { Sequelize } from 'sequelize';
+import  {logger} from './loggerHelper.js'
 
 const databaseConfig = {
   database: process.env.DB_NAME,
@@ -17,6 +18,7 @@ const sequelize = new Sequelize(
   {
     host: databaseConfig.host,
     dialect: 'postgres',
+    logging: false,
   }
 );
 
@@ -24,7 +26,8 @@ try {
   await sequelize.authenticate();
   console.log('Connection has been established successfully.');
 } catch (error) {
-  console.error('Unable to connect to the database:', error);
+  logger.error(`Unable to connect to the database: ${error.message}`);
+  throw error;
 }
 
 export default sequelize;
