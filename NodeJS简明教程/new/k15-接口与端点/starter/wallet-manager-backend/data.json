@@ -1,0 +1,90 @@
+[
+    {
+        "id": 1,
+        "name": "Apple MacBook Pro 17inch",
+        "color": "Silver",
+        "category": "Laptop",
+        "price": 2999,
+        "description": "Apple MacBook Pro 17inch"
+    },
+    {
+        "id": 2,
+        "name": "Microsoft Surface Pro",
+        "color": "White",
+        "category": "Laptop",
+        "price": 1999,
+        "description": "Microsoft Surface Pro"
+    },
+    {
+        "id": 3,
+        "name": "Magic Mouse 2",
+        "color": "Black",
+        "category": "Accessories",
+        "price": 99,
+        "description": "Magic Mouse 2"
+    },
+    {
+        "id": 1747499011676,
+        "name": "iPad",
+        "price": 299,
+        "color": "Silver",
+        "category": "Laptop",
+        "description": "iPad from Apple"
+    },
+    {
+        "id": 1747560431118,
+        "name": "Telsa",
+        "price": 20000,
+        "color": "Black",
+        "category": "Laptop",
+        "description": "dehaiuyhfeahuiifea"
+    },
+    {
+        "id": 1747561824198,
+        "name": "RTX4090",
+        "price": 5000,
+        "color": "Black",
+        "category": "Gaming",
+        "description": "The GeForce RTX 40 series is a family of consumer graphics processing units (GPUs) developed by Nvidia as part of its GeForce line of graphics cards, succeeding the GeForce RTX 30 series. The series was announced on September 20, 2022, at the GPU Technology Conference, and launched on October 12, 2022, starting with its flagship model, the RTX 4090.[1] It was succeeded by the GeForce RTX 50 series, which debuted on January 30, 2025,[3] after being previously announced at CES.[4]\n\nThe cards are based on Nvidia's Ada Lovelace architecture and feature Nvidia RTX's third-generation RT cores for hardware-accelerated real-time ray tracing, and fourth-generation deep-learning-focused Tensor Cores.\n\nDetails\nArchitectural highlights of the Ada Lovelace architecture include the following:[5]\n\nCUDA Compute Capability 8.9[6]\nTSMC 4N process (5 nm custom designed for Nvidia)[1] – not to be confused with N4\nFourth-generation Tensor Cores with FP8, FP16, bfloat16, TensorFloat-32 (TF32) and sparsity acceleration\nThird-generation Ray Tracing Cores, along with concurrent ray tracing, shading and compute\nShader Execution Reordering – needs to be enabled by the developer[7]\nDual NVENC with 8K 10-bit 120FPS AV1 fixed function hardware encoding[8][9]\nA new generation of Optical Flow Accelerator to aid DLSS 3.0 intermediate AI-based frame generation[10]\nNo NVLink support[11][12]\nDisplayPort 1.4a and HDMI 2.1 display connections\nDouble-precision (FP64) performance of Ada Lovelace silicon is 1/64 of single-precision (FP32) performance.\nRelease\nThe RTX 4090 was released as the first model of the series on October 12, 2022, for $1,599 US,[1] and the 16GB RTX 4080 was released on November 16, 2022, for $1,199 US. An RTX 4080 12GB was announced in September 2022, originally to be priced at $899 US, however following some controversy in the media it was \"unlaunched\" by Nvidia. On January 5, 2023, that model was released as the RTX 4070 Ti for $799 US. The RTX 4070 was then released on April 13, 2023 at $599 US MSRP. The RTX 4060 Ti was released on May 24, 2023, at $399 US, and the RTX 4060 on June 29, 2023, at $299 US. An RTX 4060 Ti 16GB followed on July 18, 2023, at $499 US. On January 8, 2024, Nvidia released the RTX 4070 Super at $599, RTX 4070 Ti Super at $799 and RTX 4080 Super at $999. These video cards were launched at higher specs and lower prices than their original counterparts.[13] In the same vein, the production of the RTX 4080 and RTX 4070 Ti have stopped due to the Super series, but the 4070 will remain.[14] In August 2024, Nvidia, citing the need \"to improve supply and availability\", introduced a variant of the RTX 4070 card with GDDR6 running at 20Gbps while all the other specs remain the same.[15][16]"
+    },
+    {
+        "id": 1758399606734,
+        "name": "kk",
+        "price": 30,
+        "color": "blue",
+        "category": "Phone",
+        "description": "大事记\nFirefox专案一开始是戴夫·海厄特（Dave Hyatt）与布雷克·罗斯（Blake Ross）由Mozilla浏览器专案分支出来的一个实验专案。他们认为Mozilla浏览器专案受到网景通讯公司赞助的商业需求所拖累，并且有过度开发者导向的功能蔓延。专案开发由本·古德杰（Ben Goodger）主持。\n2004年2月5日，商业和IT顾问公司AMS将Mozilla Firefox（当时的Firebird）分类到“Tier 1”（即最佳的）等级的开放原始码产品（Keating，2004）。这表示AMS认为Firebird几乎没有风险和拥有优秀的技术。\n2007年11月13日，百科编辑器升级，支持Firefox。此前，由于种种原因的限制，Firefox浏览器的用户无法在百科编辑器中正常插入标签（包括粗体、斜体、链接和标题）。通过技术升级，已经可以支持这一功能。\n2007年12月6日，百度签约谋智网络，火狐内置百度搜索。\n2012年10月4日，在新发布的Nightly 18版本中，针对Windows 8，Mozilla在Firefox中先行加入了Metro UI。\n2013年9月，Windows 8版Firefox进入Aurora开发阶段。采用Modern/Metro界面的Firefox仍在开发中，并计划于2014年1月发布。\n2017年10月，Mozilla宣布，火狐浏览器将会在2018年8月 (Firefox 52 ESR支持结束) 彻底终止对已经停止服务的Windows XP和Vista版的支持。 [7]\n2017年11月，Mozilla向Windows、Mac、Linux、Android和iOS发布了Firefox 57，也就是火狐量子（Firefox Quantum）浏览器。该浏览器号称是2004年火狐1.0以来最大的更新，不仅大幅改进了性能，还改版了视觉效果。 [8]\n2021年1月26日，Mozilla 正式发布火狐浏览器 Firefox 85 版本。此次大版本更新带来了超级 Cookie 保护功能、更易用的书签管理，以及一键删除密码功能。另外，此次更新也正式停止了对 Adobe Flash 的支持 [3]。\n2021年7月消息，Mozilla官方在官网发出通知称，（火狐浏览器轻量版）已经于2021年6月30日正式停止开发和支持。 [14]\n2021年7月14日，火狐浏览器 Firefox 90 版本正式发布，包含桌面版和 Android 版。 [15]\n2022年5月31日消息，Mozilla 发布了 Firefox 101 正式版更新。 [18]\n2022年6月5日消息，Mozilla 为 Firefox 火狐浏览器推出了一个可以离线工作的翻译插件 Firefox Translations。 [19]\n2023年1月17日，Mozilla推出了 Firefox 109 正式版。 [32]\n2023年1月31日，火狐浏览器 Firefox 迎来 109.0.1 正式版更新，修复了 Windows 版字体渲染效果不佳问题。 [33]\n2023年3月14日消息，火狐浏览器 Firefox 迎来 111.0 版本更新，为 Windows 用户带来了原生通知，体验更好。 [34]\n2023年6月7日消息，Mozilla6月6日发布 Firefox 114 稳定版更新的同时，也将开发的重心迁移到 Firefox 115 版本上，并于7日推出Beta版本。引入Cookie Banner Reduction 和 Quick Actions 按钮。 [35]\n2023年7月5日，Mozilla 正式发布了火狐浏览器 Firefox 115 稳定版更新，本次更新最值得关注一点是，这是支持 Win7 / Win8、macOS 10.12、10.13 和 10.14 的最后一个版本。 [37]\n2023年10月消息，火狐 Firefox 官网显示，Firefox 账户将于 11 月 1 日更名为 Mozilla 账户，将作为 Mozilla 为各种产品和服务提供的主要身份验证和账户管理服务。 [38]\n2023年10月，Mozilla 面向 Windows、macOS 和 Linux 平台，发布了最新的火狐浏览器 Firefox 119 稳定版。该版本除了修复此前存在的 BUG外，还添加了在 PDF 文档中插入图片、增强 Firefox View，以及通过引入 Encrypted Client Hello（ECH）增强隐私等。 [39]\n2024年6月，Mozilla 公司通过 Firefox Nightly 官方 X 账号发布推文，表示在 Nightly 频道最新 Firefox 浏览器版本中，引入了新的实验 Flag，用户启用后鼠标悬停在标签页上，可以在缩略图中预览标签页内容。 [41]\n2024年 6月26日，IT之家消息， Mozilla 计划在 Firefox 浏览器侧边栏中引入 AI 聊天机器人。 [42]7月18日消息，Mozilla 公司于1周前发布了火狐 Firefox 浏览器 128 稳定版更新，其中值得关注的变化在于引入了 Privacy Preserving Attribution（PPA）实验性 API，探索平衡隐私保护、广告追踪的解决方法。自 Firefox 128 浏览器版本开始，该 PPA实验API默认处于启用状态 [43]。\n2025年2月3日，火狐浏览器Firefox的135桌面版本正式发布。 [44]\n2025年3月5日，Mozilla 火狐浏览器 Firefox 136.0 版本更新正式发布，带来了多项改进。 [45]\n2025年6月10日消息，Mozilla公司宣布将于2025年6月26日正式关闭其火狐Firefox浏览器的AI助手扩展Orbit。 [46]\n2025年6月14日消息，在最新版Firefox火狐浏览器139版本中，用户可以将Perplexity AI作为搜索引擎。 [47]\n2025年6月25日消息，Mozilla推出了最新的Firefox浏览器v140.0版本，该版本也是Firefox ESR v140.0长期支持版的基础，追求稳定的可以下载ESR版本。 [48]\n2025年7月16日消息，开源的火狐浏览器可能很快就会终止所有中国区用户账户并关闭北京火狐公司，相关通知意外泄露并被撤回，暂时还没有官方公告。 [49]\n2025年7月22日，根据Mozilla GFX团队的最新更新，Firefox 141发布时正式支持WebGPU。 [50]\n2025年7月27日消息，北京谋智火狐信息技术有限公司发布了“关于Firefox在中国持续运营，但北京火狐关闭及Firefox账户服务终止的重要公告”。具体来看，Firefox浏览器、Firefox社区、Firefox火狐通行证账户均为Mozilla的授权产品，经Mozilla授权，北京谋智火狐信息技术有限公司在中国大陆负责部分Firefox浏览器相关业务。 [51]\n2025年8月22日报道，在Windows 10、Windows 11版火狐Firefox 142浏览器中，Mozilla推出实验性Progressive Web Apps（PWA）功能，支持用户将网站固定到任务栏并在精简窗口中运行。 [56]\n更换CEO\nMozilla董事会2014年3月26日宣布，联合创始人、现任首席技术官（CTO）Brendan Eich被任命为Mozilla首席执行官（CEO），即时生效。\n另外，谋智中国CEO宫力将担任Mozilla首席运营官（COO），负责云服务、IT、市场、移动&开发、平台工程。\nMitchell Baker将继续担任执行董事长。"
+    },
+    {
+        "id": 83,
+        "name": "Sleek Fresh Chips",
+        "color": "#1a5138",
+        "category": "Generic Rubber Fish",
+        "price": 121.89,
+        "description": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J"
+    },
+    {
+        "id": 59,
+        "name": "Tasty Concrete Car",
+        "color": "#5a535a",
+        "category": "Unbranded Frozen Pants",
+        "price": 951.79,
+        "description": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive"
+    },
+    {
+        "id": 67,
+        "name": "Modern Wooden Bacon",
+        "color": "#2c6764",
+        "category": "Small Fresh Tuna",
+        "price": 901.25,
+        "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support"
+    },
+    {
+        "id": 17,
+        "name": "Intelligent Concrete Bacon",
+        "color": "#442a4a",
+        "category": "Rustic Concrete Pants",
+        "price": 109.09,
+        "description": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design"
+    }
+]

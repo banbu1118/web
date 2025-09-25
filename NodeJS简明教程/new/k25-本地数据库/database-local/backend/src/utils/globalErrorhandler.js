@@ -1,0 +1,7 @@
+import { sendJsonResponse } from "./responseHelper.js"
+
+export default function globalErrorhandler(err, _req, res, _next) {
+    const { name = 'Unknown Error', message = 'Something broke!', statusCode = 500 } = err
+
+    return sendJsonResponse(res, statusCode, message)
+}
