@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.6"
+  },
+  "dependencies": {
+    "@tsconfig/node-lts": "^22.0.2"
+  }
+}
